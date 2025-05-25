@@ -8,9 +8,9 @@ export default function EquipmentSection() {
     <section id="sprzet" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Specyfikacja sprzętu</h2>
+          <h2 className="text-3xl font-bold mb-4">Спецификация оборудования</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Nasze rowery elektryczne zostały starannie dobrane, aby spełnić potrzeby kurierów i zapewnić niezawodną pracę w każdych warunkach.
+            Наши электровелосипеды были тщательно подобраны, чтобы удовлетворить потребности курьеров и обеспечить надежную работу в любых условиях.
           </p>
         </div>
         
@@ -19,43 +19,43 @@ export default function EquipmentSection() {
             <div className="aspect-w-16 aspect-h-9">
               <img 
                 src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Rower elektryczny dla kurierów"
+                alt="Электровелосипед для курьеров"
                 className="object-cover w-full h-full"
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-4">Model Courier Pro 2023</h3>
+              <h3 className="text-xl font-semibold mb-4">Модель Courier Pro 2023</h3>
               
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Battery className="h-5 w-5 text-primary mr-3" />
                   <div>
-                    <h4 className="font-medium">Bateria</h4>
-                    <p className="text-sm text-muted-foreground">48V 15Ah, zasięg do 80 km</p>
+                    <h4 className="font-medium">Батарея</h4>
+                    <p className="text-sm text-muted-foreground">48В 15Ач, запас хода до 80 км</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
                   <Gauge className="h-5 w-5 text-primary mr-3" />
                   <div>
-                    <h4 className="font-medium">Silnik</h4>
-                    <p className="text-sm text-muted-foreground">500W, maksymalna prędkość 25 km/h</p>
+                    <h4 className="font-medium">Двигатель</h4>
+                    <p className="text-sm text-muted-foreground">500Вт, максимальная скорость 25 км/ч</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
                   <Bike className="h-5 w-5 text-primary mr-3" />
                   <div>
-                    <h4 className="font-medium">Rama</h4>
-                    <p className="text-sm text-muted-foreground">Aluminiowa, wzmocniona, rozmiar uniwersalny</p>
+                    <h4 className="font-medium">Рама</h4>
+                    <p className="text-sm text-muted-foreground">Алюминиевая, усиленная, универсальный размер</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
                   <Drill className="h-5 w-5 text-primary mr-3" />
                   <div>
-                    <h4 className="font-medium">Hamulce</h4>
-                    <p className="text-sm text-muted-foreground">Hydrauliczne tarczowe, przód i tył</p>
+                    <h4 className="font-medium">Тормоза</h4>
+                    <p className="text-sm text-muted-foreground">Гидравлические дисковые, передние и задние</p>
                   </div>
                 </div>
               </div>
@@ -66,43 +66,43 @@ export default function EquipmentSection() {
             <div className="aspect-w-16 aspect-h-9">
               <img 
                 src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Wyposażenie kurierskie"
+                alt="Курьерское оборудование"
                 className="object-cover w-full h-full"
               />
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-4">Wyposażenie dodatkowe</h3>
+              <h3 className="text-xl font-semibold mb-4">Дополнительное оборудование</h3>
               
               <div className="space-y-4">
                 <div className="flex items-center">
                   <ShieldCheck className="h-5 w-5 text-secondary mr-3" />
                   <div>
-                    <h4 className="font-medium">Bezpieczeństwo</h4>
-                    <p className="text-sm text-muted-foreground">Kask, kamizelka odblaskowa, zapięcie klasy premium</p>
+                    <h4 className="font-medium">Безопасность</h4>
+                    <p className="text-sm text-muted-foreground">Шлем, светоотражающий жилет, премиум-класса замок</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
                   <Bike className="h-5 w-5 text-secondary mr-3" />
                   <div>
-                    <h4 className="font-medium">Sakwy kurierskie</h4>
-                    <p className="text-sm text-muted-foreground">Wodoodporne, pojemność 50L, termoizolowane</p>
+                    <h4 className="font-medium">Курьерские сумки</h4>
+                    <p className="text-sm text-muted-foreground">Водонепроницаемые, объем 50Л, термоизолированные</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
                   <Battery className="h-5 w-5 text-secondary mr-3" />
                   <div>
-                    <h4 className="font-medium">Ładowarka</h4>
-                    <p className="text-sm text-muted-foreground">Szybka ładowarka 4A, pełne ładowanie w 4 godziny</p>
+                    <h4 className="font-medium">Зарядное устройство</h4>
+                    <p className="text-sm text-muted-foreground">Быстрое зарядное устройство 4А, полная зарядка за 4 часа</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
                   <Clock className="h-5 w-5 text-secondary mr-3" />
                   <div>
-                    <h4 className="font-medium">Wsparcie</h4>
-                    <p className="text-sm text-muted-foreground">Serwis techniczny 7 dni w tygodniu</p>
+                    <h4 className="font-medium">Поддержка</h4>
+                    <p className="text-sm text-muted-foreground">Техническое обслуживание 7 дней в неделю</p>
                   </div>
                 </div>
               </div>
@@ -116,14 +116,14 @@ export default function EquipmentSection() {
               <Download className="h-16 w-16 text-primary" />
             </div>
             <div className="md:w-2/4 mb-6 md:mb-0">
-              <h3 className="text-xl font-semibold mb-2">Pobierz pełną specyfikację</h3>
+              <h3 className="text-xl font-semibold mb-2">Скачать полную спецификацию</h3>
               <p className="text-muted-foreground">
-                Szczegółowa dokumentacja techniczna naszych rowerów elektrycznych, z instrukcją obsługi i poradami dla kurierów.
+                Подробная техническая документация наших электровелосипедов, с инструкцией по эксплуатации и советами для курьеров.
               </p>
             </div>
             <div className="md:w-1/4 text-center">
               <Button className="w-full sm:w-auto">
-                Pobierz PDF
+                Скачать PDF
               </Button>
             </div>
           </div>

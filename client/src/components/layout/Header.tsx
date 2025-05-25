@@ -5,11 +5,11 @@ import { Container } from "@/components/ui/container";
 import { Menu, X, Bike, PhoneCall } from "lucide-react";
 
 const navItems = [
-  { id: "funkcje", label: "Funkcje" },
-  { id: "cennik", label: "Cennik" },
-  { id: "zasady", label: "Zasady" },
-  { id: "sprzet", label: "Sprzęt" },
-  { id: "kontakt", label: "Kontakt" }
+  { id: "funkcje", label: "Преимущества" },
+  { id: "cennik", label: "Цены" },
+  { id: "zasady", label: "Правила" },
+  { id: "sprzet", label: "Оборудование" },
+  { id: "kontakt", label: "Контакты" }
 ];
 
 export default function Header() {
@@ -38,7 +38,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Bike className="h-6 w-6 text-primary" />
-            <span className="text-xl font-semibold">ElektroBike Wrocław</span>
+            <span className="text-xl font-semibold">RowerHub.bike</span>
           </div>
           
           {/* Desktop Navigation */}
@@ -71,7 +71,7 @@ export default function Header() {
           {/* Call Button */}
           <Button className="hidden md:flex items-center gap-2">
             <PhoneCall className="h-4 w-4" />
-            Zadzwoń
+            Позвонить
           </Button>
         </div>
       </Container>
@@ -97,7 +97,7 @@ export default function Header() {
               ))}
               <Button className="flex items-center gap-2">
                 <PhoneCall className="h-4 w-4" />
-                Zadzwoń
+                Позвонить
               </Button>
             </div>
           </Container>

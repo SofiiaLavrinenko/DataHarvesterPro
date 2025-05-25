@@ -7,9 +7,9 @@ export default function RulesSection() {
     <section id="zasady" className="py-20 bg-white">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Zasady korzystania</h2>
+          <h2 className="text-3xl font-bold mb-4">Правила использования</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Zapoznaj się z zasadami wynajmu rowerów elektrycznych. Dbamy o Twoje bezpieczeństwo i komfort korzystania z naszych usług.
+            Ознакомьтесь с правилами аренды электровелосипедов. Мы заботимся о вашей безопасности и комфорте при использовании наших услуг.
           </p>
         </div>
         
@@ -17,7 +17,7 @@ export default function RulesSection() {
           <div>
             <h3 className="text-xl font-semibold mb-6 flex items-center">
               <CheckCircle2 className="h-6 w-6 text-secondary mr-3" />
-              Co zapewniamy
+              Что мы обеспечиваем
             </h3>
             
             <ul className="space-y-4">
@@ -26,9 +26,9 @@ export default function RulesSection() {
                   <CheckCircle2 className="h-5 w-5 text-secondary" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Pełne naładowanie</h4>
+                  <h4 className="font-medium mb-1">Полная зарядка</h4>
                   <p className="text-muted-foreground text-sm">
-                    Każdy rower wydawany jest z w pełni naładowaną baterią, gotowy do pracy.
+                    Каждый велосипед выдается с полностью заряженной батареей, готовый к работе.
                   </p>
                 </div>
               </li>
@@ -38,9 +38,9 @@ export default function RulesSection() {
                   <CheckCircle2 className="h-5 w-5 text-secondary" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Wsparcie techniczne</h4>
+                  <h4 className="font-medium mb-1">Техническая поддержка</h4>
                   <p className="text-muted-foreground text-sm">
-                    W przypadku awarii zapewniamy pomoc techniczną lub wymianę roweru.
+                    В случае поломки мы обеспечиваем техническую помощь или замену велосипеда.
                   </p>
                 </div>
               </li>
@@ -50,9 +50,9 @@ export default function RulesSection() {
                   <CheckCircle2 className="h-5 w-5 text-secondary" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Elastyczność zwrotu</h4>
+                  <h4 className="font-medium mb-1">Гибкость возврата</h4>
                   <p className="text-muted-foreground text-sm">
-                    Możliwość przedłużenia najmu lub wcześniejszego zwrotu z proporcjonalnym rozliczeniem.
+                    Возможность продления аренды или досрочного возврата с пропорциональным расчетом.
                   </p>
                 </div>
               </li>
@@ -62,9 +62,9 @@ export default function RulesSection() {
                   <CheckCircle2 className="h-5 w-5 text-secondary" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Szkolenie z obsługi</h4>
+                  <h4 className="font-medium mb-1">Обучение использованию</h4>
                   <p className="text-muted-foreground text-sm">
-                    Każdy najemca otrzymuje instruktaż z obsługi roweru elektrycznego.
+                    Каждый арендатор получает инструктаж по использованию электровелосипеда.
                   </p>
                 </div>
               </li>
@@ -74,7 +74,7 @@ export default function RulesSection() {
           <div>
             <h3 className="text-xl font-semibold mb-6 flex items-center">
               <XCircle className="h-6 w-6 text-destructive mr-3" />
-              Twoje obowiązki
+              Ваши обязанности
             </h3>
             
             <ul className="space-y-4">
@@ -83,9 +83,9 @@ export default function RulesSection() {
                   <XCircle className="h-5 w-5 text-destructive" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Odpowiedzialność za sprzęt</h4>
+                  <h4 className="font-medium mb-1">Ответственность за оборудование</h4>
                   <p className="text-muted-foreground text-sm">
-                    Najemca odpowiada za powierzony sprzęt i jest zobowiązany do jego zwrotu w stanie niepogorszonym.
+                    Арендатор отвечает за вверенное оборудование и обязан вернуть его в исходном состоянии.
                   </p>
                 </div>
               </li>
@@ -95,9 +95,9 @@ export default function RulesSection() {
                   <XCircle className="h-5 w-5 text-destructive" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Zakaz modyfikacji</h4>
+                  <h4 className="font-medium mb-1">Запрет модификаций</h4>
                   <p className="text-muted-foreground text-sm">
-                    Zabronione jest dokonywanie jakichkolwiek modyfikacji technicznych roweru.
+                    Запрещено вносить какие-либо технические модификации в велосипед.
                   </p>
                 </div>
               </li>
@@ -107,9 +107,9 @@ export default function RulesSection() {
                   <XCircle className="h-5 w-5 text-destructive" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Bezpieczne parkowanie</h4>
+                  <h4 className="font-medium mb-1">Безопасная парковка</h4>
                   <p className="text-muted-foreground text-sm">
-                    Rower należy zawsze przypinać załączonym zapięciem do stałych elementów infrastruktury.
+                    Велосипед всегда должен быть пристегнут прилагаемым замком к стационарным элементам инфраструктуры.
                   </p>
                 </div>
               </li>
@@ -119,9 +119,9 @@ export default function RulesSection() {
                   <XCircle className="h-5 w-5 text-destructive" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Zgłaszanie usterek</h4>
+                  <h4 className="font-medium mb-1">Сообщение о неисправностях</h4>
                   <p className="text-muted-foreground text-sm">
-                    Obowiązek natychmiastowego zgłaszania wszelkich usterek i problemów technicznych.
+                    Обязательное немедленное сообщение о любых неисправностях и технических проблемах.
                   </p>
                 </div>
               </li>
@@ -131,7 +131,7 @@ export default function RulesSection() {
         
         <div className="mt-16 text-center">
           <ScrollLink to="kontakt" smooth={true} duration={500} offset={-80} className="text-primary hover:underline cursor-pointer">
-            Pełny regulamin wynajmu dostępny w naszym biurze
+            Полные правила аренды доступны в нашем офисе
           </ScrollLink>
         </div>
       </Container>

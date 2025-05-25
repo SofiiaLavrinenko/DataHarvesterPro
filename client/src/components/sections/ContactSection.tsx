@@ -33,8 +33,8 @@ export default function ContactSection() {
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         variant: "destructive",
-        title: "Błąd formularza",
-        description: "Wypełnij wszystkie wymagane pola."
+        title: "Ошибка формы",
+        description: "Заполните все обязательные поля."
       });
       return;
     }
@@ -42,8 +42,8 @@ export default function ContactSection() {
     // Here you would typically send the form data to your backend
     // For now, we'll just show a success toast
     toast({
-      title: "Wiadomość wysłana",
-      description: "Dziękujemy za kontakt. Odpowiemy najszybciej jak to możliwe."
+      title: "Сообщение отправлено",
+      description: "Спасибо за обращение. Мы ответим вам как можно скорее."
     });
 
     // Reset form
@@ -60,9 +60,9 @@ export default function ContactSection() {
     <section id="kontakt" className="py-20 bg-white">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Skontaktuj się z nami</h2>
+          <h2 className="text-3xl font-bold mb-4">Свяжитесь с нами</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Masz pytania? Chcesz zarezerwować rower? Nasz zespół jest gotowy, aby Ci pomóc.
+            Есть вопросы? Хотите забронировать велосипед? Наша команда готова помочь вам.
           </p>
         </div>
         
@@ -70,80 +70,80 @@ export default function ContactSection() {
           <div>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
-                <Label htmlFor="name">Imię i nazwisko *</Label>
+                <Label htmlFor="name">Имя и фамилия *</Label>
                 <Input 
                   id="name" 
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Jan Kowalski"
+                  placeholder="Иван Иванов"
                   required
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="email">Adres email *</Label>
+                <Label htmlFor="email">Электронная почта *</Label>
                 <Input 
                   type="email" 
                   id="email" 
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="jan.kowalski@example.com"
+                  placeholder="ivan.ivanov@example.com"
                   required
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="phone">Telefon</Label>
+                <Label htmlFor="phone">Телефон</Label>
                 <Input 
                   type="tel" 
                   id="phone" 
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+48 123 456 789"
+                  placeholder="+7 123 456 7890"
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="subject">Temat</Label>
+                <Label htmlFor="subject">Тема</Label>
                 <Select onValueChange={handleSelectChange} value={formData.subject}>
                   <SelectTrigger id="subject">
-                    <SelectValue placeholder="Wybierz temat" />
+                    <SelectValue placeholder="Выберите тему" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="rezerwacja">Rezerwacja roweru</SelectItem>
-                    <SelectItem value="pytanie">Pytanie ogólne</SelectItem>
-                    <SelectItem value="oferta-firmowa">Oferta firmowa</SelectItem>
-                    <SelectItem value="serwis">Serwis techniczny</SelectItem>
-                    <SelectItem value="inne">Inne</SelectItem>
+                    <SelectItem value="rezerwacja">Бронирование велосипеда</SelectItem>
+                    <SelectItem value="pytanie">Общий вопрос</SelectItem>
+                    <SelectItem value="oferta-firmowa">Корпоративное предложение</SelectItem>
+                    <SelectItem value="serwis">Техническое обслуживание</SelectItem>
+                    <SelectItem value="inne">Другое</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="message">Wiadomość *</Label>
+                <Label htmlFor="message">Сообщение *</Label>
                 <Textarea 
                   id="message" 
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5} 
-                  placeholder="Twoja wiadomość..."
+                  placeholder="Ваше сообщение..."
                   required
                 />
               </div>
               
               <Button type="submit" className="w-full">
-                Wyślij wiadomość
+                Отправить сообщение
               </Button>
             </form>
           </div>
           
           <div>
             <div className="bg-background p-6 rounded-xl shadow-sm mb-8">
-              <h3 className="text-xl font-semibold mb-6">Dane kontaktowe</h3>
+              <h3 className="text-xl font-semibold mb-6">Контактные данные</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -152,7 +152,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-muted-foreground">kontakt@elektrobike-wroclaw.pl</p>
+                    <p className="text-muted-foreground">contact@rowerhub.bike</p>
                   </div>
                 </div>
                 
@@ -161,7 +161,7 @@ export default function ContactSection() {
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Telefon</h4>
+                    <h4 className="font-medium mb-1">Телефон</h4>
                     <p className="text-muted-foreground">+48 123 456 789</p>
                   </div>
                 </div>
@@ -171,11 +171,11 @@ export default function ContactSection() {
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Adres</h4>
+                    <h4 className="font-medium mb-1">Адрес</h4>
                     <p className="text-muted-foreground">
-                      ul. Kurierska 42<br />
-                      50-001 Wrocław<br />
-                      Polska
+                      ул. Курьерская 42<br />
+                      50-001 Вроцлав<br />
+                      Польша
                     </p>
                   </div>
                 </div>
@@ -183,25 +183,25 @@ export default function ContactSection() {
             </div>
             
             <div className="bg-background p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-6">Godziny otwarcia</h3>
+              <h3 className="text-xl font-semibold mb-6">Часы работы</h3>
               
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="font-medium">Poniedziałek - Piątek</span>
+                  <span className="font-medium">Понедельник - Пятница</span>
                   <span>8:00 - 19:00</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="font-medium">Sobota</span>
+                  <span className="font-medium">Суббота</span>
                   <span>9:00 - 16:00</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="font-medium">Niedziela</span>
-                  <span>Zamknięte</span>
+                  <span className="font-medium">Воскресенье</span>
+                  <span>Закрыто</span>
                 </div>
               </div>
               
               <div className="mt-8">
-                <h4 className="font-medium mb-3">Śledź nas</h4>
+                <h4 className="font-medium mb-3">Следите за нами</h4>
                 <div className="flex space-x-4">
                   <a href="#" className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-standard">
                     <Facebook className="h-5 w-5 text-primary" />

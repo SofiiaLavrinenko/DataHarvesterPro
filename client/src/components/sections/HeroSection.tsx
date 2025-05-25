@@ -10,20 +10,20 @@ export default function HeroSection() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Dostarcz więcej z <span className="text-gradient">rowerem elektrycznym</span>
+              Доставляй больше с <span className="text-gradient">электровелосипедом</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Wynajem nowoczesnych rowerów elektrycznych dla kurierów we Wrocławiu. Zwiększ swoje możliwości dostawy i zarabiaj więcej.
+              Аренда современных электровелосипедов для курьеров во Вроцлаве. Увеличь свои возможности доставки и зарабатывай больше.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <ScrollLink to="cennik" smooth={true} duration={500} offset={-80}>
                 <Button className="w-full sm:w-auto">
-                  Sprawdź cennik
+                  Проверить цены
                 </Button>
               </ScrollLink>
               <ScrollLink to="kontakt" smooth={true} duration={500} offset={-80}>
                 <Button variant="outline" className="w-full sm:w-auto">
-                  Kontakt <ArrowRight className="ml-2 h-4 w-4" />
+                  Контакты <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </ScrollLink>
             </div>
@@ -32,13 +32,13 @@ export default function HeroSection() {
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img 
                 src="https://images.unsplash.com/photo-1571168538867-ea0bdf879ecb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Kurier na rowerze elektrycznym"
+                alt="Курьер на электровелосипеде"
                 className="w-full h-auto rounded-xl"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4 backdrop-blur-sm">
                 <div className="text-white">
-                  <p className="font-medium">Zwiększ efektywność</p>
-                  <p className="text-sm">Dostarczaj więcej w krótszym czasie</p>
+                  <p className="font-medium">Повысь эффективность</p>
+                  <p className="text-sm">Доставляй больше за меньшее время</p>
                 </div>
               </div>
             </div>
@@ -52,8 +52,8 @@ export default function HeroSection() {
                 <Battery className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold">Długa żywotność baterii</h3>
-                <p className="text-sm text-muted-foreground">Do 8 godzin ciągłej pracy</p>
+                <h3 className="font-semibold">Долгий срок службы батареи</h3>
+                <p className="text-sm text-muted-foreground">До 8 часов непрерывной работы</p>
               </div>
             </div>
           </div>
@@ -64,8 +64,8 @@ export default function HeroSection() {
                 <MapPin className="h-6 w-6 text-secondary" />
               </div>
               <div>
-                <h3 className="font-semibold">Doskonałe do miasta</h3>
-                <p className="text-sm text-muted-foreground">Łatwe manewrowanie w ruchu miejskim</p>
+                <h3 className="font-semibold">Идеально для города</h3>
+                <p className="text-sm text-muted-foreground">Легкое маневрирование в городском потоке</p>
               </div>
             </div>
           </div>
@@ -76,8 +76,8 @@ export default function HeroSection() {
                 <ShieldCheck className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold">Pełne ubezpieczenie</h3>
-                <p className="text-sm text-muted-foreground">Ochrona dla Ciebie i roweru</p>
+                <h3 className="font-semibold">Полная страховка</h3>
+                <p className="text-sm text-muted-foreground">Защита для тебя и велосипеда</p>
               </div>
             </div>
           </div>

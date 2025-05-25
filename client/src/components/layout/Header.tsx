@@ -38,7 +38,7 @@ export default function Header() {
       <Container className="py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <div className="bg-white p-2 rounded-lg shadow-md">
+            <div className="bg-white p-2 rounded-lg shadow-md flex items-center justify-center">
               <img src={logoPath} alt="RowerHub.bike" className="h-14" />
             </div>
           </div>

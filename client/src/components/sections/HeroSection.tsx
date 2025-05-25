@@ -2,14 +2,23 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { ArrowRight, Battery, MapPin, ShieldCheck } from "lucide-react";
+import bicyclesImage from "../../assets/bicycles.jpg";
 
 export default function HeroSection() {
   return (
     <section className="pt-28 pb-16 bg-gradient-to-br from-gray-900 to-black">
       <Container>
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white leading-tight">
+          <div className="md:w-1/2 mb-10 md:mb-0 relative">
+            <div className="absolute -top-10 -left-10 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden shadow-2xl rotate-3 border-4 border-white hidden md:block">
+              <img 
+                src={bicyclesImage} 
+                alt="Наши электровелосипеды" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white leading-tight md:pl-12">
               Доставляй больше с <span className="text-orange-500 inline-block relative">
                 электровелосипедом
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-orange-500 rounded-full"></span>

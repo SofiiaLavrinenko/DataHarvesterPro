@@ -10,10 +10,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <Bike className="h-6 w-6 text-primary" />
-              <span className="text-xl font-semibold">ElektroBike Wrocław</span>
+              <span className="text-xl font-semibold">RowerHub.bike</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Nowoczesny wynajem rowerów elektrycznych dla kurierów we Wrocławiu. Szybkie, niezawodne i ekologiczne rozwiązanie.
+              Современная аренда электровелосипедов для курьеров во Вроцлаве. Быстрое, надежное и экологичное решение.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-standard">
@@ -32,26 +32,26 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-6">Oferta</h4>
+            <h4 className="text-lg font-semibold mb-6">Предложения</h4>
             <ul className="space-y-3">
               <li>
                 <ScrollLink to="funkcje" className="text-gray-400 hover:text-white transition-standard cursor-pointer" smooth={true} duration={500} offset={-80}>
-                  Funkcje
+                  Преимущества
                 </ScrollLink>
               </li>
               <li>
                 <ScrollLink to="cennik" className="text-gray-400 hover:text-white transition-standard cursor-pointer" smooth={true} duration={500} offset={-80}>
-                  Cennik
+                  Цены
                 </ScrollLink>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Nasze rowery
+                  Наши велосипеды
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Recenzje
+                  Отзывы
                 </a>
               </li>
               <li>
@@ -63,62 +63,62 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-6">Wsparcie</h4>
+            <h4 className="text-lg font-semibold mb-6">Поддержка</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Centrum pomocy
+                  Центр помощи
                 </a>
               </li>
               <li>
                 <ScrollLink to="zasady" className="text-gray-400 hover:text-white transition-standard cursor-pointer" smooth={true} duration={500} offset={-80}>
-                  Zasady korzystania
+                  Правила использования
                 </ScrollLink>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Serwis
+                  Сервис
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Forum
+                  Форум
                 </a>
               </li>
               <li>
                 <ScrollLink to="kontakt" className="text-gray-400 hover:text-white transition-standard cursor-pointer" smooth={true} duration={500} offset={-80}>
-                  Kontakt
+                  Контакты
                 </ScrollLink>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-6">Firma</h4>
+            <h4 className="text-lg font-semibold mb-6">Компания</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  O nas
+                  О нас
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Blog
+                  Блог
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Kariera
+                  Карьера
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Prywatność
+                  Конфиденциальность
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-standard">
-                  Warunki
+                  Условия
                 </a>
               </li>
             </ul>
@@ -127,11 +127,11 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} ElektroBike Wrocław. Wszelkie prawa zastrzeżone.
+            &copy; {new Date().getFullYear()} RowerHub.bike. Все права защищены.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-standard">Prywatność</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-standard">Regulamin</a>
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-standard">Конфиденциальность</a>
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-standard">Правила</a>
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-standard">Cookies</a>
           </div>
         </div>

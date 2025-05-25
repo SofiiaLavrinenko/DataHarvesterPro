@@ -37,14 +37,14 @@ export default function Header() {
     <header className={`fixed w-full z-50 transition-standard ${scrolled ? 'bg-black shadow-lg' : 'bg-black bg-opacity-90'}`}>
       <Container className="py-3">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
+          <div className="flex items-center mr-8">
             <div className="bg-white p-2 rounded-lg shadow-md flex items-center justify-center">
-              <img src={logoPath} alt="RowerHub.bike" className="h-14" />
+              <img src={logoPath} alt="RowerHub.bike" className="h-9" />
             </div>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-10">
+          <nav className="hidden md:flex space-x-10 flex-grow justify-center">
             {navItems.map((item) => (
               <ScrollLink
                 key={item.id}

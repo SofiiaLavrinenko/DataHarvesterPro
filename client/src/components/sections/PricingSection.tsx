@@ -40,14 +40,6 @@ export default function PricingSection() {
                 </li>
                 <li className="flex items-start bg-gray-900/50 p-3 rounded-lg hover:bg-gray-900 transition-all duration-300">
                   <Check className="h-6 w-6 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-lg">Качественные курьерские сумки в комплекте</span>
-                </li>
-                <li className="flex items-start bg-gray-900/50 p-3 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                  <Check className="h-6 w-6 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-lg">Шлем и светоотражающий жилет</span>
-                </li>
-                <li className="flex items-start bg-gray-900/50 p-3 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                  <Check className="h-6 w-6 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-200 text-lg">Надежный велосипедный замок</span>
                 </li>
                 <li className="flex items-start bg-gray-900/50 p-3 rounded-lg hover:bg-gray-900 transition-all duration-300">

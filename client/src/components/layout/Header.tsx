@@ -34,15 +34,17 @@ export default function Header() {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className={`fixed w-full z-50 transition-standard ${scrolled ? 'bg-black shadow-sm' : 'bg-black bg-opacity-80'}`}>
-      <Container className="py-4">
+    <header className={`fixed w-full z-50 transition-standard ${scrolled ? 'bg-black shadow-lg' : 'bg-black bg-opacity-90'}`}>
+      <Container className="py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img src={logoPath} alt="RowerHub.bike" className="h-14" />
+            <div className="bg-white p-2 rounded-lg shadow-md">
+              <img src={logoPath} alt="RowerHub.bike" className="h-14" />
+            </div>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-10">
             {navItems.map((item) => (
               <ScrollLink
                 key={item.id}
@@ -51,7 +53,7 @@ export default function Header() {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className="text-white hover:text-orange-400 cursor-pointer transition-standard font-medium text-lg"
+                className="text-white hover:text-orange-400 cursor-pointer transition-standard font-medium text-lg tracking-wide border-b-2 border-transparent hover:border-orange-400 py-1"
               >
                 {item.label}
               </ScrollLink>
@@ -69,7 +71,7 @@ export default function Header() {
           </Button>
           
           {/* Call Button */}
-          <Button className="hidden md:flex items-center gap-2 bg-orange-500 hover:bg-orange-600">
+          <Button className="hidden md:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-lg transform hover:-translate-y-1 transition duration-300">
             <PhoneCall className="h-4 w-4" />
             Позвонить
           </Button>
@@ -95,7 +97,7 @@ export default function Header() {
                   {item.label}
                 </ScrollLink>
               ))}
-              <Button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600">
+              <Button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-md">
                 <PhoneCall className="h-4 w-4" />
                 Позвонить
               </Button>

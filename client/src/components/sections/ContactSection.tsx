@@ -3,9 +3,8 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Clock, Instagram, Facebook, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function ContactSection() {
@@ -14,17 +13,12 @@ export default function ContactSection() {
     name: "",
     email: "",
     phone: "",
-    subject: "",
     message: ""
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSelectChange = (value: string) => {
-    setFormData(prev => ({ ...prev, subject: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -51,17 +45,16 @@ export default function ContactSection() {
       name: "",
       email: "",
       phone: "",
-      subject: "",
       message: ""
     });
   };
 
   return (
-    <section id="kontakt" className="py-20 bg-white">
+    <section id="kontakt" className="py-20 bg-black">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Свяжитесь с нами</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-white">Свяжитесь с нами</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
             Есть вопросы? Хотите забронировать велосипед? Наша команда готова помочь вам.
           </p>
         </div>
@@ -70,109 +63,93 @@ export default function ContactSection() {
           <div>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
-                <Label htmlFor="name">Имя и фамилия *</Label>
+                <Label htmlFor="name" className="text-white">Имя и фамилия *</Label>
                 <Input 
                   id="name" 
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Иван Иванов"
                   required
+                  className="bg-gray-900 border-gray-700 text-white"
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="email">Электронная почта *</Label>
+                <Label htmlFor="email" className="text-white">Электронная почта *</Label>
                 <Input 
                   type="email" 
                   id="email" 
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="ivan.ivanov@example.com"
                   required
+                  className="bg-gray-900 border-gray-700 text-white"
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="phone">Телефон</Label>
+                <Label htmlFor="phone" className="text-white">Телефон</Label>
                 <Input 
                   type="tel" 
                   id="phone" 
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+7 123 456 7890"
+                  className="bg-gray-900 border-gray-700 text-white"
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="subject">Тема</Label>
-                <Select onValueChange={handleSelectChange} value={formData.subject}>
-                  <SelectTrigger id="subject">
-                    <SelectValue placeholder="Выберите тему" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="rezerwacja">Бронирование велосипеда</SelectItem>
-                    <SelectItem value="pytanie">Общий вопрос</SelectItem>
-                    <SelectItem value="oferta-firmowa">Корпоративное предложение</SelectItem>
-                    <SelectItem value="serwis">Техническое обслуживание</SelectItem>
-                    <SelectItem value="inne">Другое</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message">Сообщение *</Label>
+                <Label htmlFor="message" className="text-white">Сообщение *</Label>
                 <Textarea 
                   id="message" 
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5} 
-                  placeholder="Ваше сообщение..."
                   required
+                  className="bg-gray-900 border-gray-700 text-white"
                 />
               </div>
               
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600">
                 Отправить сообщение
               </Button>
             </form>
           </div>
           
           <div>
-            <div className="bg-background p-6 rounded-xl shadow-sm mb-8">
-              <h3 className="text-xl font-semibold mb-6">Контактные данные</h3>
+            <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-sm mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-white">Контактные данные</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                    <Mail className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mr-4 mt-1">
+                    <Mail className="h-5 w-5 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-muted-foreground">contact@rowerhub.bike</p>
+                    <h4 className="font-medium mb-1 text-white">Email</h4>
+                    <p className="text-gray-400">contact@rowerhub.bike</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                    <Phone className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mr-4 mt-1">
+                    <Phone className="h-5 w-5 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Телефон</h4>
-                    <p className="text-muted-foreground">+48 123 456 789</p>
+                    <h4 className="font-medium mb-1 text-white">Телефон</h4>
+                    <p className="text-gray-400">+48 123 456 789</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
-                    <MapPin className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mr-4 mt-1">
+                    <MapPin className="h-5 w-5 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Адрес</h4>
-                    <p className="text-muted-foreground">
+                    <h4 className="font-medium mb-1 text-white">Адрес</h4>
+                    <p className="text-gray-400">
                       ул. Курьерская 42<br />
                       50-001 Вроцлав<br />
                       Польша
@@ -182,35 +159,12 @@ export default function ContactSection() {
               </div>
             </div>
             
-            <div className="bg-background p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-6">Часы работы</h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Понедельник - Пятница</span>
-                  <span>8:00 - 19:00</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Суббота</span>
-                  <span>9:00 - 16:00</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Воскресенье</span>
-                  <span>Закрыто</span>
-                </div>
-              </div>
-              
-              <div className="mt-8">
-                <h4 className="font-medium mb-3">Следите за нами</h4>
-                <div className="flex space-x-4">
-                  <a href="#" className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-standard">
-                    <Facebook className="h-5 w-5 text-primary" />
-                  </a>
-                  <a href="#" className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-standard">
-                    <Instagram className="h-5 w-5 text-primary" />
-                  </a>
-                  <a href="#" className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-standard">
-                    <Twitter className="h-5 w-5 text-primary" />
+            <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-sm">
+              <div className="mb-6">
+                <h4 className="font-medium mb-3 text-white">Следите за нами</h4>
+                <div className="flex">
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-standard">
+                    <Instagram className="h-5 w-5 text-orange-500" />
                   </a>
                 </div>
               </div>

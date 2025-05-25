@@ -34,12 +34,11 @@ export default function Header() {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className={`fixed w-full z-50 transition-standard ${scrolled ? 'bg-white shadow-sm' : 'bg-transparent'}`}>
+    <header className={`fixed w-full z-50 transition-standard ${scrolled ? 'bg-black shadow-sm' : 'bg-transparent'}`}>
       <Container className="py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <img src={logoPath} alt="RowerHub.bike" className="h-10" />
-            <span className="text-xl font-semibold">RowerHub.bike</span>
+          <div className="flex items-center">
+            <img src={logoPath} alt="RowerHub.bike" className="h-12" />
           </div>
           
           {/* Desktop Navigation */}
@@ -52,7 +51,7 @@ export default function Header() {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className="text-foreground hover:text-primary cursor-pointer transition-standard"
+                className="text-white hover:text-orange-400 cursor-pointer transition-standard"
               >
                 {item.label}
               </ScrollLink>
@@ -64,13 +63,13 @@ export default function Header() {
             variant="ghost" 
             size="icon" 
             onClick={toggleMobileMenu} 
-            className="md:hidden"
+            className="md:hidden text-white hover:text-orange-400"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
           
           {/* Call Button */}
-          <Button className="hidden md:flex items-center gap-2">
+          <Button className="hidden md:flex items-center gap-2 bg-orange-500 hover:bg-orange-600">
             <PhoneCall className="h-4 w-4" />
             Позвонить
           </Button>
@@ -79,7 +78,7 @@ export default function Header() {
       
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-md">
+        <div className="md:hidden bg-black shadow-md">
           <Container className="py-2">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
@@ -90,13 +89,13 @@ export default function Header() {
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="py-2 border-b border-gray-100 text-foreground"
+                  className="py-2 border-b border-gray-800 text-white hover:text-orange-400"
                   onClick={closeMobileMenu}
                 >
                   {item.label}
                 </ScrollLink>
               ))}
-              <Button className="flex items-center gap-2">
+              <Button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600">
                 <PhoneCall className="h-4 w-4" />
                 Позвонить
               </Button>

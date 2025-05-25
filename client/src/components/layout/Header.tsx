@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { Menu, X, Bike, PhoneCall } from "lucide-react";
+import { Menu, X, PhoneCall } from "lucide-react";
+import logoPath from "../../assets/logo.png";
 
 const navItems = [
   { id: "funkcje", label: "Преимущества" },
@@ -37,7 +38,7 @@ export default function Header() {
       <Container className="py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Bike className="h-6 w-6 text-primary" />
+            <img src={logoPath} alt="RowerHub.bike" className="h-10" />
             <span className="text-xl font-semibold">RowerHub.bike</span>
           </div>
           

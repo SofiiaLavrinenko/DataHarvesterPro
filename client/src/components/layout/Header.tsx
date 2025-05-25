@@ -34,11 +34,11 @@ export default function Header() {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className={`fixed w-full z-50 transition-standard ${scrolled ? 'bg-black shadow-sm' : 'bg-transparent'}`}>
+    <header className={`fixed w-full z-50 transition-standard ${scrolled ? 'bg-black shadow-sm' : 'bg-black bg-opacity-80'}`}>
       <Container className="py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img src={logoPath} alt="RowerHub.bike" className="h-12" />
+            <img src={logoPath} alt="RowerHub.bike" className="h-14" />
           </div>
           
           {/* Desktop Navigation */}
@@ -51,7 +51,7 @@ export default function Header() {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className="text-white hover:text-orange-400 cursor-pointer transition-standard"
+                className="text-white hover:text-orange-400 cursor-pointer transition-standard font-medium text-lg"
               >
                 {item.label}
               </ScrollLink>
@@ -89,7 +89,7 @@ export default function Header() {
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="py-2 border-b border-gray-800 text-white hover:text-orange-400"
+                  className="py-3 border-b border-gray-800 text-white hover:text-orange-400 text-lg"
                   onClick={closeMobileMenu}
                 >
                   {item.label}

@@ -5,25 +5,20 @@ import { ArrowRight, Battery, MapPin, ShieldCheck } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="pt-28 pb-16 bg-gradient-to-br from-white to-blue-50">
+    <section className="pt-28 pb-16 bg-gradient-to-br from-gray-900 to-black">
       <Container>
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Доставляй больше с <span className="text-gradient">электровелосипедом</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              Доставляй больше с <span className="text-orange-500">электровелосипедом</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-gray-300 mb-8">
               Аренда современных электровелосипедов для курьеров во Вроцлаве. Увеличь свои возможности доставки и зарабатывай больше.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <ScrollLink to="cennik" smooth={true} duration={500} offset={-80}>
-                <Button className="w-full sm:w-auto">
-                  Проверить цены
-                </Button>
-              </ScrollLink>
               <ScrollLink to="kontakt" smooth={true} duration={500} offset={-80}>
-                <Button variant="outline" className="w-full sm:w-auto">
-                  Контакты <ArrowRight className="ml-2 h-4 w-4" />
+                <Button className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600">
+                  Связаться с нами
                 </Button>
               </ScrollLink>
             </div>
@@ -46,38 +41,38 @@ export default function HeroSection() {
         </div>
         
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow-sm card-hover">
+          <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-sm card-hover">
             <div className="flex items-start mb-4">
-              <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                <Battery className="h-6 w-6 text-primary" />
+              <div className="bg-gray-800 p-3 rounded-lg mr-4">
+                <Battery className="h-6 w-6 text-orange-500" />
               </div>
               <div>
-                <h3 className="font-semibold">Долгий срок службы батареи</h3>
-                <p className="text-sm text-muted-foreground">До 8 часов непрерывной работы</p>
+                <h3 className="font-semibold text-white">Долгий срок службы батареи</h3>
+                <p className="text-sm text-gray-400">До 8 часов непрерывной работы</p>
               </div>
             </div>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-sm card-hover">
+          <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-sm card-hover">
             <div className="flex items-start mb-4">
-              <div className="bg-green-100 p-3 rounded-lg mr-4">
-                <MapPin className="h-6 w-6 text-secondary" />
+              <div className="bg-gray-800 p-3 rounded-lg mr-4">
+                <MapPin className="h-6 w-6 text-orange-500" />
               </div>
               <div>
-                <h3 className="font-semibold">Идеально для города</h3>
-                <p className="text-sm text-muted-foreground">Легкое маневрирование в городском потоке</p>
+                <h3 className="font-semibold text-white">Идеально для города</h3>
+                <p className="text-sm text-gray-400">Легкое маневрирование в городском потоке</p>
               </div>
             </div>
           </div>
           
-          <div className="bg-white p-6 rounded-xl shadow-sm card-hover">
+          <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-sm card-hover">
             <div className="flex items-start mb-4">
-              <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                <ShieldCheck className="h-6 w-6 text-primary" />
+              <div className="bg-gray-800 p-3 rounded-lg mr-4">
+                <ShieldCheck className="h-6 w-6 text-orange-500" />
               </div>
               <div>
-                <h3 className="font-semibold">Полная страховка</h3>
-                <p className="text-sm text-muted-foreground">Защита для тебя и велосипеда</p>
+                <h3 className="font-semibold text-white">Полная страховка</h3>
+                <p className="text-sm text-gray-400">Защита для тебя и велосипеда</p>
               </div>
             </div>
           </div>

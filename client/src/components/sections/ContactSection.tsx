@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function ContactSection() {
@@ -162,9 +162,12 @@ export default function ContactSection() {
             <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-sm">
               <div className="mb-6">
                 <h4 className="font-medium mb-3 text-white">Следите за нами</h4>
-                <div className="flex">
+                <div className="flex space-x-4">
                   <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-standard">
                     <Instagram className="h-5 w-5 text-orange-500" />
+                  </a>
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-standard">
+                    <Facebook className="h-5 w-5 text-orange-500" />
                   </a>
                 </div>
               </div>

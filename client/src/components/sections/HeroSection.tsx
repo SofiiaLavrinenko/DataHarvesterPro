@@ -44,7 +44,7 @@ export default function HeroSection() {
           </div>
         </div>
         
-        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
           <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition duration-300">
             <div className="flex items-start">
               <div className="bg-gray-800 p-2 md:p-3 rounded-lg mr-3 md:mr-4 shadow-inner border border-gray-700 flex-shrink-0">
@@ -65,18 +65,6 @@ export default function HeroSection() {
               <div>
                 <h3 className="font-semibold text-white text-base md:text-lg mb-1">Идеально для города</h3>
                 <p className="text-xs md:text-sm text-gray-300">Легкое маневрирование в городском потоке</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition duration-300 sm:col-span-2 lg:col-span-1">
-            <div className="flex items-start">
-              <div className="bg-gray-800 p-2 md:p-3 rounded-lg mr-3 md:mr-4 shadow-inner border border-gray-700 flex-shrink-0">
-                <ShieldCheck className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-white text-base md:text-lg mb-1">Полная страховка</h3>
-                <p className="text-xs md:text-sm text-gray-300">Защита для тебя и велосипеда</p>
               </div>
             </div>
           </div>

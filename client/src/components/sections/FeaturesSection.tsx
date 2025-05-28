@@ -44,7 +44,7 @@ export default function FeaturesSection() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Гибкие сроки</h3>
             <p className="text-muted-foreground">
-              Аренда на день, неделю или месяц - адаптирована под ваши потребности.
+              Аренда на неделю или месяц - адаптирована под ваши потребности.
             </p>
           </div>
           

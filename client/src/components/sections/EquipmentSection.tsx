@@ -30,7 +30,7 @@ export default function EquipmentSection() {
                   <Battery className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-medium text-white text-base md:text-lg mb-1">Батарея</h4>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300">15Ah, запас хода до 80 км</p>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300">35Ah, запас хода до 80 км</p>
                   </div>
                 </div>
                 

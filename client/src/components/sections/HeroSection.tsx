@@ -10,19 +10,11 @@ export default function HeroSection() {
       <Container>
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0 relative">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white leading-tight relative">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white leading-tight">
               Доставляй больше с <span className="text-orange-500 inline-block relative">
                 электровелосипедом
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-orange-500 rounded-full"></span>
               </span>
-              
-              <div className="absolute top-0 -right-16 w-32 h-32 rounded-lg overflow-hidden shadow-2xl rotate-3 border-4 border-white hidden md:block">
-                <img 
-                  src={bicyclesImage} 
-                  alt="Наши электровелосипеды" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </h1>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               Аренда современных электровелосипедов для курьеров во Вроцлаве. Увеличь свои возможности доставки и зарабатывай больше.

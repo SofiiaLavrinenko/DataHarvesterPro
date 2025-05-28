@@ -13,8 +13,8 @@ export default function EquipmentSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-black border border-gray-800 rounded-xl shadow-sm overflow-hidden">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl shadow-xl overflow-hidden">
             <div className="aspect-w-16 aspect-h-9">
               <img 
                 src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
@@ -22,86 +22,39 @@ export default function EquipmentSection() {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-4 text-white">Модель Courier Pro 2023</h3>
+            <div className="p-8">
+              <h3 className="text-2xl font-semibold mb-6 text-white text-center">Модель Courier Pro 2023</h3>
               
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <Battery className="h-5 w-5 text-orange-500 mr-3" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                  <Battery className="h-6 w-6 text-orange-500 mr-3 mt-1" />
                   <div>
-                    <h4 className="font-medium text-white">Батарея</h4>
-                    <p className="text-sm text-gray-400">48В 15Ач, запас хода до 80 км</p>
+                    <h4 className="font-medium text-white text-lg">Батарея</h4>
+                    <p className="text-sm text-gray-300">48В 15Ач, запас хода до 80 км</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <Gauge className="h-5 w-5 text-orange-500 mr-3" />
+                <div className="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                  <Gauge className="h-6 w-6 text-orange-500 mr-3 mt-1" />
                   <div>
-                    <h4 className="font-medium text-white">Двигатель</h4>
-                    <p className="text-sm text-gray-400">500Вт, максимальная скорость 25 км/ч</p>
+                    <h4 className="font-medium text-white text-lg">Двигатель</h4>
+                    <p className="text-sm text-gray-300">500Вт, максимальная скорость 25 км/ч</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <Bike className="h-5 w-5 text-orange-500 mr-3" />
+                <div className="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                  <Bike className="h-6 w-6 text-orange-500 mr-3 mt-1" />
                   <div>
-                    <h4 className="font-medium text-white">Рама</h4>
-                    <p className="text-sm text-gray-400">Алюминиевая, усиленная, универсальный размер</p>
+                    <h4 className="font-medium text-white text-lg">Рама</h4>
+                    <p className="text-sm text-gray-300">Алюминиевая, усиленная, универсальный размер</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <Drill className="h-5 w-5 text-orange-500 mr-3" />
+                <div className="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                  <Drill className="h-6 w-6 text-orange-500 mr-3 mt-1" />
                   <div>
-                    <h4 className="font-medium text-white">Тормоза</h4>
-                    <p className="text-sm text-gray-400">Гидравлические дисковые, передние и задние</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-black border border-gray-800 rounded-xl shadow-sm overflow-hidden">
-            <div className="aspect-w-16 aspect-h-9">
-              <img 
-                src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Курьерское оборудование"
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-4 text-white">Дополнительное оборудование</h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <ShieldCheck className="h-5 w-5 text-orange-500 mr-3" />
-                  <div>
-                    <h4 className="font-medium text-white">Безопасность</h4>
-                    <p className="text-sm text-gray-400">Шлем, светоотражающий жилет, премиум-класса замок</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <Bike className="h-5 w-5 text-orange-500 mr-3" />
-                  <div>
-                    <h4 className="font-medium text-white">Курьерские сумки</h4>
-                    <p className="text-sm text-gray-400">Водонепроницаемые, объем 50Л, термоизолированные</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <Battery className="h-5 w-5 text-orange-500 mr-3" />
-                  <div>
-                    <h4 className="font-medium text-white">Зарядное устройство</h4>
-                    <p className="text-sm text-gray-400">Быстрое зарядное устройство 4А, полная зарядка за 4 часа</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <Clock className="h-5 w-5 text-orange-500 mr-3" />
-                  <div>
-                    <h4 className="font-medium text-white">Поддержка</h4>
-                    <p className="text-sm text-gray-400">Техническое обслуживание 7 дней в неделю</p>
+                    <h4 className="font-medium text-white text-lg">Тормоза</h4>
+                    <p className="text-sm text-gray-300">Гидравлические дисковые, передние и задние</p>
                   </div>
                 </div>
               </div>

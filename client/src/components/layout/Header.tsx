@@ -107,9 +107,13 @@ export default function Header() {
                   {item.label}
                 </ScrollLink>
               ))}
+              <div className="flex items-center justify-between mt-4 pb-4 border-b border-gray-800">
+                <span className="text-white text-lg font-medium">Язык / Мова:</span>
+                <LanguageSwitcher />
+              </div>
               <Button className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-md mt-4 py-3 text-lg">
                 <PhoneCall className="h-5 w-5" />
-                Позвонить
+                {t("call")}
               </Button>
             </div>
           </Container>

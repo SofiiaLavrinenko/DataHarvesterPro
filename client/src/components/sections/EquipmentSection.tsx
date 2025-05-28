@@ -1,6 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Link as ScrollLink } from "react-scroll";
-import { Bike, Battery, Drill, Gauge, ShieldCheck, Clock, Lightbulb } from "lucide-react";
+import { Bike, Battery, Drill, Gauge, ShieldCheck, Clock, Lightbulb, Lock, MapPin } from "lucide-react";
 
 export default function EquipmentSection() {
   return (
@@ -63,6 +63,22 @@ export default function EquipmentSection() {
                   <div>
                     <h4 className="font-medium text-white text-base md:text-lg mb-1">Фонари</h4>
                     <p className="text-xs sm:text-sm md:text-base text-gray-300">Передний и задний свет для уверенной езды в темное время суток</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                  <Lock className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-white text-base md:text-lg mb-1">Замок ABUS</h4>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300">Надёжный немецкий замок с высшей степенью защиты</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                  <MapPin className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-white text-base md:text-lg mb-1">AirTag</h4>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300">Отслеживание перемещения для предотвращения краж</p>
                   </div>
                 </div>
               </div>

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Menu, X, PhoneCall } from "lucide-react";
 import logoPath from "../../assets/logo.png";
 

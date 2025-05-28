@@ -35,16 +35,16 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full z-50 transition-standard ${scrolled ? 'bg-black shadow-lg' : 'bg-black bg-opacity-90'}`}>
-      <Container className="py-3">
+      <Container className="py-2 md:py-3 px-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center mr-8">
-            <div className="bg-white p-2 rounded-lg shadow-md flex items-center justify-center">
-              <img src={logoPath} alt="RowerHub.bike" className="h-9" />
+          <div className="flex items-center">
+            <div className="bg-white p-1.5 md:p-2 rounded-lg shadow-md flex items-center justify-center">
+              <img src={logoPath} alt="RowerHub.bike" className="h-7 md:h-9" />
             </div>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-10 flex-grow justify-center">
+          <nav className="hidden lg:flex space-x-6 xl:space-x-10 flex-grow justify-center">
             {navItems.map((item) => (
               <ScrollLink
                 key={item.id}
@@ -53,7 +53,7 @@ export default function Header() {
                 smooth={true}
                 offset={-80}
                 duration={500}
-                className="text-white hover:text-orange-400 cursor-pointer transition-standard font-medium text-lg tracking-wide border-b-2 border-transparent hover:border-orange-400 py-1"
+                className="text-white hover:text-orange-400 cursor-pointer transition-standard font-medium text-base xl:text-lg tracking-wide border-b-2 border-transparent hover:border-orange-400 py-1 whitespace-nowrap"
               >
                 {item.label}
               </ScrollLink>
@@ -65,13 +65,13 @@ export default function Header() {
             variant="ghost" 
             size="icon" 
             onClick={toggleMobileMenu} 
-            className="md:hidden text-white hover:text-orange-400"
+            className="lg:hidden text-white hover:text-orange-400 p-2"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
           </Button>
           
           {/* Call Button */}
-          <Button className="hidden md:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-lg transform hover:-translate-y-1 transition duration-300">
+          <Button className="hidden lg:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-lg transform hover:-translate-y-1 transition duration-300 text-sm xl:text-base px-4 xl:px-6">
             <PhoneCall className="h-4 w-4" />
             Позвонить
           </Button>
@@ -80,9 +80,9 @@ export default function Header() {
       
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black shadow-md">
-          <Container className="py-2">
-            <div className="flex flex-col space-y-3">
+        <div className="lg:hidden bg-black shadow-md border-t border-gray-800">
+          <Container className="py-4 px-4">
+            <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <ScrollLink
                   key={item.id}
@@ -91,14 +91,14 @@ export default function Header() {
                   smooth={true}
                   offset={-80}
                   duration={500}
-                  className="py-3 border-b border-gray-800 text-white hover:text-orange-400 text-lg"
+                  className="py-3 px-2 border-b border-gray-800 text-white hover:text-orange-400 text-lg font-medium transition-all duration-300 cursor-pointer"
                   onClick={closeMobileMenu}
                 >
                   {item.label}
                 </ScrollLink>
               ))}
-              <Button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-md">
-                <PhoneCall className="h-4 w-4" />
+              <Button className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-md mt-4 py-3 text-lg">
+                <PhoneCall className="h-5 w-5" />
                 Позвонить
               </Button>
             </div>

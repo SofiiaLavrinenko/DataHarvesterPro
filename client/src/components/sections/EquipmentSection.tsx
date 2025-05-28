@@ -1,6 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Link as ScrollLink } from "react-scroll";
-import { Bike, Battery, Drill, Gauge, ShieldCheck, Clock } from "lucide-react";
+import { Bike, Battery, Drill, Gauge, ShieldCheck, Clock, Lightbulb } from "lucide-react";
 
 export default function EquipmentSection() {
   return (
@@ -25,7 +25,7 @@ export default function EquipmentSection() {
             <div className="p-4 sm:p-6 md:p-8">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 md:mb-8 text-white text-center">Модель Courier Pro 2023</h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 <div className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
                   <Battery className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
@@ -37,8 +37,8 @@ export default function EquipmentSection() {
                 <div className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
                   <Gauge className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium text-white text-base md:text-lg mb-1">Двигатель</h4>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300">500Вт, максимальная скорость 25 км/ч</p>
+                    <h4 className="font-medium text-white text-base md:text-lg mb-1">Надежный двигатель</h4>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300">Минимум обслуживания — максимум концентрации на работе</p>
                   </div>
                 </div>
                 
@@ -53,8 +53,16 @@ export default function EquipmentSection() {
                 <div className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
                   <Drill className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium text-white text-base md:text-lg mb-1">Тормоза</h4>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300">Гидравлические дисковые, передние и задние</p>
+                    <h4 className="font-medium text-white text-base md:text-lg mb-1">Гидравлические тормоза Shimano</h4>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300">Обеспечивают безопасное торможение в любых условиях</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                  <Lightbulb className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-white text-base md:text-lg mb-1">Фонари</h4>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300">Передний и задний свет для уверенной езды в темное время суток</p>
                   </div>
                 </div>
               </div>

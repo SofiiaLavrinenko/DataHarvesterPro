@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { Link as ScrollLink } from "react-scroll";
 import { Bike, Battery, Drill, Gauge, ShieldCheck, Clock, Lightbulb, Lock, MapPin } from "lucide-react";
+import bikePhoto from "@assets/photo_2025-05-28 23.37.33.jpeg";
 
 export default function EquipmentSection() {
   return (
@@ -17,7 +18,7 @@ export default function EquipmentSection() {
           <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl shadow-xl overflow-hidden">
             <div className="aspect-w-16 aspect-h-9 relative">
               <img 
-                src="/attached_assets/photo_2025-05-28 23.37.33.jpeg" 
+                src={bikePhoto} 
                 alt="Электровелосипед для курьеров"
                 className="object-cover w-full h-64 sm:h-80 md:h-96"
               />

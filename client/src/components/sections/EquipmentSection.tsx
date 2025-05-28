@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { Link as ScrollLink } from "react-scroll";
 import { Bike, Battery, Drill, Gauge, ShieldCheck, Clock, Lightbulb, Lock, MapPin } from "lucide-react";
-import bikePhoto from "@assets/photo_2025-05-28 23.37.33.jpeg";
+import bikePhoto from "@assets/photo_2025-05-28 23.37.30.jpeg";
 
 export default function EquipmentSection() {
   return (

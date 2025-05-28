@@ -17,7 +17,7 @@ export default function EquipmentSection() {
           <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl shadow-xl overflow-hidden">
             <div className="aspect-w-16 aspect-h-9 relative">
               <img 
-                src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="/attached_assets/photo_2025-05-28 23.37.33.jpeg" 
                 alt="Электровелосипед для курьеров"
                 className="object-cover w-full h-64 sm:h-80 md:h-96"
               />

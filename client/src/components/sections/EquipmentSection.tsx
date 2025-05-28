@@ -20,7 +20,7 @@ export default function EquipmentSection() {
               <img 
                 src={bikePhoto} 
                 alt="Электровелосипед для курьеров"
-                className="object-cover w-full h-64 sm:h-80 md:h-96"
+                className="object-contain w-full h-64 sm:h-80 md:h-96 bg-gray-800"
               />
             </div>
             <div className="p-4 sm:p-6 md:p-8">

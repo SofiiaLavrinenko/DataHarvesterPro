@@ -33,7 +33,7 @@ export default function FeaturesSection() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Мощный двигатель</h3>
             <p className="text-muted-foreground">
-              Двигатели мощностью 500Вт, позволяющие легко преодолевать подъемы с грузом.
+              Мощные двигатели, позволяющие легко преодолевать подъемы с грузом.
             </p>
           </div>
           

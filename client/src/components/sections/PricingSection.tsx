@@ -22,13 +22,13 @@ export default function PricingSection() {
             <div className="bg-orange-500 text-white text-xs sm:text-sm font-semibold uppercase py-1.5 md:py-2 px-3 md:px-4 rounded-full inline-block mb-4 md:mb-6 shadow-lg">
               <div className="flex items-center">
                 <Zap className="w-3 h-3 md:w-4 md:h-4 mr-1" />
-                <span className="text-xs md:text-sm">Аренда электровелосипедов</span>
+                <span className="text-xs md:text-sm">Недельная аренда</span>
               </div>
             </div>
             
             <div className="mb-8 md:mb-12 text-center">
-              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-orange-500 drop-shadow-lg">от 26 зл</span>
-              <span className="text-lg sm:text-xl md:text-2xl text-gray-300 ml-2">/день</span>
+              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-orange-500 drop-shadow-lg">220 зл</span>
+              <span className="text-lg sm:text-xl md:text-2xl text-gray-300 ml-2">/неделя</span>
             </div>
             
             <div className="mb-8 md:mb-10">

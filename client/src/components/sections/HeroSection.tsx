@@ -52,7 +52,7 @@ export default function HeroSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-white text-base md:text-lg mb-1">Долгий срок службы батареи</h3>
-                <p className="text-xs md:text-sm text-gray-300">До 8 часов непрерывной работы</p>
+                <p className="text-xs md:text-sm text-gray-300">35Ah, до 8 часов непрерывной работы</p>
               </div>
             </div>
           </div>

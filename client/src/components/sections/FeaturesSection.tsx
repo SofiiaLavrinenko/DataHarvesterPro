@@ -22,7 +22,7 @@ export default function FeaturesSection() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Эффективная батарея</h3>
             <p className="text-muted-foreground">
-              Батареи емкостью 48В, обеспечивающие до 80 км пробега на одной зарядке.
+              Батареи емкостью 35Ah, обеспечивающие до 80 км пробега на одной зарядке.
             </p>
           </div>
           

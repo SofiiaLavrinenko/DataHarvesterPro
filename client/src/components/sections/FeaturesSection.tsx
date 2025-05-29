@@ -108,7 +108,7 @@ export default function FeaturesSection() {
                 <img 
                   src={bikePhoto1} 
                   alt="Электровелосипеды RowerHub в офисе"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-bottom"
                 />
               </div>
 

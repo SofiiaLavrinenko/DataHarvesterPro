@@ -5,6 +5,7 @@ import { Battery, Zap, Clock, Shield, MapPin, ReceiptText } from "lucide-react";
 import bikePhoto1 from "@assets/photo_2025-05-28 23.37.30.jpeg";
 import bikePhoto2 from "@assets/photo_2025-05-28 23.37.33.jpeg";
 import bikePhoto3 from "@assets/IMG_8779_resized.jpg";
+import bikePhoto4 from "@assets/Знімок екрана 2025-05-29 о 11.41.49.png";
 
 export default function FeaturesSection() {
   return (
@@ -113,8 +114,8 @@ export default function FeaturesSection() {
               </div>
               <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <img 
-                  src={bikePhoto1} 
-                  alt="Электровелосипед для курьеров - дополнительный вид"
+                  src={bikePhoto4} 
+                  alt="Электровелосипед для курьеров - новый вид"
                   className="w-full h-full object-cover"
                 />
               </div>

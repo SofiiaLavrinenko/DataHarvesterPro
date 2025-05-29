@@ -109,7 +109,7 @@ export default function FeaturesSection() {
                   src={bikePhoto1} 
                   alt="Электровелосипеды RowerHub в офисе"
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: '50% 35%' }}
+                  style={{ objectPosition: '50% 55%' }}
                 />
               </div>
 

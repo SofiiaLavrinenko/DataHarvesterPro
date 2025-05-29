@@ -2,10 +2,9 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { Battery, Zap, Clock, Shield, MapPin, ReceiptText } from "lucide-react";
-import bikePhoto1 from "@assets/photo_2025-05-28 23.37.30.jpeg";
-import bikePhoto2 from "@assets/photo_2025-05-28 23.37.33.jpeg";
-import bikePhoto3 from "@assets/IMG_8779_resized.jpg";
-import bikePhoto4 from "@assets/Знімок екрана 2025-05-29 о 11.41.49.png";
+import bikePhoto1 from "@assets/IMG_8783_resized.jpg";
+import bikePhoto2 from "@assets/photo_2025-05-28 23.37.26.jpeg";
+import bikePhoto3 from "@assets/photo_2025-05-28 23.37.36.jpeg";
 
 export default function FeaturesSection() {
   return (
@@ -94,31 +93,25 @@ export default function FeaturesSection() {
               <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <img 
                   src={bikePhoto1} 
-                  alt="Электровелосипед для курьеров - вид 1"
-                  className="w-full h-full object-cover"
+                  alt="Электровелосипеды RowerHub в офисе"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <img 
                   src={bikePhoto2} 
-                  alt="Электровелосипед для курьеров - вид 2"
-                  className="w-full h-full object-cover"
+                  alt="Электровелосипед RowerHub - детальный вид"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <img 
                   src={bikePhoto3} 
-                  alt="Электровелосипед для курьеров - вид 3"
-                  className="w-full h-full object-cover"
+                  alt="Электровелосипед RowerHub - вид сбоку"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
-              <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <img 
-                  src={bikePhoto4} 
-                  alt="Электровелосипед для курьеров - новый вид"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+
             </div>
           </div>
           <p className="text-center text-gray-600 mt-4 text-sm">

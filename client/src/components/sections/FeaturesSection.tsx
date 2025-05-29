@@ -5,6 +5,7 @@ import { Battery, Zap, Clock, Shield, MapPin, ReceiptText } from "lucide-react";
 import bikePhoto1 from "@assets/IMG_8783_resized.jpg";
 import bikePhoto2 from "@assets/photo_2025-05-28 23.37.26.jpeg";
 import bikePhoto3 from "@assets/photo_2025-05-28 23.37.36.jpeg";
+import bikePhoto4 from "@assets/photo_2025-05-29 12.15.06.jpeg";
 
 export default function FeaturesSection() {
   return (
@@ -110,6 +111,13 @@ export default function FeaturesSection() {
                   alt="Электровелосипеды RowerHub в офисе"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: '50% 82%' }}
+                />
+              </div>
+              <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <img 
+                  src={bikePhoto4} 
+                  alt="Электровелосипед RowerHub - новое фото"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 

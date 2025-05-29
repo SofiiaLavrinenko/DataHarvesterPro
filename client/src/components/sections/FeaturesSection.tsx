@@ -92,8 +92,8 @@ export default function FeaturesSection() {
             <div className="flex gap-6 pb-4" style={{ minWidth: 'max-content' }}>
               <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <img 
-                  src={bikePhoto1} 
-                  alt="Электровелосипеды RowerHub в офисе"
+                  src={bikePhoto3} 
+                  alt="Электровелосипед RowerHub - вид сбоку"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -106,8 +106,8 @@ export default function FeaturesSection() {
               </div>
               <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <img 
-                  src={bikePhoto3} 
-                  alt="Электровелосипед RowerHub - вид сбоку"
+                  src={bikePhoto1} 
+                  alt="Электровелосипеды RowerHub в офисе"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

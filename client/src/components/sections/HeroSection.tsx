@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { ArrowRight, Battery, MapPin, ShieldCheck } from "lucide-react";
-import bicyclesImage from "../../assets/bicycles.jpg";
+import heroPhoto from "@assets/photo_2025-05-28 23.37.33.jpeg";
 
 export default function HeroSection() {
   return (
@@ -27,8 +27,8 @@ export default function HeroSection() {
           <div className="w-full lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition duration-500 max-w-lg mx-auto lg:max-w-none">
               <img 
-                src="https://images.unsplash.com/photo-1571168538867-ea0bdf879ecb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Курьер на электровелосипеде"
+                src={heroPhoto} 
+                alt="Два электровелосипеда RowerHub для курьеров"
                 className="w-full h-auto rounded-xl"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-3 md:p-5 backdrop-blur-sm">

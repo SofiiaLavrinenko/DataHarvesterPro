@@ -18,7 +18,7 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <ScrollLink to="kontakt" smooth={true} duration={500} offset={-80}>
-                <Button className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 shadow-lg transform hover:-translate-y-1 transition duration-300 text-base md:text-lg px-6 md:px-8 py-3 md:py-6">
+                <Button className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 shadow-lg transform hover:-translate-y-1 transition duration-300 text-base md:text-lg px-6 md:px-8 py-3 md:py-6 font-bold">
                   Забронировать
                 </Button>
               </ScrollLink>

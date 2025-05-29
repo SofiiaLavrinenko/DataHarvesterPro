@@ -2,6 +2,9 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { Battery, Zap, Clock, Shield, MapPin, ReceiptText } from "lucide-react";
+import bikePhoto1 from "@assets/photo_2025-05-28 23.37.30.jpeg";
+import bikePhoto2 from "@assets/photo_2025-05-28 23.37.33.jpeg";
+import bikePhoto3 from "@assets/IMG_8779_resized.jpg";
 
 export default function FeaturesSection() {
   return (
@@ -82,12 +85,44 @@ export default function FeaturesSection() {
           </div>
         </div>
         
-        <div className="mt-16 flex justify-center">
-          <ScrollLink to="cennik" smooth={true} duration={500} offset={-80}>
-            <Button>
-              Проверить наше предложение
-            </Button>
-          </ScrollLink>
+        {/* Photo Gallery */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Наши велосипеды</h3>
+          <div className="overflow-x-auto scrollbar-hide">
+            <div className="flex gap-6 pb-4" style={{ minWidth: 'max-content' }}>
+              <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <img 
+                  src={bikePhoto1} 
+                  alt="Электровелосипед для курьеров - вид 1"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <img 
+                  src={bikePhoto2} 
+                  alt="Электровелосипед для курьеров - вид 2"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <img 
+                  src={bikePhoto3} 
+                  alt="Электровелосипед для курьеров - вид 3"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <img 
+                  src={bikePhoto1} 
+                  alt="Электровелосипед для курьеров - дополнительный вид"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <p className="text-center text-gray-600 mt-4 text-sm">
+            ← Прокрутите, чтобы увидеть больше фотографий →
+          </p>
         </div>
       </Container>
     </section>

@@ -70,3 +70,13 @@
     @apply transition-standard hover:-translate-y-1 hover:shadow-md;
   }
 }
+
+/* Hide scrollbar for horizontal photo gallery */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

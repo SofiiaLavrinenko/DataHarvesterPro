@@ -196,8 +196,24 @@ const translations = {
     'rules.fullRules': 'Full rental rules are available at our office',
     
     // Equipment Section
-    'equipment.title': 'Specifications',
-    'equipment.subtitle': 'Technical specifications of our electric bikes',
+    'equipment.title': 'Equipment Specifications',
+    'equipment.subtitle': 'Our electric bikes have been carefully selected to meet courier needs and provide reliable operation in any conditions.',
+    'equipment.model': 'Courier Pro 2023 Model',
+    'equipment.imageAlt': 'Electric bike for couriers',
+    'equipment.battery.title': 'Battery',
+    'equipment.battery.desc': '35Ah, range up to 100 km',
+    'equipment.motor.title': 'Reliable Motor',
+    'equipment.motor.desc': 'Minimal maintenance — maximum focus on work',
+    'equipment.frame.title': 'Frame',
+    'equipment.frame.desc': 'Aluminum, reinforced, universal size',
+    'equipment.brakes.title': 'Shimano Hydraulic Brakes',
+    'equipment.brakes.desc': 'Ensure safe braking in any conditions',
+    'equipment.lights.title': 'Lights',
+    'equipment.lights.desc': 'Front and rear lights for confident riding in dark conditions',
+    'equipment.lock.title': 'ABUS Lock',
+    'equipment.lock.desc': 'Reliable German lock with highest level of protection',
+    'equipment.airtag.title': 'AirTag',
+    'equipment.airtag.desc': 'Movement tracking to prevent theft',
     
     // Contact Section
     'contact.title': 'Contact Us',

@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { ArrowRight, Battery, MapPin, ShieldCheck } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 import heroPhoto from "@assets/photo_2025-05-28 23.37.33.jpeg";
 
 export default function HeroSection() {

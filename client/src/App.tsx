@@ -15,21 +15,23 @@ import ContactSection from "./components/sections/ContactSection";
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow">
-            <HeroSection />
-            <FeaturesSection />
-            <PricingSection />
-            <RulesSection />
-            <EquipmentSection />
-            <ContactSection />
-          </main>
-          <Footer />
-        </div>
-      </TooltipProvider>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-grow">
+              <HeroSection />
+              <FeaturesSection />
+              <PricingSection />
+              <RulesSection />
+              <EquipmentSection />
+              <ContactSection />
+            </main>
+            <Footer />
+          </div>
+        </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

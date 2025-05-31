@@ -3,19 +3,23 @@ import { Link as ScrollLink } from "react-scroll";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Menu, X, PhoneCall } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import logoPath from "../../assets/logo.png";
 
-const navItems = [
-  { id: "funkcje", label: "Преимущества" },
-  { id: "cennik", label: "Цены" },
-  { id: "zasady", label: "Правила" },
-  { id: "sprzet", label: "Оборудование" },
-  { id: "kontakt", label: "Контакты" }
+const getNavItems = (t: (key: string) => string) => [
+  { id: "funkcje", label: t('nav.why') },
+  { id: "cennik", label: t('nav.pricing') },
+  { id: "zasady", label: t('nav.rules') },
+  { id: "sprzet", label: t('nav.equipment') },
+  { id: "kontakt", label: t('nav.contact') }
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
+  const navItems = getNavItems(t);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +49,7 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-6 xl:space-x-10 flex-grow justify-center">
-            {navItems.map((item) => (
+            {navItems.map((item: any) => (
               <ScrollLink
                 key={item.id}
                 to={item.id}
@@ -60,21 +64,26 @@ export default function Header() {
             ))}
           </nav>
           
-          {/* Mobile Menu Button */}
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={toggleMobileMenu} 
-            className="lg:hidden text-white hover:text-orange-400 p-2"
-          >
-            {mobileMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
-          </Button>
-          
-          {/* Call Button */}
-          <Button className="hidden lg:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-lg transform hover:-translate-y-1 transition duration-300 text-sm xl:text-base px-4 xl:px-6">
-            <PhoneCall className="h-4 w-4" />
-            Позвонить
-          </Button>
+          {/* Language Switcher & Mobile Menu */}
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            
+            {/* Mobile Menu Button */}
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={toggleMobileMenu} 
+              className="lg:hidden text-white hover:text-orange-400 p-2"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
+            </Button>
+            
+            {/* Call Button */}
+            <Button className="hidden lg:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-lg transform hover:-translate-y-1 transition duration-300 text-sm xl:text-base px-4 xl:px-6">
+              <PhoneCall className="h-4 w-4" />
+              {t('header.call')}
+            </Button>
+          </div>
         </div>
       </Container>
       
@@ -83,7 +92,7 @@ export default function Header() {
         <div className="lg:hidden bg-black shadow-md border-t border-gray-800">
           <Container className="py-4 px-4">
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
+              {navItems.map((item: any) => (
                 <ScrollLink
                   key={item.id}
                   to={item.id}
@@ -99,7 +108,7 @@ export default function Header() {
               ))}
               <Button className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 shadow-md mt-4 py-3 text-lg">
                 <PhoneCall className="h-5 w-5" />
-                Позвонить
+                {t('header.call')}
               </Button>
             </div>
           </Container>

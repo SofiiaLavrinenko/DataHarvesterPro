@@ -10,9 +10,9 @@ export default function RulesSection() {
     <section id="zasady" className="py-20 bg-white">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Правила использования</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('rules.title')}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Ознакомьтесь с правилами аренды электровелосипедов. Мы заботимся о вашей безопасности и комфорте при использовании наших услуг.
+            {t('rules.subtitle')}
           </p>
         </div>
         
@@ -20,7 +20,7 @@ export default function RulesSection() {
           <div>
             <h3 className="text-xl font-semibold mb-6 flex items-center">
               <CheckCircle2 className="h-6 w-6 text-secondary mr-3" />
-              Что мы обеспечиваем
+              {t('rules.weProvide')}
             </h3>
             
             <ul className="space-y-4">

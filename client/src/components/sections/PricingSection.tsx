@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { Check, Zap } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function PricingSection() {
   return (

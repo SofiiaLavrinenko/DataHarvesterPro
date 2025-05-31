@@ -139,7 +139,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1 text-white text-base md:text-lg">Email</h4>
-                    <p className="text-gray-300 text-sm md:text-base break-all">contact@rowerhub.bike</p>
+                    <p className="text-gray-300 text-sm md:text-base break-all">{t('contact.info.email')}</p>
                   </div>
                 </div>
                 
@@ -148,8 +148,8 @@ export default function ContactSection() {
                     <Phone className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1 text-white text-base md:text-lg">Телефон</h4>
-                    <p className="text-gray-300 text-sm md:text-base">+48 123 456 789</p>
+                    <h4 className="font-medium mb-1 text-white text-base md:text-lg">{t('contact.form.phone')}</h4>
+                    <p className="text-gray-300 text-sm md:text-base">{t('contact.info.phone')}</p>
                   </div>
                 </div>
                 
@@ -158,11 +158,9 @@ export default function ContactSection() {
                     <MapPin className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1 text-white text-base md:text-lg">Адрес</h4>
+                    <h4 className="font-medium mb-1 text-white text-base md:text-lg">{t('contact.info.address')}</h4>
                     <p className="text-gray-300 text-sm md:text-base">
-                      ул. Курьерская 42<br />
-                      50-001 Вроцлав<br />
-                      Польша
+                      {t('contact.info.address')}
                     </p>
                   </div>
                 </div>
@@ -171,7 +169,7 @@ export default function ContactSection() {
             
             <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-4 sm:p-6 md:p-8 rounded-xl shadow-xl">
               <div>
-                <h4 className="font-medium mb-4 md:mb-5 text-white text-base md:text-lg">Следите за нами</h4>
+                <h4 className="font-medium mb-4 md:mb-5 text-white text-base md:text-lg">{t('contact.social.title')}</h4>
                 <div className="flex space-x-4">
                   <a href="#" className="w-10 h-10 md:w-12 md:h-12 bg-orange-500/20 rounded-lg flex items-center justify-center hover:bg-orange-500/40 transition-all duration-300 border border-orange-500/50 transform hover:-translate-y-1">
                     <Instagram className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />

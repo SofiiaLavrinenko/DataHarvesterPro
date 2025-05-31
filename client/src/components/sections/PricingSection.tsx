@@ -5,16 +5,18 @@ import { Check, Zap } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export default function PricingSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="cennik" className="py-12 md:py-20 bg-gradient-to-br from-gray-900 to-black">
       <Container className="px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white relative inline-block">
-            Выгодные тарифы
+            {t('pricing.title')}
             <span className="absolute -bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 w-16 md:w-24 h-0.5 md:h-1 bg-orange-500 rounded-full"></span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto mt-4 md:mt-6 text-sm sm:text-base md:text-lg px-4">
-            Подберите оптимальный вариант аренды с технической поддержкой и гарантией качества.
+            {t('pricing.subtitle')}
           </p>
         </div>
         
@@ -23,35 +25,35 @@ export default function PricingSection() {
             <div className="bg-orange-500 text-white text-xs sm:text-sm font-semibold uppercase py-1.5 md:py-2 px-3 md:px-4 rounded-full inline-block mb-4 md:mb-6 shadow-lg">
               <div className="flex items-center">
                 <Zap className="w-3 h-3 md:w-4 md:h-4 mr-1" />
-                <span className="text-xs md:text-sm">Аренда электровелосипедов</span>
+                <span className="text-xs md:text-sm">{t('pricing.badge')}</span>
               </div>
             </div>
             
             <div className="mb-8 md:mb-12 text-center">
-              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-orange-500 drop-shadow-lg">от 26 зл</span>
-              <span className="text-lg sm:text-xl md:text-2xl text-gray-300 ml-2">/день</span>
+              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-orange-500 drop-shadow-lg">{t('pricing.price')}</span>
+              <span className="text-lg sm:text-xl md:text-2xl text-gray-300 ml-2">{t('pricing.period')}</span>
             </div>
             
             <div className="mb-8 md:mb-10">
               <ul className="space-y-3 md:space-y-5">
                 <li className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
                   <Check className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-sm sm:text-base md:text-lg">Высокая мощность и дальность поездки</span>
+                  <span className="text-gray-200 text-sm sm:text-base md:text-lg">{t('pricing.feature1')}</span>
                 </li>
                 <li className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
                   <Check className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-sm sm:text-base md:text-lg">Надежный велосипедный замок</span>
+                  <span className="text-gray-200 text-sm sm:text-base md:text-lg">{t('pricing.feature2')}</span>
                 </li>
                 <li className="flex items-start bg-gray-900/50 p-3 md:p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
                   <Check className="h-5 w-5 md:h-6 md:w-6 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-sm sm:text-base md:text-lg">Техподдержка и обслуживание 24/7</span>
+                  <span className="text-gray-200 text-sm sm:text-base md:text-lg">{t('pricing.feature3')}</span>
                 </li>
               </ul>
             </div>
             
             <ScrollLink to="kontakt" smooth={true} duration={500} offset={-80}>
               <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white text-base sm:text-lg md:text-xl py-4 md:py-6 px-6 shadow-xl hover:shadow-orange-500/30 transform hover:-translate-y-1 transition duration-300">
-                Забронировать
+                {t('pricing.cta')}
               </Button>
             </ScrollLink>
           </div>

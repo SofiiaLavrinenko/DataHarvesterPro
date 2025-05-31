@@ -1,8 +1,11 @@
 import { Container } from "@/components/ui/container";
 import { Link as ScrollLink } from "react-scroll";
 import { CheckCircle2, XCircle } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function RulesSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="zasady" className="py-20 bg-white">
       <Container>

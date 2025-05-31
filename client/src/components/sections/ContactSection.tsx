@@ -6,9 +6,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Instagram, Facebook, Send, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function ContactSection() {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,20 +56,20 @@ export default function ContactSection() {
       <Container className="px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white relative inline-block">
-            Свяжитесь с нами
+            {t('contact.title')}
             <span className="absolute -bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 w-16 md:w-24 h-0.5 md:h-1 bg-orange-500 rounded-full"></span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto mt-4 md:mt-6 text-sm sm:text-base md:text-lg px-4">
-            Есть вопросы? Хотите забронировать велосипед? Наша команда готова помочь вам.
+            {t('contact.subtitle')}
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           <div className="bg-gradient-to-br from-gray-900 to-black p-4 sm:p-6 md:p-8 rounded-xl shadow-xl border border-gray-800">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-white">Напишите нам</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-white">{t('contact.form.title')}</h3>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-white text-sm md:text-base">Имя и фамилия *</Label>
+                <Label htmlFor="name" className="text-white text-sm md:text-base">{t('contact.form.name')} *</Label>
                 <Input 
                   id="name" 
                   name="name"
@@ -79,7 +81,7 @@ export default function ContactSection() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-white text-sm md:text-base">Электронная почта *</Label>
+                <Label htmlFor="email" className="text-white text-sm md:text-base">{t('contact.form.email')} *</Label>
                 <Input 
                   type="email" 
                   id="email" 
@@ -92,7 +94,7 @@ export default function ContactSection() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-white text-sm md:text-base">Телефон</Label>
+                <Label htmlFor="phone" className="text-white text-sm md:text-base">{t('contact.form.phone')}</Label>
                 <Input 
                   type="tel" 
                   id="phone" 
@@ -104,7 +106,7 @@ export default function ContactSection() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-white text-sm md:text-base">Сообщение *</Label>
+                <Label htmlFor="message" className="text-white text-sm md:text-base">{t('contact.form.message')} *</Label>
                 <Textarea 
                   id="message" 
                   name="message"
@@ -121,14 +123,14 @@ export default function ContactSection() {
                 className="w-full bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-1 transition duration-300 flex items-center justify-center gap-2 py-3 md:py-4 text-sm md:text-base"
               >
                 <Send className="h-4 w-4 md:h-5 md:w-5" />
-                Отправить сообщение
+                {t('contact.form.submit')}
               </Button>
             </form>
           </div>
           
           <div className="space-y-6 md:space-y-8">
             <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-4 sm:p-6 md:p-8 rounded-xl shadow-xl">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-white">Контактные данные</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-white">{t('contact.info.title')}</h3>
               
               <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start hover:bg-gray-800/50 p-3 md:p-4 rounded-lg transition-all duration-300">

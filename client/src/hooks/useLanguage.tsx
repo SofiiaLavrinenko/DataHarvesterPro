@@ -112,9 +112,25 @@ const translations = {
     // Contact Section
     'contact.title': 'Свяжитесь с нами',
     'contact.subtitle': 'Есть вопросы? Хотите забронировать велосипед? Наша команда готова помочь вам.',
+    'contact.form.title': 'Напишите нам',
+    'contact.form.name': 'Имя и фамилия',
+    'contact.form.email': 'Email',
+    'contact.form.phone': 'Телефон',
+    'contact.form.message': 'Сообщение',
+    'contact.form.submit': 'Отправить сообщение',
+    'contact.info.title': 'Контактная информация',
+    'contact.info.address': 'г. Вроцлав, Польша',
+    'contact.info.phone': '+48 123 456 789',
+    'contact.info.email': 'info@rowerhub.bike',
+    'contact.info.hours': 'Пн-Вс: 8:00 - 20:00',
+    'contact.social.title': 'Мы в социальных сетях',
+    'contact.social.desc': 'Следите за новостями и получайте полезные советы',
     
     // Footer
     'footer.description': 'Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса.',
+    'footer.links': 'Быстрые ссылки',
+    'footer.contact.title': 'Контакты',
+    'footer.social.title': 'Социальные сети',
     'footer.rights': '© 2025 RowerHub.bike. Все права защищены.',
   },
   en: {
@@ -218,9 +234,25 @@ const translations = {
     // Contact Section
     'contact.title': 'Contact Us',
     'contact.subtitle': 'Have questions? Want to book a bike? Our team is ready to help you.',
+    'contact.form.title': 'Write to Us',
+    'contact.form.name': 'Full Name',
+    'contact.form.email': 'Email',
+    'contact.form.phone': 'Phone',
+    'contact.form.message': 'Message',
+    'contact.form.submit': 'Send Message',
+    'contact.info.title': 'Contact Information',
+    'contact.info.address': 'Wrocław, Poland',
+    'contact.info.phone': '+48 123 456 789',
+    'contact.info.email': 'info@rowerhub.bike',
+    'contact.info.hours': 'Mon-Sun: 8:00 AM - 8:00 PM',
+    'contact.social.title': 'Follow Us',
+    'contact.social.desc': 'Stay updated and get useful tips',
     
     // Footer
     'footer.description': 'Professional electric bike rental for couriers in Wrocław. Reliability, economy and convenience for your business.',
+    'footer.links': 'Quick Links',
+    'footer.contact.title': 'Contact',
+    'footer.social.title': 'Social Media',
     'footer.rights': '© 2025 RowerHub.bike. All rights reserved.',
   }
 };

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Instagram, Facebook, Send, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, Send, ArrowRight, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/hooks/useLanguage";
 
@@ -135,11 +135,11 @@ export default function ContactSection() {
               <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start hover:bg-gray-800/50 p-3 md:p-4 rounded-lg transition-all duration-300">
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mr-3 md:mr-4 mt-1 border border-orange-500/50 flex-shrink-0">
-                    <Mail className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
+                    <MessageCircle className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1 text-white text-base md:text-lg">Email</h4>
-                    <p className="text-gray-300 text-sm md:text-base break-all">{t('contact.info.email')}</p>
+                    <h4 className="font-medium mb-1 text-white text-base md:text-lg">Telegram</h4>
+                    <p className="text-gray-300 text-sm md:text-base break-all">{t('contact.info.telegram')}</p>
                   </div>
                 </div>
                 
@@ -158,7 +158,7 @@ export default function ContactSection() {
                     <MapPin className="h-5 w-5 md:h-6 md:w-6 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1 text-white text-base md:text-lg">{t('contact.info.address')}</h4>
+                    <h4 className="font-medium mb-1 text-white text-base md:text-lg">{t('contact.info.address.title')}</h4>
                     <p className="text-gray-300 text-sm md:text-base">
                       {t('contact.info.address')}
                     </p>

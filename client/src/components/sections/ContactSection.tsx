@@ -1,5 +1,9 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { Container } from "@/components/ui/container";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,6 +11,8 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Instagram, Facebook, Send, ArrowRight, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/hooks/useLanguage";
+import { contactFormSchema, type ContactForm } from "@/../../shared/schema";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactSection() {
   const { toast } = useToast();

@@ -20,27 +20,16 @@
                         'muted-foreground': 'hsl(0, 0%, 45.1%)',
                         border: 'hsl(0, 0%, 89.8%)',
                         input: 'hsl(0, 0%, 89.8%)',
-                        ring: 'hsl(25, 95%, 53%)'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif']
+                        ring: 'hsl(25, 95%, 53%)',
+                        destructive: 'hsl(0, 84.2%, 60.2%)'
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .hero-gradient {
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
-        }
-        .section-padding {
-            padding: 5rem 0;
-        }
-        .container-custom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
         }
         .btn-primary {
             background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
@@ -59,12 +48,12 @@
             box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
         }
         .card-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
         .card-shadow:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
         .feature-icon {
             width: 3rem;
@@ -76,9 +65,7 @@
             justify-content: center;
             color: white;
             font-size: 1.5rem;
-        }
-        .smooth-scroll {
-            scroll-behavior: smooth;
+            margin: 0 auto;
         }
         .success-message {
             background: #10b981;
@@ -88,29 +75,32 @@
             margin: 1rem 0;
             display: none;
         }
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
     </style>
 </head>
-<body class="bg-background text-foreground smooth-scroll">
+<body class="bg-white text-gray-900" style="scroll-behavior: smooth;">
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-border">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container-custom py-4 flex justify-between items-center">
-            <div class="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                RowerHub.bike
-            </div>
+            <div class="text-2xl font-bold text-orange-500">RowerHub.bike</div>
             <div class="flex gap-2">
-                <button onclick="setLanguage('ru')" id="btn-ru" class="px-4 py-2 rounded-md bg-primary text-white">RU</button>
-                <button onclick="setLanguage('en')" id="btn-en" class="px-4 py-2 rounded-md bg-muted text-muted-foreground">EN</button>
+                <button onclick="setLanguage('ru')" id="btn-ru" class="px-3 py-1 rounded text-sm bg-orange-500 text-white">RU</button>
+                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded text-sm bg-gray-100 text-gray-600">EN</button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-gradient text-white section-padding">
+    <section class="hero-gradient text-white py-20">
         <div class="container-custom text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight" data-ru="Аренда электровелосипедов для курьеров" data-en="E-bike rental for couriers">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-ru="Аренда электровелосипедов для курьеров" data-en="E-bike rental for couriers">
                 Аренда электровелосипедов для курьеров
             </h1>
-            <p class="text-xl md:text-2xl mb-8 text-white/90" data-ru="Профессиональные решения мобильности во Вроцлаве" data-en="Professional mobility solutions in Wrocław">
+            <p class="text-xl mb-8 text-white/90" data-ru="Профессиональные решения мобильности во Вроцлаве" data-en="Professional mobility solutions in Wrocław">
                 Профессиональные решения мобильности во Вроцлаве
             </p>
             <button onclick="scrollToContact()" class="btn-primary text-lg" data-ru="Забронировать сейчас" data-en="Book now">
@@ -120,28 +110,28 @@
     </section>
 
     <!-- Features Section -->
-    <section class="section-padding bg-muted/50">
+    <section class="py-20 bg-gray-50">
         <div class="container-custom">
-            <h2 class="text-4xl font-bold text-center mb-16" data-ru="Почему выбирают нас" data-en="Why choose us">Почему выбирают нас</h2>
+            <h2 class="text-3xl font-bold text-center mb-16" data-ru="Почему выбирают нас" data-en="Why choose us">Почему выбирают нас</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="feature-icon mx-auto mb-4">⚡</div>
+                <div class="text-center bg-white p-8 rounded-lg card-shadow">
+                    <div class="feature-icon mb-6">⚡</div>
                     <h3 class="text-xl font-semibold mb-4" data-ru="Надежность" data-en="Reliability">Надежность</h3>
-                    <p class="text-muted-foreground" data-ru="Профессиональное обслуживание и техническая поддержка" data-en="Professional service and technical support">
+                    <p class="text-gray-600" data-ru="Профессиональное обслуживание и техническая поддержка" data-en="Professional service and technical support">
                         Профессиональное обслуживание и техническая поддержка
                     </p>
                 </div>
-                <div class="text-center">
-                    <div class="feature-icon mx-auto mb-4">🚴</div>
+                <div class="text-center bg-white p-8 rounded-lg card-shadow">
+                    <div class="feature-icon mb-6">🚴</div>
                     <h3 class="text-xl font-semibold mb-4" data-ru="Качество" data-en="Quality">Качество</h3>
-                    <p class="text-muted-foreground" data-ru="Современные велосипеды в отличном состоянии" data-en="Modern bikes in excellent condition">
+                    <p class="text-gray-600" data-ru="Современные велосипеды в отличном состоянии" data-en="Modern bikes in excellent condition">
                         Современные велосипеды в отличном состоянии
                     </p>
                 </div>
-                <div class="text-center">
-                    <div class="feature-icon mx-auto mb-4">💰</div>
+                <div class="text-center bg-white p-8 rounded-lg card-shadow">
+                    <div class="feature-icon mb-6">💰</div>
                     <h3 class="text-xl font-semibold mb-4" data-ru="Доступность" data-en="Affordability">Доступность</h3>
-                    <p class="text-muted-foreground" data-ru="Конкурентные цены и гибкие условия аренды" data-en="Competitive prices and flexible rental terms">
+                    <p class="text-gray-600" data-ru="Конкурентные цены и гибкие условия аренды" data-en="Competitive prices and flexible rental terms">
                         Конкурентные цены и гибкие условия аренды
                     </p>
                 </div>
@@ -150,21 +140,21 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="section-padding">
+    <section class="py-20">
         <div class="container-custom">
-            <h2 class="text-4xl font-bold text-center mb-16" data-ru="Тарифы" data-en="Pricing">Тарифы</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg card-shadow border border-border">
-                    <h3 class="text-2xl font-semibold mb-4" data-ru="Дневной" data-en="Daily">Дневной</h3>
-                    <div class="text-4xl font-bold text-primary mb-4">50 zł</div>
-                    <p class="text-muted-foreground mb-6" data-ru="За 24 часа" data-en="Per 24 hours">За 24 часа</p>
+            <h2 class="text-3xl font-bold text-center mb-16" data-ru="Тарифы" data-en="Pricing">Тарифы</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg card-shadow border">
+                    <h3 class="text-xl font-semibold mb-4" data-ru="Дневной" data-en="Daily">Дневной</h3>
+                    <div class="text-3xl font-bold text-orange-500 mb-4">50 zł</div>
+                    <p class="text-gray-600 mb-6" data-ru="За 24 часа" data-en="Per 24 hours">За 24 часа</p>
                     <ul class="space-y-2 mb-8 text-sm">
                         <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span>
+                            <span class="text-orange-500">✓</span>
                             <span data-ru="Полная зарядка" data-en="Full charge">Полная зарядка</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span>
+                            <span class="text-orange-500">✓</span>
                             <span data-ru="Техосмотр" data-en="Technical inspection">Техосмотр</span>
                         </li>
                     </ul>
@@ -173,20 +163,20 @@
                     </button>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg card-shadow border-2 border-primary relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold" data-ru="Популярный" data-en="Popular">
+                <div class="bg-white p-8 rounded-lg card-shadow border-2 border-orange-500 relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold" data-ru="Популярный" data-en="Popular">
                         Популярный
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4" data-ru="Недельный" data-en="Weekly">Недельный</h3>
-                    <div class="text-4xl font-bold text-primary mb-4">300 zł</div>
-                    <p class="text-muted-foreground mb-6" data-ru="7 дней" data-en="7 days">7 дней</p>
+                    <h3 class="text-xl font-semibold mb-4" data-ru="Недельный" data-en="Weekly">Недельный</h3>
+                    <div class="text-3xl font-bold text-orange-500 mb-4">300 zł</div>
+                    <p class="text-gray-600 mb-6" data-ru="7 дней" data-en="7 days">7 дней</p>
                     <ul class="space-y-2 mb-8 text-sm">
                         <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span>
+                            <span class="text-orange-500">✓</span>
                             <span data-ru="Все включено" data-en="Everything included">Все включено</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span>
+                            <span class="text-orange-500">✓</span>
                             <span data-ru="Приоритетная поддержка" data-en="Priority support">Приоритетная поддержка</span>
                         </li>
                     </ul>
@@ -195,17 +185,17 @@
                     </button>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg card-shadow border border-border">
-                    <h3 class="text-2xl font-semibold mb-4" data-ru="Месячный" data-en="Monthly">Месячный</h3>
-                    <div class="text-4xl font-bold text-primary mb-4">1000 zł</div>
-                    <p class="text-muted-foreground mb-6" data-ru="30 дней" data-en="30 days">30 дней</p>
+                <div class="bg-white p-8 rounded-lg card-shadow border">
+                    <h3 class="text-xl font-semibold mb-4" data-ru="Месячный" data-en="Monthly">Месячный</h3>
+                    <div class="text-3xl font-bold text-orange-500 mb-4">1000 zł</div>
+                    <p class="text-gray-600 mb-6" data-ru="30 дней" data-en="30 days">30 дней</p>
                     <ul class="space-y-2 mb-8 text-sm">
                         <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span>
+                            <span class="text-orange-500">✓</span>
                             <span data-ru="Максимальная экономия" data-en="Maximum savings">Максимальная экономия</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span>
+                            <span class="text-orange-500">✓</span>
                             <span data-ru="Персональный менеджер" data-en="Personal manager">Персональный менеджер</span>
                         </li>
                     </ul>
@@ -217,20 +207,239 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="kontakt" class="section-padding bg-muted/50">
+    <!-- Rules Section -->
+    <section class="py-20 bg-white">
         <div class="container-custom">
-            <h2 class="text-4xl font-bold text-center mb-16" data-ru="Свяжитесь с нами" data-en="Contact us">Свяжитесь с нами</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4" data-ru="Правила использования" data-en="Usage Rules">Правила использования</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Ознакомьтесь с правилами аренды электровелосипедов. Мы заботимся о вашей безопасности и комфорте при использовании наших услуг." data-en="Familiarize yourself with the electric bike rental rules. We care about your safety and comfort when using our services.">
+                    Ознакомьтесь с правилами аренды электровелосипедов. Мы заботимся о вашей безопасности и комфорте при использовании наших услуг.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <span class="text-green-600 mr-3">✓</span>
+                        <span data-ru="Что мы обеспечиваем" data-en="What We Provide">Что мы обеспечиваем</span>
+                    </h3>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-ru="Полная зарядка" data-en="Full Charge">Полная зарядка</h4>
+                                <p class="text-gray-600 text-sm" data-ru="Каждый велосипед выдается с полностью заряженной батареей, готовый к работе." data-en="Each bike is provided with a fully charged battery, ready for work.">
+                                    Каждый велосипед выдается с полностью заряженной батареей, готовый к работе.
+                                </p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-ru="Техническая поддержка" data-en="Technical Support">Техническая поддержка</h4>
+                                <p class="text-gray-600 text-sm" data-ru="В случае поломки мы обеспечиваем техническую помощь или замену велосипеда." data-en="In case of breakdown, we provide technical assistance or bike replacement.">
+                                    В случае поломки мы обеспечиваем техническую помощь или замену велосипеда.
+                                </p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-ru="Гибкость возврата" data-en="Return Flexibility">Гибкость возврата</h4>
+                                <p class="text-gray-600 text-sm" data-ru="Возможность продления аренды или досрочного возврата с пропорциональным расчетом." data-en="Possibility of rental extension or early return with proportional calculation.">
+                                    Возможность продления аренды или досрочного возврата с пропорциональным расчетом.
+                                </p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-ru="Обучение использованию" data-en="Usage Training">Обучение использованию</h4>
+                                <p class="text-gray-600 text-sm" data-ru="Каждый арендатор получает инструктаж по использованию электровелосипеда." data-en="Each renter receives instruction on how to use the electric bike.">
+                                    Каждый арендатор получает инструктаж по использованию электровелосипеда.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <span class="text-red-600 mr-3">✗</span>
+                        <span data-ru="Ваши обязанности" data-en="Your Responsibilities">Ваши обязанности</span>
+                    </h3>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-red-600 text-sm">✗</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-ru="Ответственность за оборудование" data-en="Equipment Responsibility">Ответственность за оборудование</h4>
+                                <p class="text-gray-600 text-sm" data-ru="Арендатор отвечает за вверенное оборудование и обязан вернуть его в исходном состоянии." data-en="The renter is responsible for the entrusted equipment and must return it in original condition.">
+                                    Арендатор отвечает за вверенное оборудование и обязан вернуть его в исходном состоянии.
+                                </p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-red-600 text-sm">✗</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-ru="Запрет модификаций" data-en="No Modifications">Запрет модификаций</h4>
+                                <p class="text-gray-600 text-sm" data-ru="Запрещено вносить какие-либо технические модификации в велосипед." data-en="Making any technical modifications to the bike is prohibited.">
+                                    Запрещено вносить какие-либо технические модификации в велосипед.
+                                </p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-red-600 text-sm">✗</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-ru="Безопасная парковка" data-en="Safe Parking">Безопасная парковка</h4>
+                                <p class="text-gray-600 text-sm" data-ru="Велосипед всегда должен быть пристегнут прилагаемым замком к стационарным элементам инфраструктуры." data-en="The bike must always be locked with the provided lock to stationary infrastructure elements.">
+                                    Велосипед всегда должен быть пристегнут прилагаемым замком к стационарным элементам инфраструктуры.
+                                </p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-red-600 text-sm">✗</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-ru="Сообщение о неисправностях" data-en="Report Issues">Сообщение о неисправностях</h4>
+                                <p class="text-gray-600 text-sm" data-ru="Обязательное немедленное сообщение о любых неисправностях и технических проблемах." data-en="Mandatory immediate reporting of any malfunctions and technical problems.">
+                                    Обязательное немедленное сообщение о любых неисправностях и технических проблемах.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#kontakt" onclick="scrollToContact()" class="text-orange-500 hover:underline cursor-pointer" data-ru="Полные правила аренды доступны в нашем офисе" data-en="Full rental rules are available at our office">
+                    Полные правила аренды доступны в нашем офисе
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-black">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-white" data-ru="Спецификация оборудования" data-en="Equipment Specifications">Спецификация оборудования</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto" data-ru="Наши электровелосипеды были тщательно подобраны, чтобы удовлетворить потребности курьеров и обеспечить надежную работу в любых условиях." data-en="Our electric bikes have been carefully selected to meet courier needs and provide reliable operation in any conditions.">
+                    Наши электровелосипеды были тщательно подобраны, чтобы удовлетворить потребности курьеров и обеспечить надежную работу в любых условиях.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl shadow-xl overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9 relative">
+                        <img 
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMTExODI3Ii8+CjxwYXRoIGQ9Ik0yMDAgMzAwSDYwMFYyODBIMjAwVjMwMFoiIGZpbGw9IiNGOTczMTYiLz4KPGV4dCB4PSI0MDAiIHk9IjIwMCIgZmlsbD0iI0Y5NzMxNiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkVsZWN0cmljIEJpa2U8L3RleHQ+Cjwvc3ZnPgo="
+                            alt="Electric bike for couriers"
+                            class="object-cover object-center w-full h-64 md:h-96"
+                        />
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-8 text-white text-center" data-ru="Модель Courier Pro 2023" data-en="Courier Pro 2023 Model">Модель Courier Pro 2023</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <div class="text-orange-500 mr-3 mt-1 text-xl">🔋</div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1" data-ru="Батарея" data-en="Battery">Батарея</h4>
+                                    <p class="text-gray-300 text-sm" data-ru="35Ah, запас хода до 100 км" data-en="35Ah, range up to 100 km">35Ah, запас хода до 100 км</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <div class="text-orange-500 mr-3 mt-1 text-xl">⚙️</div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1" data-ru="Надежный двигатель" data-en="Reliable Motor">Надежный двигатель</h4>
+                                    <p class="text-gray-300 text-sm" data-ru="Минимум обслуживания — максимум концентрации на работе" data-en="Minimal maintenance — maximum focus on work">Минимум обслуживания — максимум концентрации на работе</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <div class="text-orange-500 mr-3 mt-1 text-xl">🚴</div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1" data-ru="Рама" data-en="Frame">Рама</h4>
+                                    <p class="text-gray-300 text-sm" data-ru="Алюминиевая, усиленная, универсальный размер" data-en="Aluminum, reinforced, universal size">Алюминиевая, усиленная, универсальный размер</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <div class="text-orange-500 mr-3 mt-1 text-xl">🛠️</div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1" data-ru="Гидравлические тормоза Shimano" data-en="Shimano Hydraulic Brakes">Гидравлические тормоза Shimano</h4>
+                                    <p class="text-gray-300 text-sm" data-ru="Обеспечивают безопасное торможение в любых условиях" data-en="Ensure safe braking in any conditions">Обеспечивают безопасное торможение в любых условиях</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <div class="text-orange-500 mr-3 mt-1 text-xl">💡</div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1" data-ru="Фонари" data-en="Lights">Фонари</h4>
+                                    <p class="text-gray-300 text-sm" data-ru="Передний и задний свет для уверенной езды в темное время суток" data-en="Front and rear lights for confident riding in dark conditions">Передний и задний свет для уверенной езды в темное время суток</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <div class="text-orange-500 mr-3 mt-1 text-xl">🔒</div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1" data-ru="Замок ABUS" data-en="ABUS Lock">Замок ABUS</h4>
+                                    <p class="text-gray-300 text-sm" data-ru="Надёжный немецкий замок с высшей степенью защиты" data-en="Reliable German lock with highest level of protection">Надёжный немецкий замок с высшей степенью защиты</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <div class="text-orange-500 mr-3 mt-1 text-xl">📍</div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1" data-ru="AirTag" data-en="AirTag">AirTag</h4>
+                                    <p class="text-gray-300 text-sm" data-ru="Отслеживание перемещения для предотвращения краж" data-en="Movement tracking to prevent theft">Отслеживание перемещения для предотвращения краж</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-20 bg-gray-50">
+        <div class="container-custom">
+            <h2 class="text-3xl font-bold text-center mb-16" data-ru="Свяжитесь с нами" data-en="Contact us">Свяжитесь с нами</h2>
             
             <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
                 <div>
-                    <h3 class="text-2xl font-semibold mb-8" data-ru="Контактная информация" data-en="Contact information">Контактная информация</h3>
+                    <h3 class="text-xl font-semibold mb-8" data-ru="Контактная информация" data-en="Contact information">Контактная информация</h3>
                     <div class="space-y-6">
                         <div class="flex items-center gap-4">
                             <div class="feature-icon">📞</div>
                             <div>
                                 <div class="font-semibold" data-ru="Телефон" data-en="Phone">Телефон</div>
-                                <a href="tel:800922508" class="text-primary hover:text-accent transition-colors">800 922 508</a>
+                                <a href="tel:800922508" class="text-orange-500 hover:text-orange-600 transition-colors">800 922 508</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
@@ -244,14 +453,14 @@
                             <div class="feature-icon">💬</div>
                             <div>
                                 <div class="font-semibold">Telegram</div>
-                                <a href="https://t.me/BaitEb1ke" target="_blank" class="text-primary hover:text-accent transition-colors">@BaitEb1ke</a>
+                                <a href="https://t.me/BaitEb1ke" target="_blank" class="text-orange-500 hover:text-orange-600 transition-colors">@BaitEb1ke</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-white p-8 rounded-lg card-shadow">
-                    <h3 class="text-xl font-semibold mb-6" data-ru="Форма заявки" data-en="Request form">Форма заявки</h3>
+                    <h3 class="text-xl font-semibold mb-6" data-ru="Напишите нам" data-en="Write to Us">Напишите нам</h3>
                     <div id="successMessage" class="success-message">
                         <span data-ru="Ваша заявка принята! Мы свяжемся с вами по телефону или Telegram в ближайшее время." data-en="Your request has been received! We will contact you by phone or Telegram soon.">
                             Ваша заявка принята! Мы свяжемся с вами по телефону или Telegram в ближайшее время.
@@ -259,16 +468,16 @@
                     </div>
                     <form id="contactForm" class="space-y-6">
                         <div>
-                            <label class="block text-sm font-medium mb-2" data-ru="Имя" data-en="Name">Имя</label>
-                            <input type="text" id="name" required class="w-full p-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent">
+                            <label class="block text-sm font-medium mb-2" data-ru="Имя и фамилия" data-en="Full Name">Имя и фамилия</label>
+                            <input type="text" id="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" data-ru-placeholder="Введите ваше имя" data-en-placeholder="Enter your name">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2" data-ru="Email" data-en="Email">Email</label>
-                            <input type="email" id="email" required class="w-full p-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent">
+                            <input type="email" id="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" data-ru-placeholder="Введите ваш email" data-en-placeholder="Enter your email">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2" data-ru="Телефон" data-en="Phone">Телефон</label>
-                            <input type="tel" id="phone" required class="w-full p-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent">
+                            <input type="tel" id="phone" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" data-ru-placeholder="Введите ваш телефон" data-en-placeholder="Enter your phone number">
                         </div>
                         <button type="submit" class="btn-primary w-full" id="submitBtn" data-ru="Отправить заявку" data-en="Send request">
                             Отправить заявку
@@ -280,10 +489,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-secondary text-white py-8">
+    <footer class="bg-gray-900 text-white py-8">
         <div class="container-custom text-center">
             <div class="text-2xl font-bold mb-4">RowerHub.bike</div>
-            <p class="text-white/80">&copy; 2025 RowerHub.bike - <span data-ru="Аренда электровелосипедов во Вроцлаве" data-en="E-bike rental in Wrocław">Аренда электровелосипедов во Вроцлаве</span></p>
+            <p class="text-gray-400">&copy; 2025 RowerHub.bike - <span data-ru="Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса." data-en="Professional electric bike rental for couriers in Wrocław. Reliability, economy and convenience for your business.">Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса.</span></p>
         </div>
     </footer>
 
@@ -295,11 +504,11 @@
             
             // Update buttons
             document.getElementById('btn-ru').className = lang === 'ru' ? 
-                'px-4 py-2 rounded-md bg-primary text-white' : 
-                'px-4 py-2 rounded-md bg-muted text-muted-foreground';
+                'px-3 py-1 rounded text-sm bg-orange-500 text-white' : 
+                'px-3 py-1 rounded text-sm bg-gray-100 text-gray-600';
             document.getElementById('btn-en').className = lang === 'en' ? 
-                'px-4 py-2 rounded-md bg-primary text-white' : 
-                'px-4 py-2 rounded-md bg-muted text-muted-foreground';
+                'px-3 py-1 rounded text-sm bg-orange-500 text-white' : 
+                'px-3 py-1 rounded text-sm bg-gray-100 text-gray-600';
 
             // Update all text elements
             document.querySelectorAll('[data-ru]').forEach(el => {
@@ -307,6 +516,15 @@
                     el.textContent = el.getAttribute('data-ru');
                 } else {
                     el.textContent = el.getAttribute('data-en');
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-ru-placeholder]').forEach(el => {
+                if (lang === 'ru') {
+                    el.placeholder = el.getAttribute('data-ru-placeholder');
+                } else {
+                    el.placeholder = el.getAttribute('data-en-placeholder');
                 }
             });
         }
@@ -336,7 +554,7 @@
 
             // Show loading state
             submitBtn.disabled = true;
-            submitBtn.textContent = currentLanguage === 'ru' ? 'Отправляем...' : 'Sending...';
+            submitBtn.textContent = currentLanguage === 'ru' ? 'Отправка...' : 'Sending...';
 
             // Simulate form submission
             setTimeout(() => {
@@ -356,7 +574,7 @@
             }, 1000);
         });
 
-        // Set initial language
+        // Set initial language and placeholders
         setLanguage('ru');
     </script>
 </body>

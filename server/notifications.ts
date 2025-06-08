@@ -6,7 +6,7 @@ interface ContactFormData {
   name: string;
   email: string;
   phone: string;
-  message: string;
+  message?: string;
 }
 
 export async function sendTelegramNotification(formData: ContactFormData): Promise<boolean> {
@@ -20,8 +20,6 @@ export async function sendTelegramNotification(formData: ContactFormData): Promi
 👤 ${formData.name}
 📧 ${formData.email}
 📱 ${formData.phone}
-
-💬 ${formData.message}
 
 ⏰ ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Warsaw' })}
 
@@ -60,7 +58,6 @@ export async function logContactForm(formData: ContactFormData): Promise<boolean
   console.log(`Имя: ${formData.name}`);
   console.log(`Email: ${formData.email}`);
   console.log(`Телефон: ${formData.phone}`);
-  console.log(`Сообщение: ${formData.message}`);
   console.log(`Время: ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Warsaw' })}`);
   console.log('====================================');
   return true;

@@ -21,8 +21,7 @@ export default function ContactSection() {
     defaultValues: {
       name: "",
       email: "",
-      phone: "",
-      message: ""
+      phone: ""
     }
   });
 
@@ -140,23 +139,7 @@ export default function ContactSection() {
                   )}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white text-base md:text-lg">{t('contact.form.message')}</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder={t('contact.form.message.placeholder')}
-                          className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 min-h-[120px] text-base resize-none"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+
 
                 <Button
                   type="submit"

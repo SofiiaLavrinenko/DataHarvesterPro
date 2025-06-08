@@ -64,7 +64,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-black via-gray-900 to-orange-900/20">
+    <section id="kontakt" className="py-16 md:py-24 bg-gradient-to-br from-black via-gray-900 to-orange-900/20">
       <Container>
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent">

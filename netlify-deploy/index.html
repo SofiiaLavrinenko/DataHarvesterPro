@@ -140,66 +140,50 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="py-20">
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-black">
         <div class="container-custom">
-            <h2 class="text-3xl font-bold text-center mb-16" data-ru="Тарифы" data-en="Pricing">Тарифы</h2>
-            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white p-8 rounded-lg card-shadow border">
-                    <h3 class="text-xl font-semibold mb-4" data-ru="Дневной" data-en="Daily">Дневной</h3>
-                    <div class="text-3xl font-bold text-orange-500 mb-4">50 zł</div>
-                    <p class="text-gray-600 mb-6" data-ru="За 24 часа" data-en="Per 24 hours">За 24 часа</p>
-                    <ul class="space-y-2 mb-8 text-sm">
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span>
-                            <span data-ru="Полная зарядка" data-en="Full charge">Полная зарядка</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span>
-                            <span data-ru="Техосмотр" data-en="Technical inspection">Техосмотр</span>
-                        </li>
-                    </ul>
-                    <button onclick="scrollToContact()" class="btn-primary w-full" data-ru="Забронировать" data-en="Book">
-                        Забронировать
-                    </button>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg card-shadow border-2 border-orange-500 relative">
-                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold" data-ru="Популярный" data-en="Popular">
-                        Популярный
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-white relative inline-block" data-ru="Выгодные тарифы" data-en="Affordable Pricing">
+                    Выгодные тарифы
+                    <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-orange-500 rounded-full"></span>
+                </h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mt-6" data-ru="Подберите оптимальный вариант аренды с технической поддержкой и гарантией качества." data-en="Choose the optimal rental option with technical support and quality guarantee.">
+                    Подберите оптимальный вариант аренды с технической поддержкой и гарантией качества.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-gray-900 to-black border-2 border-orange-500 text-white rounded-xl shadow-2xl p-8 hover:shadow-orange-500/20 transition-all duration-500">
+                    <div class="bg-orange-500 text-white text-sm font-semibold uppercase py-2 px-4 rounded-full inline-block mb-6 shadow-lg">
+                        <div class="flex items-center">
+                            <span class="mr-2">⚡</span>
+                            <span data-ru="Аренда электровелосипедов" data-en="Electric bike rental">Аренда электровелосипедов</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4" data-ru="Недельный" data-en="Weekly">Недельный</h3>
-                    <div class="text-3xl font-bold text-orange-500 mb-4">300 zł</div>
-                    <p class="text-gray-600 mb-6" data-ru="7 дней" data-en="7 days">7 дней</p>
-                    <ul class="space-y-2 mb-8 text-sm">
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span>
-                            <span data-ru="Все включено" data-en="Everything included">Все включено</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span>
-                            <span data-ru="Приоритетная поддержка" data-en="Priority support">Приоритетная поддержка</span>
-                        </li>
-                    </ul>
-                    <button onclick="scrollToContact()" class="btn-primary w-full" data-ru="Забронировать" data-en="Book">
-                        Забронировать
-                    </button>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg card-shadow border">
-                    <h3 class="text-xl font-semibold mb-4" data-ru="Месячный" data-en="Monthly">Месячный</h3>
-                    <div class="text-3xl font-bold text-orange-500 mb-4">1000 zł</div>
-                    <p class="text-gray-600 mb-6" data-ru="30 дней" data-en="30 days">30 дней</p>
-                    <ul class="space-y-2 mb-8 text-sm">
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span>
-                            <span data-ru="Максимальная экономия" data-en="Maximum savings">Максимальная экономия</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span>
-                            <span data-ru="Персональный менеджер" data-en="Personal manager">Персональный менеджер</span>
-                        </li>
-                    </ul>
-                    <button onclick="scrollToContact()" class="btn-primary w-full" data-ru="Забронировать" data-en="Book">
+                    
+                    <div class="mb-12 text-center">
+                        <span class="text-6xl font-bold text-orange-500 drop-shadow-lg" data-ru="от 26 зл" data-en="from 26 zł">от 26 зл</span>
+                        <span class="text-2xl text-gray-300 ml-2" data-ru="/день" data-en="/day">/день</span>
+                    </div>
+                    
+                    <div class="mb-10">
+                        <ul class="space-y-5">
+                            <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <span class="text-orange-500 mr-3 mt-0.5 text-lg">✓</span>
+                                <span class="text-gray-200" data-ru="Высокая мощность и дальность поездки" data-en="High power and long range">Высокая мощность и дальность поездки</span>
+                            </li>
+                            <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <span class="text-orange-500 mr-3 mt-0.5 text-lg">✓</span>
+                                <span class="text-gray-200" data-ru="Надежный велосипедный замок" data-en="Reliable bike lock">Надежный велосипедный замок</span>
+                            </li>
+                            <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
+                                <span class="text-orange-500 mr-3 mt-0.5 text-lg">✓</span>
+                                <span class="text-gray-200" data-ru="Техподдержка и обслуживание 24/7" data-en="24/7 technical support and maintenance">Техподдержка и обслуживание 24/7</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button onclick="scrollToContact()" class="btn-primary w-full text-xl py-6 shadow-xl hover:shadow-orange-500/30 transform hover:-translate-y-1 transition duration-300" data-ru="Забронировать" data-en="Book Now">
                         Забронировать
                     </button>
                 </div>

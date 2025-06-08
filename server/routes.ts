@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactFormSchema } from "../shared/schema";
-import { sendContactEmail, sendConfirmationEmail } from "./email";
+import { sendContactNotification } from "./notifications";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API route for contact form
@@ -23,26 +23,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const formData = validation.data;
 
-      // Send email to company
+      // Send notification to company
       try {
-        await sendContactEmail(formData);
-        
-        // Try to send confirmation email to user (optional)
-        try {
-          await sendConfirmationEmail(formData);
-        } catch (confirmError) {
-          console.warn('Could not send confirmation email:', confirmError);
-          // Don't fail the request if confirmation email fails
-        }
+        await sendContactNotification(formData);
 
         return res.status(200).json({ 
           message: 'Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.' 
         });
-      } catch (emailError) {
-        console.error('Error sending contact email:', emailError);
+      } catch (notificationError) {
+        console.error('Error sending notification:', notificationError);
         
-        // Check if it's due to missing API key
-        if (emailError instanceof Error && emailError.message.includes('SENDGRID_API_KEY')) {
+        // Check if it's due to missing Telegram configuration
+        if (notificationError instanceof Error && notificationError.message.includes('TELEGRAM_BOT_TOKEN')) {
           return res.status(500).json({ 
             message: 'Сервис временно недоступен. Пожалуйста, свяжитесь с нами напрямую по телефону 800 922 508 или через Telegram @BaitEb1ke.' 
           });

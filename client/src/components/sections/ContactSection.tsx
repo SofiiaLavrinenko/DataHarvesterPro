@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -7,7 +6,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Instagram, Facebook, Send, ArrowRight, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -17,121 +15,161 @@ import { apiRequest } from "@/lib/queryClient";
 export default function ContactSection() {
   const { toast } = useToast();
   const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        variant: "destructive",
-        title: "Ошибка формы",
-        description: "Заполните все обязательные поля."
-      });
-      return;
-    }
-
-    // Here you would typically send the form data to your backend
-    // For now, we'll just show a success toast
-    toast({
-      title: "Сообщение отправлено",
-      description: "Спасибо за обращение. Мы ответим вам как можно скорее."
-    });
-
-    // Reset form
-    setFormData({
+  const form = useForm<ContactForm>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
       name: "",
       email: "",
       phone: "",
       message: ""
-    });
+    }
+  });
+
+  const contactMutation = useMutation({
+    mutationFn: async (data: ContactForm) => {
+      const response = await apiRequest('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      return response;
+    },
+    onSuccess: (data) => {
+      toast({
+        title: "Заявка отправлена!",
+        description: data.message || "Мы свяжемся с вами в ближайшее время.",
+      });
+      form.reset();
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Ошибка отправки",
+        description: error.message || "Не удалось отправить заявку. Попробуйте еще раз.",
+        variant: "destructive",
+      });
+    }
+  });
+
+  const onSubmit = (data: ContactForm) => {
+    contactMutation.mutate(data);
   };
 
   return (
-    <section id="kontakt" className="py-12 md:py-20 bg-gradient-to-b from-black to-gray-900">
-      <Container className="px-4">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-black via-gray-900 to-orange-900/20">
+      <Container>
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white relative inline-block">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent">
             {t('contact.title')}
-            <span className="absolute -bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 w-16 md:w-24 h-0.5 md:h-1 bg-orange-500 rounded-full"></span>
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mt-4 md:mt-6 text-sm sm:text-base md:text-lg px-4">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t('contact.subtitle')}
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-900 to-black p-4 sm:p-6 md:p-8 rounded-xl shadow-xl border border-gray-800">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-white">{t('contact.form.title')}</h3>
-            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-white text-sm md:text-base">{t('contact.form.name')} *</Label>
-                <Input 
-                  id="name" 
+
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+          <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6 md:p-8 lg:p-10 rounded-xl shadow-2xl">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 text-white">
+              {t('contact.form.title')}
+            </h3>
+            
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-gray-800 border-gray-700 text-white focus:border-orange-500 focus:ring-orange-500/20 text-sm md:text-base"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white text-base md:text-lg">{t('contact.form.name')}</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder={t('contact.form.name.placeholder')}
+                          className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 h-11 md:h-12 text-base"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-white text-sm md:text-base">{t('contact.form.email')} *</Label>
-                <Input 
-                  type="email" 
-                  id="email" 
+
+                <FormField
+                  control={form.control}
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-gray-800 border-gray-700 text-white focus:border-orange-500 focus:ring-orange-500/20 text-sm md:text-base"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white text-base md:text-lg">{t('contact.form.email')}</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder={t('contact.form.email.placeholder')}
+                          className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 h-11 md:h-12 text-base"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="text-white text-sm md:text-base">{t('contact.form.phone')}</Label>
-                <Input 
-                  type="tel" 
-                  id="phone" 
+
+                <FormField
+                  control={form.control}
                   name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="bg-gray-800 border-gray-700 text-white focus:border-orange-500 focus:ring-orange-500/20 text-sm md:text-base"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white text-base md:text-lg">{t('contact.form.phone')}</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="tel"
+                          placeholder={t('contact.form.phone.placeholder')}
+                          className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 h-11 md:h-12 text-base"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message" className="text-white text-sm md:text-base">{t('contact.form.message')} *</Label>
-                <Textarea 
-                  id="message" 
+
+                <FormField
+                  control={form.control}
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4} 
-                  required
-                  className="bg-gray-800 border-gray-700 text-white focus:border-orange-500 focus:ring-orange-500/20 text-sm md:text-base min-h-[100px]"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white text-base md:text-lg">{t('contact.form.message')}</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder={t('contact.form.message.placeholder')}
+                          className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 min-h-[120px] text-base resize-none"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-1 transition duration-300 flex items-center justify-center gap-2 py-3 md:py-4 text-sm md:text-base"
-              >
-                <Send className="h-4 w-4 md:h-5 md:w-5" />
-                {t('contact.form.submit')}
-              </Button>
-            </form>
+
+                <Button
+                  type="submit"
+                  disabled={contactMutation.isPending}
+                  className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-medium py-3 md:py-4 px-6 md:px-8 rounded-lg text-base md:text-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {contactMutation.isPending ? (
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      {t('contact.form.sending')}
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <Send className="h-4 w-4 md:h-5 md:w-5" />
+                      {t('contact.form.submit')}
+                    </div>
+                  )}
+                </Button>
+              </form>
+            </Form>
           </div>
           
           <div className="space-y-6 md:space-y-8">

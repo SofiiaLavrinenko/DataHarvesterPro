@@ -15,20 +15,17 @@ export async function sendTelegramNotification(formData: ContactFormData): Promi
   }
 
   try {
-    const message = `🚴‍♂️ НОВАЯ ЗАЯВКА НА БРОНИРОВАНИЕ ВЕЛОСИПЕДА
+    const message = `🚴‍♂️ НОВАЯ ЗАЯВКА НА БРОНИРОВАНИЕ
 
-👤 Клиент: ${formData.name}
-📧 Email: ${formData.email}
-📱 Телефон: ${formData.phone}
+👤 ${formData.name}
+📧 ${formData.email}
+📱 ${formData.phone}
 
-💬 Сообщение:
-${formData.message}
+💬 ${formData.message}
 
-⏰ Время: ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Warsaw' })} (Warsaw)
+⏰ ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Warsaw' })}
 
-Свяжитесь с клиентом:
-• Email: ${formData.email}
-• Телефон: ${formData.phone}`;
+#заявка #велосипед #аренда`;
 
     const telegramApiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
     

@@ -28,14 +28,21 @@ export default function ContactSection() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      const response = await apiRequest('/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
-      return response;
+
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.message || 'Ошибка отправки заявки');
+      }
+      
+      return result;
     },
     onSuccess: (data) => {
       toast({

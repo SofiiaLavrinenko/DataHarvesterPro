@@ -512,7 +512,7 @@
                             </div>
                             <div class="flex-1">
                                 <div class="font-semibold text-lg mb-1">Telegram</div>
-                                <a href="https://t.me/BaitEb1ke" target="_blank" class="text-orange-500 hover:text-orange-600 transition-colors text-lg">@BaitEb1ke</a>
+                                <a href="https://t.me/BaitEb1ke" target="_blank" class="transition-colors text-lg" style="color: #ea580c;" onmouseover="this.style.color='#c2410c'" onmouseout="this.style.color='#ea580c'">@BaitEb1ke</a>
                             </div>
                         </div>
                     </div>
@@ -566,12 +566,20 @@
         function setLanguage(lang) {
             currentLanguage = lang;
             
-            document.getElementById('btn-ru').className = lang === 'ru' ? 
-                'px-3 py-1 rounded text-sm bg-orange-500 text-white' : 
-                'px-3 py-1 rounded text-sm bg-gray-100 text-gray-600';
-            document.getElementById('btn-en').className = lang === 'en' ? 
-                'px-3 py-1 rounded text-sm bg-orange-500 text-white' : 
-                'px-3 py-1 rounded text-sm bg-gray-100 text-gray-600';
+            const btnRu = document.getElementById('btn-ru');
+            const btnEn = document.getElementById('btn-en');
+            
+            if (lang === 'ru') {
+                btnRu.className = 'px-3 py-1 rounded text-sm text-white';
+                btnRu.style.backgroundColor = '#ea580c';
+                btnEn.className = 'px-3 py-1 rounded text-sm bg-gray-100 text-gray-600';
+                btnEn.style.backgroundColor = '';
+            } else {
+                btnEn.className = 'px-3 py-1 rounded text-sm text-white';
+                btnEn.style.backgroundColor = '#ea580c';
+                btnRu.className = 'px-3 py-1 rounded text-sm bg-gray-100 text-gray-600';
+                btnRu.style.backgroundColor = '';
+            }
 
             document.querySelectorAll('[data-ru]').forEach(el => {
                 if (lang === 'ru') {

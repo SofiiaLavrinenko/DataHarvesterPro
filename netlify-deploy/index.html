@@ -11,9 +11,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#f97316',
+                        primary: '#ea580c',
                         secondary: '#171717',
-                        accent: '#ea580c'
+                        accent: '#c2410c'
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif']
@@ -28,18 +28,18 @@
     <style>
         * { box-sizing: border-box; }
         body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
-        .hero-gradient { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+        .hero-gradient { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
         .btn-primary {
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
             color: white; padding: 0.75rem 2rem; border-radius: 0.5rem;
             font-weight: 600; transition: all 0.3s ease; border: none;
             cursor: pointer; text-decoration: none; display: inline-block;
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3); }
         .card-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; }
         .card-shadow:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .feature-icon {
-            width: 3rem; height: 3rem; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            width: 3rem; height: 3rem; background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             color: white; margin: 0 auto; flex-shrink: 0;
         }
@@ -51,11 +51,11 @@
         }
         .gallery-scroll {
             display: flex; gap: 1rem; overflow-x: auto; padding: 1rem 0;
-            scrollbar-width: thin; scrollbar-color: #f97316 #f1f1f1;
+            scrollbar-width: thin; scrollbar-color: #ea580c #f1f1f1;
         }
         .gallery-scroll::-webkit-scrollbar { height: 8px; }
         .gallery-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
-        .gallery-scroll::-webkit-scrollbar-thumb { background: #f97316; border-radius: 4px; }
+        .gallery-scroll::-webkit-scrollbar-thumb { background: #ea580c; border-radius: 4px; }
         .bike-photo {
             min-width: 280px; height: 200px; object-fit: cover; border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;
@@ -67,9 +67,9 @@
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container-custom py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-orange-500">RowerHub.bike</div>
+            <div class="text-2xl font-bold" style="color: #ea580c;">RowerHub.bike</div>
             <div class="flex gap-2">
-                <button onclick="setLanguage('ru')" id="btn-ru" class="px-3 py-1 rounded text-sm bg-orange-500 text-white">RU</button>
+                <button onclick="setLanguage('ru')" id="btn-ru" class="px-3 py-1 rounded text-sm text-white" style="background-color: #ea580c;">RU</button>
                 <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded text-sm bg-gray-100 text-gray-600">EN</button>
             </div>
         </div>
@@ -128,7 +128,48 @@
                         Конкурентные цены и гибкие условия аренды
                     </p>
                 </div>
+            </div>
 
+            <!-- Photo Gallery -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-center mb-12" data-ru="Наши велосипеды" data-en="Our Bikes">Наши велосипеды</h3>
+                <div class="gallery-scroll">
+                    <div class="flex-shrink-0">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCACsAUADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD2aiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr//9k="
+                             alt="Электровелосипед RowerHub для курьеров" class="bike-photo">
+                        <div class="text-center mt-3">
+                            <p class="text-sm text-gray-600" data-ru="Главный велосипед RowerHub" data-en="Main RowerHub bike">Главный велосипед RowerHub</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAEAAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9UKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr//Z"
+                             alt="Два электровелосипеда на парковке" class="bike-photo">
+                        <div class="text-center mt-3">
+                            <p class="text-sm text-gray-600" data-ru="Велосипеды готовы к работе" data-en="Bikes ready for work">Велосипеды готовы к работе</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCADIAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1aiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr/2Q=="
+                             alt="Велосипед с курьерской сумкой" class="bike-photo">
+                        <div class="text-center mt-3">
+                            <p class="text-sm text-gray-600" data-ru="Велосипед с оборудованием" data-en="Bike with equipment">Велосипед с оборудованием</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCADIAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1aiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr/2Q=="
+                             alt="Электровелосипед во время зарядки" class="bike-photo">
+                        <div class="text-center mt-3">
+                            <p class="text-sm text-gray-600" data-ru="Быстрая зарядка аккумулятора" data-en="Fast battery charging">Быстрая зарядка аккумулятора</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-gray-500 mt-4 text-sm" data-ru="Пролистайте горизонтально, чтобы увидеть больше фото" data-en="Scroll horizontally to see more photos">Пролистайте горизонтально, чтобы увидеть больше фото</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Pricing Section -->
     <section class="py-20 bg-gradient-to-br from-gray-900 to-black">
@@ -448,7 +489,7 @@
                             </div>
                             <div class="flex-1">
                                 <div class="font-semibold text-lg mb-1" data-ru="Телефон" data-en="Phone">Телефон</div>
-                                <a href="tel:800922508" class="text-orange-500 hover:text-orange-600 transition-colors text-lg">800 922 508</a>
+                                <a href="tel:800922508" class="transition-colors text-lg" style="color: #ea580c;" onmouseover="this.style.color='#c2410c'" onmouseout="this.style.color='#ea580c'">800 922 508</a>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">

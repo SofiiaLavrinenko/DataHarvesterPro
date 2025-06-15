@@ -64,6 +64,14 @@
             border-radius: 0.5rem;
             font-weight: bold;
             font-size: 1.125rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .brand-logo {
+            height: 1.5rem;
+            width: auto;
         }
         
         .language-btn {
@@ -602,7 +610,10 @@
     <header class="nav-header">
         <div class="container">
             <div class="flex justify-between items-center py-4">
-                <div class="logo">Rower hub</div>
+                <div class="logo">
+                    <img src="logo.png" alt="RowerHub" class="brand-logo" onerror="this.style.display='none';">
+                    <span>Rower hub</span>
+                </div>
                 
                 <nav class="nav-links hidden md:flex items-center space-x-6">
                     <a href="#benefits" class="nav-link" data-ru="Преимущества" data-en="Benefits">Преимущества</a>

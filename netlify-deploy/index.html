@@ -263,6 +263,12 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .bike-image img[style*="opacity:1"] {
+            opacity: 1;
         }
         
         .feature-card {
@@ -836,23 +842,31 @@
             <div class="bikes-gallery-container" style="position: relative;">
                 <div class="bikes-gallery">
                     <div class="bike-image">
-                        <img src="bike1.jpg" 
-                             alt="Электровелосипеды RowerHub">
+                        <img src="https://i.ibb.co/7YvQxYy/photo-2025-05-28-23-37-26.jpg" 
+                             alt="Синие электровелосипеды RowerHub на парковке"
+                             onload="this.style.opacity=1"
+                             onerror="this.src='bike1.jpg'">
                     </div>
                     
                     <div class="bike-image">
-                        <img src="bike2.jpg" 
-                             alt="Электровелосипед RowerHub">
+                        <img src="https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg" 
+                             alt="Черный электровелосипед RowerHub в интерьере"
+                             onload="this.style.opacity=1"
+                             onerror="this.src='bike2.jpg'">
                     </div>
                     
                     <div class="bike-image">
-                        <img src="bike3.jpg" 
-                             alt="Электровелосипеды RowerHub">
+                        <img src="https://i.ibb.co/YfR8TYc/photo-2025-05-28-23-37-30.jpg" 
+                             alt="Группа электровелосипедов RowerHub на стойках"
+                             onload="this.style.opacity=1"
+                             onerror="this.src='bike3.jpg'">
                     </div>
                     
                     <div class="bike-image">
-                        <img src="bike4.jpg" 
-                             alt="Электровелосипед RowerHub">
+                        <img src="https://i.ibb.co/7W2yGYV/photo-2025-05-28-23-37-36.jpg" 
+                             alt="Электровелосипед RowerHub в гараже"
+                             onload="this.style.opacity=1"
+                             onerror="this.src='bike4.jpg'">
                     </div>
                 </div>
             </div>

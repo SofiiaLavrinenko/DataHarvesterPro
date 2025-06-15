@@ -13,7 +13,7 @@
         * { box-sizing: border-box; }
         body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
         
-        /* ПРИНУДИТЕЛЬНЫЕ ТЕМНО-ОРАНЖЕВЫЕ ЦВЕТА - МАКСИМАЛЬНАЯ СИЛА */
+        /* ПРИНУДИТЕЛЬНЫЕ ТЕМНО-ОРАНЖЕВЫЕ ЦВЕТА */
         :root {
             --orange-primary: #ea580c !important;
             --orange-dark: #c2410c !important;
@@ -23,13 +23,11 @@
         .bg-orange-force { background-color: var(--orange-primary) !important; }
         .border-orange-force { border-color: var(--orange-primary) !important; }
         
-        /* Перебиваем АБСОЛЮТНО все оранжевые цвета */
         [class*="orange"], .text-orange-500, .bg-orange-500, .text-orange-600, .bg-orange-600 { 
             color: var(--orange-primary) !important; 
             background-color: var(--orange-primary) !important; 
         }
         
-        /* Принудительно устанавливаем главные элементы */
         .hero-gradient { 
             background: var(--orange-primary) !important;
             background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-dark) 100%) !important;
@@ -56,14 +54,6 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); 
         }
         
-        .feature-icon {
-            width: 3rem; height: 3rem; 
-            background: var(--orange-primary) !important;
-            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-dark) 100%) !important;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            color: white; margin: 0 auto; flex-shrink: 0;
-        }
-        
         .container-custom { 
             max-width: 1200px; margin: 0 auto; padding: 0 1rem; 
         }
@@ -73,14 +63,6 @@
             margin: 1rem 0; display: none;
         }
         
-        .gallery-scroll {
-            display: flex; gap: 1rem; overflow-x: auto; padding: 1rem 0;
-            scrollbar-width: thin; scrollbar-color: var(--orange-primary) #f1f1f1;
-        }
-        .gallery-scroll::-webkit-scrollbar { height: 8px; }
-        .gallery-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
-        .gallery-scroll::-webkit-scrollbar-thumb { background: var(--orange-primary); border-radius: 4px; }
-        
         .bike-photo {
             min-width: 280px; height: 200px; object-fit: cover; border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;
@@ -88,6 +70,12 @@
         .bike-photo:hover { transform: scale(1.05); }
         
         .icon { width: 24px; height: 24px; fill: currentColor; }
+        
+        input:focus, textarea:focus {
+            border-color: var(--orange-primary) !important;
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1) !important;
+            outline: none !important;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900" style="scroll-behavior: smooth;">
@@ -314,6 +302,182 @@
         </div>
     </section>
 
+    <!-- Equipment Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 orange-force" data-ru="Наши велосипеды" data-en="Our Bikes">Наши велосипеды</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Профессиональные электровелосипеды с лучшими характеристиками для эффективной работы курьеров" data-en="Professional electric bikes with the best characteristics for efficient courier work">
+                    Профессиональные электровелосипеды с лучшими характеристиками для эффективной работы курьеров
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="bike3.jpg" alt="Электровелосипед RowerHub" class="w-full rounded-xl shadow-lg" onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 orange-force" data-ru="Технические характеристики" data-en="Technical Specifications">Технические характеристики</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <div class="bg-orange-force text-white p-2 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
+                                    <line x1="23" y1="13" x2="23" y2="11"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1" data-ru="Батарея" data-en="Battery">Батарея</h4>
+                                <p class="text-gray-600" data-ru="36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км." data-en="36V, 10.4Ah Samsung lithium-ion battery. Range up to 80 km.">36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <div class="bg-orange-force text-white p-2 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="12" y1="8" x2="12" y2="12"/>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1" data-ru="Мотор" data-en="Motor">Мотор</h4>
+                                <p class="text-gray-600" data-ru="Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч." data-en="Bafang 250W rear-wheel motor. Maximum speed 25 km/h.">Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <div class="bg-orange-force text-white p-2 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"/>
+                                    <path d="M21 12c.552 0 1-.449 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .551.448 1 1 1v7c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-7z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1" data-ru="Безопасность" data-en="Security">Безопасность</h4>
+                                <p class="text-gray-600" data-ru="Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары." data-en="ABUS Bordo 6000 lock, AirTag GPS tracker, LED headlights.">Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <div class="bg-orange-force text-white p-2 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1" data-ru="Дополнительно" data-en="Additional">Дополнительно</h4>
+                                <p class="text-gray-600" data-ru="Багажник 25 кг, брызговики, подножка, регулируемое седло." data-en="25 kg luggage rack, fenders, kickstand, adjustable saddle.">Багажник 25 кг, брызговики, подножка, регулируемое седло.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section class="py-20 bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 orange-force" data-ru="Правила аренды" data-en="Rental Rules">Правила аренды</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Простые и понятные условия аренды для комфортной и безопасной работы" data-en="Simple and clear rental conditions for comfortable and safe work">
+                    Простые и понятные условия аренды для комфортной и безопасной работы
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 orange-force" data-ru="Условия аренды" data-en="Rental Conditions">Условия аренды</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Минимальный срок аренды: 1 день" data-en="Minimum rental period: 1 day">Минимальный срок аренды: 1 день</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Залог: 500 злотых (возвращается)" data-en="Deposit: 500 zloty (refundable)">Залог: 500 злотых (возвращается)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Документы: паспорт или ID карта" data-en="Documents: passport or ID card">Документы: паспорт или ID карта</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Возраст: от 18 лет" data-en="Age: from 18 years">Возраст: от 18 лет</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 orange-force" data-ru="Обязанности арендатора" data-en="Tenant Responsibilities">Обязанности арендатора</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Всегда используйте замок при парковке" data-en="Always use the lock when parking">Всегда используйте замок при парковке</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Заряжайте батарею каждую ночь" data-en="Charge the battery every night">Заряжайте батарею каждую ночь</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Соблюдайте правила дорожного движения" data-en="Follow traffic rules">Соблюдайте правила дорожного движения</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Немедленно сообщайте о повреждениях" data-en="Report damage immediately">Немедленно сообщайте о повреждениях</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 orange-force" data-ru="Что включено" data-en="What's Included">Что включено</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Полностью заряженная батарея" data-en="Fully charged battery">Полностью заряженная батарея</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Зарядное устройство" data-en="Charger">Зарядное устройство</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Замок ABUS и ключи" data-en="ABUS lock and keys">Замок ABUS и ключи</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="24/7 техническая поддержка" data-en="24/7 technical support">24/7 техническая поддержка</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 orange-force" data-ru="Штрафы и повреждения" data-en="Fines and Damages">Штрафы и повреждения</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Потеря велосипеда: полная стоимость" data-en="Bike loss: full cost">Потеря велосипеда: полная стоимость</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Потеря ключей: 50 злотых" data-en="Key loss: 50 zloty">Потеря ключей: 50 злотых</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Повреждения: по стоимости ремонта" data-en="Damage: at repair cost">Повреждения: по стоимости ремонта</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="orange-force mr-2 mt-1">•</span>
+                            <span data-ru="Просрочка возврата: +50% за день" data-en="Late return: +50% per day">Просрочка возврата: +50% за день</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section class="py-20 bg-gradient-to-b from-gray-900 to-black text-white">
         <div class="container-custom">
@@ -391,37 +555,29 @@
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-ru="Имя и фамилия" data-en="Name and surname">Имя и фамилия</label>
                         <input type="text" name="name" id="name" required 
-                               class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none" 
-                               style="border-color: #e5e7eb;" 
-                               onFocus="this.style.borderColor='#ea580c'; this.style.boxShadow='0 0 0 3px rgba(234, 88, 12, 0.1)'" 
-                               onBlur="this.style.borderColor='#e5e7eb'; this.style.boxShadow='none'" 
+                               class="w-full p-3 border border-gray-300 rounded-lg text-gray-900" 
+                               placeholder="Введите ваше имя"
                                data-ru-placeholder="Введите ваше имя" data-en-placeholder="Enter your name">
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-ru="Email" data-en="Email">Email</label>
                         <input type="email" name="email" id="email" required 
-                               class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none" 
-                               style="border-color: #e5e7eb;" 
-                               onFocus="this.style.borderColor='#ea580c'; this.style.boxShadow='0 0 0 3px rgba(234, 88, 12, 0.1)'" 
-                               onBlur="this.style.borderColor='#e5e7eb'; this.style.boxShadow='none'" 
+                               class="w-full p-3 border border-gray-300 rounded-lg text-gray-900" 
+                               placeholder="Введите ваш email"
                                data-ru-placeholder="Введите ваш email" data-en-placeholder="Enter your email">
                     </div>
                     <div>
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" data-ru="Телефон" data-en="Phone">Телефон</label>
                         <input type="tel" name="phone" id="phone" required 
-                               class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none" 
-                               style="border-color: #e5e7eb;" 
-                               onFocus="this.style.borderColor='#ea580c'; this.style.boxShadow='0 0 0 3px rgba(234, 88, 12, 0.1)'" 
-                               onBlur="this.style.borderColor='#e5e7eb'; this.style.boxShadow='none'" 
+                               class="w-full p-3 border border-gray-300 rounded-lg text-gray-900" 
+                               placeholder="Введите ваш телефон"
                                data-ru-placeholder="Введите ваш телефон" data-en-placeholder="Enter your phone number">
                     </div>
                     <div>
                         <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-ru="Сообщение" data-en="Message">Сообщение</label>
                         <textarea name="message" id="message" rows="4" 
-                                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none" 
-                                  style="border-color: #e5e7eb;" 
-                                  onFocus="this.style.borderColor='#ea580c'; this.style.boxShadow='0 0 0 3px rgba(234, 88, 12, 0.1)'" 
-                                  onBlur="this.style.borderColor='#e5e7eb'; this.style.boxShadow='none'" 
+                                  class="w-full p-3 border border-gray-300 rounded-lg text-gray-900" 
+                                  placeholder="Расскажите о ваших потребностях в аренде велосипеда..."
                                   data-ru-placeholder="Расскажите о ваших потребностях в аренде велосипеда..." data-en-placeholder="Tell us about your bike rental needs..."></textarea>
                     </div>
                     <button type="submit" class="btn-primary w-full text-lg py-3" data-ru="Отправить заявку" data-en="Send Request">
@@ -518,7 +674,7 @@
 
 🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
 
-                await fetch(`https://api.telegram.org/bot6838629436:AAGbWVh7OrjkUmYCcQHaOe-lXCYoU_0uYK8/sendMessage`, {
+                const response = await fetch(`https://api.telegram.org/bot6838629436:AAGbWVh7OrjkUmYCcQHaOe-lXCYoU_0uYK8/sendMessage`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -527,14 +683,19 @@
                     })
                 });
                 
-                document.getElementById('successMessage').style.display = 'block';
-                this.reset();
-                
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
+                if (response.ok) {
+                    document.getElementById('successMessage').style.display = 'block';
+                    this.reset();
+                    
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Failed to send message');
+                }
                 
             } catch (error) {
+                console.error('Error:', error);
                 alert(currentLanguage === 'ru' 
                     ? 'Произошла ошибка при отправке. Попробуйте еще раз.' 
                     : 'An error occurred while sending. Please try again.');

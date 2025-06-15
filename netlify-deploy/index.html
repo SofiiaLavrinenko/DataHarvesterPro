@@ -4,98 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RowerHub.bike - Аренда электровелосипедов во Вроцлаве</title>
-    <meta name="description" content="Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежные велосипеды, доступные цены, круглосуточная поддержка.">
-    <!-- FORCE CACHE REFRESH: 2025-06-15-17:30 -->
-    <script src="https://cdn.tailwindcss.com?v=3.4.0"></script>
-    <script>
-        window.tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        orange: {
-                            500: '#ea580c',
-                            600: '#ea580c',
-                            400: '#ea580c',
-                            700: '#ea580c'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content="Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. От 26 зл/день. Надежные велосипеды, круглосуточная поддержка.">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
-        
-        /* ПРИНУДИТЕЛЬНАЯ ТЕМНО-ОРАНЖЕВАЯ СХЕМА */
-        :root {
-            --primary-orange: #ea580c;
-            --primary-orange-dark: #c2410c;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
         
-        /* УНИВЕРСАЛЬНОЕ ПЕРЕБИВАНИЕ ВСЕХ ОРАНЖЕВЫХ ЦВЕТОВ */
-        .bg-orange-500, .bg-orange-600, .text-orange-500, .text-orange-600,
-        [class*="bg-orange"], [class*="text-orange"], [class*="border-orange"] {
-            background-color: var(--primary-orange) !important;
-            color: var(--primary-orange) !important;
-            border-color: var(--primary-orange) !important;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #1f2937;
         }
         
-        .orange-dark { color: var(--primary-orange) !important; }
-        .bg-orange-dark { background-color: var(--primary-orange) !important; }
+        /* ТЕМНО-ОРАНЖЕВАЯ СХЕМА #ea580c */
+        .orange-primary { color: #ea580c !important; }
+        .bg-orange-primary { background-color: #ea580c !important; }
+        .border-orange-primary { border-color: #ea580c !important; }
         
-        .hero-bg { 
-            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
+        .hero-bg {
+            background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
         }
         
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
-            color: white; padding: 12px 32px; border-radius: 8px;
-            font-weight: 600; transition: all 0.3s; border: none; cursor: pointer;
-            text-decoration: none; display: inline-block;
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-        .btn-primary:hover { 
-            transform: translateY(-2px); 
+        
+        .btn:hover {
+            transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
         }
         
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-        .card { 
-            background: white; border-radius: 12px; padding: 24px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
         }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px rgba(0,0,0,0.1); }
         
-        .icon { width: 24px; height: 24px; fill: currentColor; }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+        
         .feature-icon {
-            width: 48px; height: 48px; background: var(--primary-orange);
-            border-radius: 8px; display: flex; align-items: center; justify-content: center;
-            color: white; margin-bottom: 16px;
+            width: 48px;
+            height: 48px;
+            background: #ea580c;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 16px;
         }
         
-        .success-msg {
-            background: #10b981; color: white; padding: 16px; border-radius: 8px;
-            margin: 16px 0; display: none;
+        .pricing-highlight {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ea580c;
+        }
+        
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+            display: none;
         }
         
         input:focus, textarea:focus {
-            border-color: var(--primary-orange) !important;
-            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1) !important;
-            outline: none !important;
+            outline: none;
+            border-color: #ea580c;
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+        }
+        
+        .language-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .language-btn.active {
+            background: #ea580c;
+            color: white;
+        }
+        
+        .language-btn.inactive {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+        
+        .gallery-scroll {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            padding: 16px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #ea580c #f1f1f1;
+        }
+        
+        .gallery-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: #ea580c;
+            border-radius: 4px;
+        }
+        
+        .bike-image {
+            width: 320px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .bike-image:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body>
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold orange-dark">RowerHub.bike</div>
-            <div class="flex gap-2">
-                <button onclick="setLanguage('ru')" id="btn-ru" class="px-3 py-1 rounded text-sm text-white bg-orange-dark">RU</button>
-                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded text-sm bg-gray-100 text-gray-600">EN</button>
+        <div class="container">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold orange-primary">RowerHub.bike</div>
+                <div class="flex gap-2">
+                    <button onclick="setLanguage('ru')" id="btn-ru" class="language-btn active">RU</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="language-btn inactive">EN</button>
+                </div>
             </div>
         </div>
     </header>
@@ -111,55 +180,52 @@
                     <p class="text-xl mb-8 opacity-90" data-ru="Профессиональные решения мобильности во Вроцлаве. Надежность, скорость и экономия для вашего успеха в курьерском бизнесе." data-en="Professional mobility solutions in Wrocław. Reliability, speed and economy for your courier business success.">
                         Профессиональные решения мобильности во Вроцлаве. Надежность, скорость и экономия для вашего успеха в курьерском бизнесе.
                     </p>
-                    <button onclick="scrollToContact()" class="btn-primary text-lg mb-8" data-ru="Забронировать сейчас" data-en="Book now">
+                    <a href="#contact" class="btn text-lg mb-8" data-ru="Забронировать сейчас" data-en="Book now">
                         Забронировать сейчас
-                    </button>
+                    </a>
                     
+                    <!-- Hero Features -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-                        <div class="bg-gray-900 border border-gray-700 p-4 rounded-xl">
+                        <div class="bg-black/20 backdrop-blur-sm border border-white/10 p-4 rounded-xl">
                             <div class="flex items-start">
-                                <div class="bg-gray-800 p-3 rounded-lg mr-4 flex-shrink-0">
-                                    <svg class="icon" style="color: #ea580c;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <div class="bg-black/30 p-3 rounded-lg mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
                                         <line x1="23" y1="13" x2="23" y2="11"/>
                                     </svg>
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-white text-lg mb-1" data-ru="Долгий срок службы батареи" data-en="Long battery life">Долгий срок службы батареи</h3>
-                                    <p class="text-sm text-gray-300" data-ru="До 80 км на одном заряде" data-en="Up to 80 km on single charge">До 80 км на одном заряде</p>
+                                    <p class="text-sm text-gray-200" data-ru="До 80 км на одном заряде" data-en="Up to 80 km on single charge">До 80 км на одном заряде</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="bg-gray-900 border border-gray-700 p-4 rounded-xl">
+                        <div class="bg-black/20 backdrop-blur-sm border border-white/10 p-4 rounded-xl">
                             <div class="flex items-start">
-                                <div class="bg-gray-800 p-3 rounded-lg mr-4 flex-shrink-0">
-                                    <svg class="icon" style="color: #ea580c;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <div class="bg-black/30 p-3 rounded-lg mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                         <circle cx="12" cy="10" r="3"/>
                                     </svg>
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-white text-lg mb-1" data-ru="Идеально для города" data-en="Perfect for the city">Идеально для города</h3>
-                                    <p class="text-sm text-gray-300" data-ru="Маневренность в городских условиях" data-en="Maneuverability in urban conditions">Маневренность в городских условиях</p>
+                                    <p class="text-sm text-gray-200" data-ru="Маневренность в городских условиях" data-en="Maneuverability in urban conditions">Маневренность в городских условиях</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div>
-                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
-                        <img src="bike3.jpg" 
-                             alt="Электровелосипеды RowerHub для курьеров" 
-                             class="w-full h-auto rounded-xl"
-                             onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
-                        <div class="absolute bottom-0 left-0 right-0 bg-black/70 p-5 backdrop-blur-sm">
-                            <div class="text-white">
-                                <p class="font-medium text-lg" data-ru="Профессиональное оборудование" data-en="Professional equipment">Профессиональное оборудование</p>
-                                <p class="text-sm text-gray-200" data-ru="Готово к работе прямо сейчас" data-en="Ready to work right now">Готово к работе прямо сейчас</p>
-                            </div>
-                        </div>
+                <div class="relative">
+                    <img src="bike3.jpg" 
+                         alt="Электровелосипеды RowerHub для курьеров" 
+                         class="w-full rounded-xl shadow-2xl"
+                         onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
+                    <div class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white p-4 rounded-lg">
+                        <p class="font-medium" data-ru="Профессиональное оборудование" data-en="Professional equipment">Профессиональное оборудование</p>
+                        <p class="text-sm text-gray-200" data-ru="Готово к работе прямо сейчас" data-en="Ready to work right now">Готово к работе прямо сейчас</p>
                     </div>
                 </div>
             </div>
@@ -170,94 +236,107 @@
     <section class="py-20 bg-white">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 orange-dark" data-ru="Почему выбирают нас" data-en="Why choose us">Почему выбирают нас</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Современные электровелосипеды с передовыми технологиями для максимальной эффективности вашего бизнеса</p>
+                <h2 class="text-3xl font-bold mb-4 orange-primary" data-ru="Почему выбирают нас" data-en="Why choose us">Почему выбирают нас</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Современные электровелосипеды с передовыми технологиями для максимальной эффективности вашего бизнеса" data-en="Modern electric bikes with advanced technologies for maximum efficiency of your business">
+                    Современные электровелосипеды с передовыми технологиями для максимальной эффективности вашего бизнеса
+                </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
                 <div class="card">
                     <div class="feature-icon">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
                             <line x1="23" y1="13" x2="23" y2="11"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2" data-ru="Долгий срок службы батареи" data-en="Long battery life">Долгий срок службы батареи</h3>
-                    <p class="text-gray-600">Мощная батарея обеспечивает до 80 км пробега на одном заряде, идеально для полного рабочего дня курьера</p>
+                    <p class="text-gray-600" data-ru="Мощная батарея обеспечивает до 80 км пробега на одном заряде, идеально для полного рабочего дня курьера" data-en="Powerful battery provides up to 80 km range on single charge, perfect for courier's full working day">
+                        Мощная батарея обеспечивает до 80 км пробега на одном заряде, идеально для полного рабочего дня курьера
+                    </p>
                 </div>
                 
+                <!-- Feature 2 -->
                 <div class="card">
                     <div class="feature-icon">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Высокая скорость доставки</h3>
-                    <p class="text-gray-600">Электропривод позволяет развивать скорость до 25 км/ч, значительно увеличивая количество выполненных заказов</p>
+                    <h3 class="text-xl font-semibold mb-2" data-ru="Высокая скорость доставки" data-en="High delivery speed">Высокая скорость доставки</h3>
+                    <p class="text-gray-600" data-ru="Электропривод позволяет развивать скорость до 25 км/ч, значительно увеличивая количество выполненных заказов" data-en="Electric drive allows speeds up to 25 km/h, significantly increasing completed orders">
+                        Электропривод позволяет развивать скорость до 25 км/ч, значительно увеличивая количество выполненных заказов
+                    </p>
                 </div>
                 
+                <!-- Feature 3 -->
                 <div class="card">
                     <div class="feature-icon">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="10"/>
                             <polyline points="12,6 12,12 16,14"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Быстрая зарядка</h3>
-                    <p class="text-gray-600">Полная зарядка батареи всего за 4-6 часов. Съемная батарея для удобства зарядки дома или в офисе</p>
+                    <h3 class="text-xl font-semibold mb-2" data-ru="Быстрая зарядка" data-en="Quick charging">Быстрая зарядка</h3>
+                    <p class="text-gray-600" data-ru="Полная зарядка батареи всего за 4-6 часов. Съемная батарея для удобства зарядки дома или в офисе" data-en="Full battery charge in just 4-6 hours. Removable battery for convenient charging at home or office">
+                        Полная зарядка батареи всего за 4-6 часов. Съемная батарея для удобства зарядки дома или в офисе
+                    </p>
                 </div>
                 
+                <!-- Feature 4 -->
                 <div class="card">
                     <div class="feature-icon">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M9 12l2 2 4-4"/>
                             <circle cx="12" cy="5" r="3"/>
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Максимальная безопасность</h3>
-                    <p class="text-gray-600">Немецкий замок ABUS высшего класса защиты и встроенная система отслеживания для защиты от краж</p>
+                    <h3 class="text-xl font-semibold mb-2" data-ru="Максимальная безопасность" data-en="Maximum security">Максимальная безопасность</h3>
+                    <p class="text-gray-600" data-ru="Немецкий замок ABUS высшего класса защиты и встроенная система отслеживания для защиты от краж" data-en="German ABUS lock of highest protection class and built-in tracking system for theft protection">
+                        Немецкий замок ABUS высшего класса защиты и встроенная система отслеживания для защиты от краж
+                    </p>
                 </div>
                 
+                <!-- Feature 5 -->
                 <div class="card">
                     <div class="feature-icon">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">GPS отслеживание</h3>
-                    <p class="text-gray-600">Встроенный AirTag для постоянного контроля местоположения велосипеда и предотвращения потерь</p>
+                    <h3 class="text-xl font-semibold mb-2" data-ru="GPS отслеживание" data-en="GPS tracking">GPS отслеживание</h3>
+                    <p class="text-gray-600" data-ru="Встроенный AirTag для постоянного контроля местоположения велосипеда и предотвращения потерь" data-en="Built-in AirTag for constant bike location control and loss prevention">
+                        Встроенный AirTag для постоянного контроля местоположения велосипеда и предотвращения потерь
+                    </p>
                 </div>
                 
+                <!-- Feature 6 -->
                 <div class="card">
                     <div class="feature-icon">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Поддержка 24/7</h3>
-                    <p class="text-gray-600">Круглосуточная техническая поддержка, быстрая замена велосипеда в случае поломки и помощь на дороге</p>
+                    <h3 class="text-xl font-semibold mb-2" data-ru="Поддержка 24/7" data-en="24/7 Support">Поддержка 24/7</h3>
+                    <p class="text-gray-600" data-ru="Круглосуточная техническая поддержка, быстрая замена велосипеда в случае поломки и помощь на дороге" data-en="24/7 technical support, quick bike replacement in case of breakdown and roadside assistance">
+                        Круглосуточная техническая поддержка, быстрая замена велосипеда в случае поломки и помощь на дороге
+                    </p>
                 </div>
             </div>
             
-            <!-- Photo Gallery -->
+            <!-- Gallery -->
             <div class="mt-16">
-                <h3 class="text-2xl font-bold text-center mb-8 orange-dark">Наши велосипеды</h3>
-                <div class="flex gap-6 overflow-x-auto pb-4">
-                    <div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                        <img src="bike3.jpg" alt="Главный велосипед RowerHub" class="w-full h-full object-cover" onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
-                    </div>
-                    <div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                        <img src="bike2.jpg" alt="Велосипеды готовы к работе" class="w-full h-full object-cover" onerror="this.src='https://i.ibb.co/gFNYn8X/photo-2025-05-28-23-37-30.jpg'">
-                    </div>
-                    <div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                        <img src="bike1.jpg" alt="Велосипед с оборудованием" class="w-full h-full object-cover" onerror="this.src='https://i.ibb.co/C8JyRZB/photo-2025-05-28-23-37-26.jpg'">
-                    </div>
-                    <div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                        <img src="bike4.jpg" alt="Быстрая зарядка аккумулятора" class="w-full h-full object-cover" onerror="this.src='https://i.ibb.co/ZzQRG4J/photo-2025-05-28-23-37-36.jpg'">
-                    </div>
+                <h3 class="text-2xl font-bold text-center mb-8 orange-primary" data-ru="Наши велосипеды" data-en="Our bikes">Наши велосипеды</h3>
+                <div class="gallery-scroll">
+                    <img src="bike3.jpg" alt="Главный велосипед RowerHub" class="bike-image" onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
+                    <img src="bike2.jpg" alt="Велосипеды готовы к работе" class="bike-image" onerror="this.src='https://i.ibb.co/gFNYn8X/photo-2025-05-28-23-37-30.jpg'">
+                    <img src="bike1.jpg" alt="Велосипед с оборудованием" class="bike-image" onerror="this.src='https://i.ibb.co/C8JyRZB/photo-2025-05-28-23-37-26.jpg'">
+                    <img src="bike4.jpg" alt="Быстрая зарядка аккумулятора" class="bike-image" onerror="this.src='https://i.ibb.co/ZzQRG4J/photo-2025-05-28-23-37-36.jpg'">
                 </div>
+                <p class="text-center text-gray-500 mt-4 text-sm" data-ru="Пролистайте горизонтально, чтобы увидеть больше фото" data-en="Scroll horizontally to see more photos">Пролистайте горизонтально, чтобы увидеть больше фото</p>
             </div>
         </div>
     </section>
@@ -266,8 +345,10 @@
     <section class="py-20 bg-gray-50">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 orange-dark">Наши велосипеды</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Профессиональные электровелосипеды с лучшими характеристиками для эффективной работы курьеров</p>
+                <h2 class="text-3xl font-bold mb-4 orange-primary" data-ru="Наши велосипеды" data-en="Our Bikes">Наши велосипеды</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Профессиональные электровелосипеды с лучшими характеристиками для эффективной работы курьеров" data-en="Professional electric bikes with the best characteristics for efficient courier work">
+                    Профессиональные электровелосипеды с лучшими характеристиками для эффективной работы курьеров
+                </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -275,58 +356,58 @@
                     <img src="bike3.jpg" alt="Электровелосипед RowerHub" class="w-full rounded-xl shadow-lg" onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
                 </div>
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 orange-dark">Технические характеристики</h3>
+                    <h3 class="text-2xl font-bold mb-6 orange-primary" data-ru="Технические характеристики" data-en="Technical Specifications">Технические характеристики</h3>
                     <div class="space-y-4">
                         <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                            <div class="bg-orange-dark text-white p-2 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <div class="bg-orange-primary text-white p-2 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
                                     <line x1="23" y1="13" x2="23" y2="11"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold mb-1">Батарея</h4>
-                                <p class="text-gray-600">36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км.</p>
+                                <h4 class="font-semibold mb-1" data-ru="Батарея" data-en="Battery">Батарея</h4>
+                                <p class="text-gray-600" data-ru="36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км." data-en="36V, 10.4Ah Samsung lithium-ion battery. Range up to 80 km.">36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                            <div class="bg-orange-dark text-white p-2 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <div class="bg-orange-primary text-white p-2 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10"/>
                                     <line x1="12" y1="8" x2="12" y2="12"/>
                                     <line x1="12" y1="16" x2="12.01" y2="16"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold mb-1">Мотор</h4>
-                                <p class="text-gray-600">Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч.</p>
+                                <h4 class="font-semibold mb-1" data-ru="Мотор" data-en="Motor">Мотор</h4>
+                                <p class="text-gray-600" data-ru="Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч." data-en="Bafang 250W rear-wheel motor. Maximum speed 25 km/h.">Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                            <div class="bg-orange-dark text-white p-2 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <div class="bg-orange-primary text-white p-2 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path d="M9 12l2 2 4-4"/>
                                     <circle cx="12" cy="5" r="3"/>
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold mb-1">Безопасность</h4>
-                                <p class="text-gray-600">Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары.</p>
+                                <h4 class="font-semibold mb-1" data-ru="Безопасность" data-en="Security">Безопасность</h4>
+                                <p class="text-gray-600" data-ru="Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары." data-en="ABUS Bordo 6000 lock, AirTag GPS tracker, LED headlights.">Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                            <div class="bg-orange-dark text-white p-2 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <div class="bg-orange-primary text-white p-2 rounded-lg mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold mb-1">Дополнительно</h4>
-                                <p class="text-gray-600">Багажник 25 кг, брызговики, подножка, регулируемое седло.</p>
+                                <h4 class="font-semibold mb-1" data-ru="Дополнительно" data-en="Additional">Дополнительно</h4>
+                                <p class="text-gray-600" data-ru="Багажник 25 кг, брызговики, подножка, регулируемое седло." data-en="25 kg luggage rack, fenders, kickstand, adjustable saddle.">Багажник 25 кг, брызговики, подножка, регулируемое седло.</p>
                             </div>
                         </div>
                     </div>
@@ -339,95 +420,97 @@
     <section class="py-20 bg-white">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 orange-dark">Правила аренды</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Простые и понятные условия аренды для комфортной и безопасной работы</p>
+                <h2 class="text-3xl font-bold mb-4 orange-primary" data-ru="Правила аренды" data-en="Rental Rules">Правила аренды</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Простые и понятные условия аренды для комфортной и безопасной работы" data-en="Simple and clear rental conditions for comfortable and safe work">
+                    Простые и понятные условия аренды для комфортной и безопасной работы
+                </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="bg-gray-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-4 orange-dark">Условия аренды</h3>
+                    <h3 class="text-xl font-semibold mb-4 orange-primary" data-ru="Условия аренды" data-en="Rental Conditions">Условия аренды</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Минимальный срок аренды: 1 день</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Минимальный срок аренды: 1 день" data-en="Minimum rental period: 1 day">Минимальный срок аренды: 1 день</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Залог: 500 злотых (возвращается)</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Залог: 500 злотых (возвращается)" data-en="Deposit: 500 zloty (refundable)">Залог: 500 злотых (возвращается)</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Документы: паспорт или ID карта</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Документы: паспорт или ID карта" data-en="Documents: passport or ID card">Документы: паспорт или ID карта</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Возраст: от 18 лет</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Возраст: от 18 лет" data-en="Age: from 18 years">Возраст: от 18 лет</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-gray-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-4 orange-dark">Обязанности арендатора</h3>
+                    <h3 class="text-xl font-semibold mb-4 orange-primary" data-ru="Обязанности арендатора" data-en="Tenant Responsibilities">Обязанности арендатора</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Всегда используйте замок при парковке</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Всегда используйте замок при парковке" data-en="Always use the lock when parking">Всегда используйте замок при парковке</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Заряжайте батарею каждую ночь</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Заряжайте батарею каждую ночь" data-en="Charge the battery every night">Заряжайте батарею каждую ночь</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Соблюдайте правила дорожного движения</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Соблюдайте правила дорожного движения" data-en="Follow traffic rules">Соблюдайте правила дорожного движения</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Немедленно сообщайте о повреждениях</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Немедленно сообщайте о повреждениях" data-en="Report damage immediately">Немедленно сообщайте о повреждениях</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-gray-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-4 orange-dark">Что включено</h3>
+                    <h3 class="text-xl font-semibold mb-4 orange-primary" data-ru="Что включено" data-en="What's Included">Что включено</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Полностью заряженная батарея</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Полностью заряженная батарея" data-en="Fully charged battery">Полностью заряженная батарея</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Зарядное устройство</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Зарядное устройство" data-en="Charger">Зарядное устройство</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Замок ABUS и ключи</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Замок ABUS и ключи" data-en="ABUS lock and keys">Замок ABUS и ключи</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>24/7 техническая поддержка</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="24/7 техническая поддержка" data-en="24/7 technical support">24/7 техническая поддержка</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-gray-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-4 orange-dark">Штрафы и повреждения</h3>
+                    <h3 class="text-xl font-semibold mb-4 orange-primary" data-ru="Штрафы и повреждения" data-en="Fines and Damages">Штрафы и повреждения</h3>
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Потеря велосипеда: полная стоимость</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Потеря велосипеда: полная стоимость" data-en="Bike loss: full cost">Потеря велосипеда: полная стоимость</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Потеря ключей: 50 злотых</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Потеря ключей: 50 злотых" data-en="Key loss: 50 zloty">Потеря ключей: 50 злотых</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Повреждения: по стоимости ремонта</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Повреждения: по стоимости ремонта" data-en="Damage: at repair cost">Повреждения: по стоимости ремонта</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="orange-dark mr-2 mt-1">•</span>
-                            <span>Просрочка возврата: +50% за день</span>
+                            <span class="orange-primary mr-2 mt-1">•</span>
+                            <span data-ru="Просрочка возврата: +50% за день" data-en="Late return: +50% per day">Просрочка возврата: +50% за день</span>
                         </li>
                     </ul>
                 </div>
@@ -439,99 +522,109 @@
     <section class="py-20 bg-gradient-to-b from-gray-900 to-black text-white">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Выгодные тарифы</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Подберите оптимальный вариант аренды с технической поддержкой и гарантией качества.</p>
+                <h2 class="text-3xl font-bold mb-4" data-ru="Выгодные тарифы" data-en="Affordable Pricing">Выгодные тарифы</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto" data-ru="Подберите оптимальный вариант аренды с технической поддержкой и гарантией качества." data-en="Choose the optimal rental option with technical support and quality guarantee.">
+                    Подберите оптимальный вариант аренды с технической поддержкой и гарантией качества.
+                </p>
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <div class="bg-gradient-to-r from-gray-900 to-black rounded-xl shadow-2xl p-8 border-2" style="border-color: #ea580c;">
-                    <div class="text-white text-sm font-semibold uppercase py-2 px-4 rounded-full inline-block mb-6 shadow-lg" style="background-color: #ea580c;">
+                <div class="bg-gradient-to-r from-gray-900 to-black rounded-xl shadow-2xl p-8 border-2 border-orange-primary">
+                    <div class="bg-orange-primary text-white text-sm font-semibold uppercase py-2 px-4 rounded-full inline-block mb-6">
                         <div class="flex items-center">
-                            <svg class="icon mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                             </svg>
-                            <span>Аренда электровелосипедов</span>
+                            <span data-ru="Аренда электровелосипедов" data-en="Electric bike rental">Аренда электровелосипедов</span>
                         </div>
                     </div>
                     
                     <div class="mb-12 text-center">
-                        <span class="text-6xl font-bold drop-shadow-lg" style="color: #ea580c;">от 26 зл</span>
-                        <span class="text-2xl text-gray-300 ml-2">/день</span>
+                        <span class="pricing-highlight" data-ru="от 26 зл" data-en="from 26 zł">от 26 зл</span>
+                        <span class="text-2xl text-gray-300 ml-2" data-ru="/день" data-en="/day">/день</span>
                     </div>
                     
                     <div class="mb-10">
                         <ul class="space-y-5">
                             <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="mr-3 mt-0.5 text-lg" style="color: #ea580c;">✓</span>
-                                <span class="text-gray-200">Долгий срок службы батареи до 80 км</span>
+                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                                <span class="text-gray-200" data-ru="Долгий срок службы батареи до 80 км" data-en="Long battery life up to 80 km">Долгий срок службы батареи до 80 км</span>
                             </li>
                             <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="mr-3 mt-0.5 text-lg" style="color: #ea580c;">✓</span>
-                                <span class="text-gray-200">Идеально для города - маневренность и скорость</span>
+                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                                <span class="text-gray-200" data-ru="Идеально для города - маневренность и скорость" data-en="Perfect for the city - maneuverability and speed">Идеально для города - маневренность и скорость</span>
                             </li>
                             <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="mr-3 mt-0.5 text-lg" style="color: #ea580c;">✓</span>
-                                <span class="text-gray-200">Надежный велосипедный замок ABUS</span>
+                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                                <span class="text-gray-200" data-ru="Надежный велосипедный замок ABUS" data-en="Reliable ABUS bike lock">Надежный велосипедный замок ABUS</span>
                             </li>
                             <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="mr-3 mt-0.5 text-lg" style="color: #ea580c;">✓</span>
-                                <span class="text-gray-200">GPS отслеживание с AirTag</span>
+                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                                <span class="text-gray-200" data-ru="GPS отслеживание с AirTag" data-en="GPS tracking with AirTag">GPS отслеживание с AirTag</span>
                             </li>
                             <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="mr-3 mt-0.5 text-lg" style="color: #ea580c;">✓</span>
-                                <span class="text-gray-200">Техподдержка и обслуживание 24/7</span>
+                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                                <span class="text-gray-200" data-ru="Техподдержка и обслуживание 24/7" data-en="24/7 technical support and maintenance">Техподдержка и обслуживание 24/7</span>
                             </li>
                         </ul>
                     </div>
                     
-                    <button onclick="scrollToContact()" class="btn-primary w-full text-xl py-6 shadow-xl transform hover:-translate-y-1 transition duration-300">
-                        Забронировать
-                    </button>
+                    <a href="#contact" class="btn w-full text-xl py-6 text-center">
+                        <span data-ru="Забронировать" data-en="Book Now">Забронировать</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="kontakt" class="py-20 bg-gray-900 text-white">
+    <section id="contact" class="py-20 bg-gray-900 text-white">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Свяжитесь с нами</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Есть вопросы? Хотите забронировать велосипед? Наша команда готова помочь вам.</p>
+                <h2 class="text-3xl font-bold mb-4" data-ru="Свяжитесь с нами" data-en="Contact Us">Свяжитесь с нами</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto" data-ru="Есть вопросы? Хотите забронировать велосипед? Наша команда готова помочь вам." data-en="Have questions? Want to book a bike? Our team is ready to help you.">
+                    Есть вопросы? Хотите забронировать велосипед? Наша команда готова помочь вам.
+                </p>
             </div>
             
             <div class="max-w-lg mx-auto bg-white rounded-lg p-8">
                 <form id="contactForm" class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Имя и фамилия</label>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-ru="Имя и фамилия" data-en="Name and surname">Имя и фамилия</label>
                         <input type="text" name="name" id="name" required 
                                class="w-full p-3 border border-gray-300 rounded-lg text-gray-900" 
-                               placeholder="Введите ваше имя">
+                               placeholder="Введите ваше имя"
+                               data-ru-placeholder="Введите ваше имя" data-en-placeholder="Enter your name">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-ru="Email" data-en="Email">Email</label>
                         <input type="email" name="email" id="email" required 
                                class="w-full p-3 border border-gray-300 rounded-lg text-gray-900" 
-                               placeholder="Введите ваш email">
+                               placeholder="Введите ваш email"
+                               data-ru-placeholder="Введите ваш email" data-en-placeholder="Enter your email">
                     </div>
                     <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Телефон</label>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" data-ru="Телефон" data-en="Phone">Телефон</label>
                         <input type="tel" name="phone" id="phone" required 
                                class="w-full p-3 border border-gray-300 rounded-lg text-gray-900" 
-                               placeholder="Введите ваш телефон">
+                               placeholder="Введите ваш телефон"
+                               data-ru-placeholder="Введите ваш телефон" data-en-placeholder="Enter your phone number">
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Сообщение</label>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-ru="Сообщение" data-en="Message">Сообщение</label>
                         <textarea name="message" id="message" rows="4" 
                                   class="w-full p-3 border border-gray-300 rounded-lg text-gray-900" 
-                                  placeholder="Расскажите о ваших потребностях в аренде велосипеда..."></textarea>
+                                  placeholder="Расскажите о ваших потребностях в аренде велосипеда..."
+                                  data-ru-placeholder="Расскажите о ваших потребностях в аренде велосипеда..." data-en-placeholder="Tell us about your bike rental needs..."></textarea>
                     </div>
-                    <button type="submit" class="btn-primary w-full text-lg py-3">
-                        Отправить заявку
+                    <button type="submit" class="btn w-full text-lg py-3">
+                        <span data-ru="Отправить заявку" data-en="Send Request">Отправить заявку</span>
                     </button>
                 </form>
-                <div id="successMessage" class="success-msg">
-                    <span>Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.</span>
+                <div id="successMessage" class="success-message">
+                    <span data-ru="Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время." data-en="Thank you! Your request has been sent. We will contact you soon.">
+                        Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
+                    </span>
                 </div>
             </div>
         </div>
@@ -542,23 +635,27 @@
         <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold orange-dark mb-4">RowerHub.bike</h3>
-                    <p class="text-gray-400">Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса.</p>
+                    <h3 class="text-xl font-bold orange-primary mb-4">RowerHub.bike</h3>
+                    <p class="text-gray-400" data-ru="Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса." data-en="Professional electric bike rental for couriers in Wrocław. Reliability, economy and convenience for your business.">
+                        Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса.
+                    </p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Контакты</h4>
+                    <h4 class="text-lg font-semibold mb-4" data-ru="Контакты" data-en="Contacts">Контакты</h4>
                     <p class="text-gray-400 mb-2">📧 info@rowerhub.bike</p>
                     <p class="text-gray-400 mb-2">💬 @BaitEb1ke</p>
                     <p class="text-gray-400">📍 Wrocław, Polska</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Режим работы</h4>
-                    <p class="text-gray-400 mb-2">Пн-Вс: 8:00 - 20:00</p>
-                    <p class="text-gray-400">Поддержка: 24/7</p>
+                    <h4 class="text-lg font-semibold mb-4" data-ru="Режим работы" data-en="Working Hours">Режим работы</h4>
+                    <p class="text-gray-400 mb-2" data-ru="Пн-Вс: 8:00 - 20:00" data-en="Mon-Sun: 8:00 - 20:00">Пн-Вс: 8:00 - 20:00</p>
+                    <p class="text-gray-400" data-ru="Поддержка: 24/7" data-en="Support: 24/7">Поддержка: 24/7</p>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">© 2025 RowerHub.bike. Все права защищены.</p>
+                <p class="text-gray-400" data-ru="© 2025 RowerHub.bike. Все права защищены." data-en="© 2025 RowerHub.bike. All rights reserved.">
+                    © 2025 RowerHub.bike. Все права защищены.
+                </p>
             </div>
         </div>
     </footer>
@@ -573,18 +670,36 @@
             const enBtn = document.getElementById('btn-en');
             
             if (lang === 'ru') {
-                ruBtn.className = 'px-3 py-1 rounded text-sm text-white bg-orange-dark';
-                enBtn.className = 'px-3 py-1 rounded text-sm bg-gray-100 text-gray-600';
+                ruBtn.className = 'language-btn active';
+                enBtn.className = 'language-btn inactive';
             } else {
-                enBtn.className = 'px-3 py-1 rounded text-sm text-white bg-orange-dark';
-                ruBtn.className = 'px-3 py-1 rounded text-sm bg-gray-100 text-gray-600';
+                enBtn.className = 'language-btn active';
+                ruBtn.className = 'language-btn inactive';
             }
+            
+            // Update text content
+            document.querySelectorAll('[data-ru][data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+            
+            // Update placeholders
+            document.querySelectorAll('[data-ru-placeholder][data-en-placeholder]').forEach(el => {
+                el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
+            });
         }
         
-        function scrollToContact() {
-            document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
-        }
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
         
+        // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -600,7 +715,7 @@
                 const telegramMessage = `🚴‍♂️ НОВАЯ ЗАЯВКА ROWERHUB.BIKE
                 
 👤 Имя: ${data.name}
-📧 Email: ${data.email}
+📧 Email: ${data.email}  
 📱 Телефон: ${data.phone}
 💬 Сообщение: ${data.message}
 
@@ -628,10 +743,13 @@
                 
             } catch (error) {
                 console.error('Error:', error);
-                alert('Произошла ошибка при отправке. Попробуйте еще раз.');
+                alert(currentLanguage === 'ru' 
+                    ? 'Произошла ошибка при отправке. Попробуйте еще раз.' 
+                    : 'An error occurred while sending. Please try again.');
             }
         });
         
+        // Initialize language
         setLanguage('ru');
     </script>
 </body>

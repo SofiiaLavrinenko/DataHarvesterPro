@@ -4,6 +4,9 @@
   
   # Команда сборки не нужна, так как файл уже готов
   command = "echo 'Site is ready for deployment'"
+  
+  # Указываем папку с функциями
+  functions = "netlify-deploy/netlify/functions"
 
 [build.environment]
   # Переменные окружения для сборки

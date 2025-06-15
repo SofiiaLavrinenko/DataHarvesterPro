@@ -1109,8 +1109,11 @@
                 Есть вопросы? Хотите забронировать велосипед? Наша команда готова помочь вам.
             </p>
             
-            <form id="contactForm" class="contact-form" name="contact" method="POST" data-netlify="true" action="/submit-form.html">
+            <form id="contactForm" class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/submit-form.html">
                 <input type="hidden" name="form-name" value="contact">
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
                 <div class="form-group">
                     <label for="name" class="form-label" data-ru="Имя и фамилия" data-en="Name and surname">Имя и фамилия</label>
                     <input type="text" name="name" id="name" required class="form-input" 

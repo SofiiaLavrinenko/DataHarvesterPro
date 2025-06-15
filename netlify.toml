@@ -6,7 +6,7 @@
   command = "echo 'Site is ready for deployment'"
   
   # Указываем папку с функциями
-  functions = "netlify-deploy/netlify/functions"
+  functions = "netlify/functions"
 
 [build.environment]
   # Переменные окружения для сборки

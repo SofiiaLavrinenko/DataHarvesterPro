@@ -245,6 +245,26 @@
             flex-direction: column;
         }
         
+        /* Bikes Gallery */
+        .bikes-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .bike-image {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .bike-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
         .feature-card {
             background: rgba(30, 41, 59, 0.6);
             backdrop-filter: blur(10px);
@@ -557,6 +577,31 @@
                 order: 1;
             }
             
+            /* Mobile Bikes Gallery - Horizontal Scroll */
+            .bikes-gallery {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1rem !important;
+                padding: 0 1rem;
+                margin: 0 -1rem 2rem -1rem !important;
+            }
+            
+            .bike-image {
+                flex: none;
+                width: 280px;
+                scroll-snap-align: start;
+            }
+            
+            .bikes-gallery::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .bikes-gallery {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            
             .benefits-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -788,26 +833,31 @@
         <div class="container">
             <h2 class="section-title" style="color: #1e293b; margin-bottom: 3rem;" data-ru="Наши велосипеды" data-en="Our bikes">Наши велосипеды</h2>
             
-            <div class="bikes-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                <div class="bike-image" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="bike1.jpg" 
-                         alt="Электровелосипед RowerHub 1" 
-                         style="width: 100%; height: 250px; object-fit: cover;"
-                         onerror="this.src='https://i.ibb.co/7YvQxYy/photo-2025-05-28-23-37-26.jpg'">
-                </div>
-                
-                <div class="bike-image" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="bike2.jpg" 
-                         alt="Электровелосипед RowerHub 2" 
-                         style="width: 100%; height: 250px; object-fit: cover;"
-                         onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
-                </div>
-                
-                <div class="bike-image" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="bike3.jpg" 
-                         alt="Электровелосипед RowerHub 3" 
-                         style="width: 100%; height: 250px; object-fit: cover;"
-                         onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
+            <div class="bikes-gallery-container" style="position: relative;">
+                <div class="bikes-gallery">
+                    <div class="bike-image">
+                        <img src="bike1.jpg" 
+                             alt="Электровелосипед RowerHub 1"
+                             onerror="this.src='https://i.ibb.co/7YvQxYy/photo-2025-05-28-23-37-26.jpg'">
+                    </div>
+                    
+                    <div class="bike-image">
+                        <img src="bike2.jpg" 
+                             alt="Электровелосипед RowerHub 2"
+                             onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
+                    </div>
+                    
+                    <div class="bike-image">
+                        <img src="bike3.jpg" 
+                             alt="Электровелосипед RowerHub 3"
+                             onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
+                    </div>
+                    
+                    <div class="bike-image">
+                        <img src="bike4.jpg" 
+                             alt="Электровелосипед RowerHub 4"
+                             onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
+                    </div>
                 </div>
             </div>
             

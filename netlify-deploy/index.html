@@ -17,91 +17,101 @@
         body { 
             font-family: 'Inter', sans-serif; 
             line-height: 1.6; 
-            color: #1f2937;
         }
         
-        /* ТЕМНО-ОРАНЖЕВАЯ СХЕМА #ea580c */
-        .orange-primary { color: #ea580c !important; }
-        .bg-orange-primary { background-color: #ea580c !important; }
-        .border-orange-primary { border-color: #ea580c !important; }
-        
-        .hero-bg {
-            background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+        /* Точный оранжевый цвет как на превью */
+        :root {
+            --orange: #ea580c;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
-        }
+        .orange { color: var(--orange); }
+        .bg-orange { background-color: var(--orange); }
+        .border-orange { border-color: var(--orange); }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 0 1rem;
         }
         
-        .card {
+        .hero-section {
+            background: var(--orange);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .feature-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--orange);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
+        }
+        
+        .section-card {
             background: white;
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 1rem;
+            padding: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
         
-        .card:hover {
+        .section-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: #ea580c;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .pricing-card {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            border: 2px solid var(--orange);
+            border-radius: 1rem;
+            padding: 2rem;
             color: white;
-            margin-bottom: 16px;
+            text-align: center;
         }
         
-        .pricing-highlight {
+        .pricing-amount {
             font-size: 4rem;
             font-weight: bold;
-            color: #ea580c;
-        }
-        
-        .success-message {
-            background: #10b981;
-            color: white;
-            padding: 16px;
-            border-radius: 8px;
-            margin: 16px 0;
-            display: none;
-        }
-        
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #ea580c;
-            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+            color: var(--orange);
+            line-height: 1;
         }
         
         .language-btn {
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
             border: none;
             cursor: pointer;
             font-weight: 500;
@@ -109,7 +119,7 @@
         }
         
         .language-btn.active {
-            background: #ea580c;
+            background: var(--orange);
             color: white;
         }
         
@@ -118,13 +128,28 @@
             color: #6b7280;
         }
         
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+        }
+        
         .gallery-scroll {
             display: flex;
-            gap: 24px;
+            gap: 1.5rem;
             overflow-x: auto;
-            padding: 16px 0;
+            padding: 1rem 0;
             scrollbar-width: thin;
-            scrollbar-color: #ea580c #f1f1f1;
+            scrollbar-color: var(--orange) #f1f1f1;
         }
         
         .gallery-scroll::-webkit-scrollbar {
@@ -137,7 +162,7 @@
         }
         
         .gallery-scroll::-webkit-scrollbar-thumb {
-            background: #ea580c;
+            background: var(--orange);
             border-radius: 4px;
         }
         
@@ -145,13 +170,74 @@
             width: 320px;
             height: 240px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 1rem;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
         
         .bike-image:hover {
             transform: scale(1.05);
+        }
+        
+        .spec-item {
+            display: flex;
+            align-items: start;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .spec-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--orange);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .rules-card {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        
+        .rules-card h3 {
+            color: var(--orange);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .rules-list li {
+            display: flex;
+            align-items: start;
+            margin-bottom: 0.75rem;
+            color: #374151;
+        }
+        
+        .rules-list li::before {
+            content: "•";
+            color: var(--orange);
+            font-weight: bold;
+            margin-right: 0.5rem;
+            margin-top: 0.125rem;
         }
     </style>
 </head>
@@ -160,7 +246,7 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container">
             <div class="flex justify-between items-center py-4">
-                <div class="text-2xl font-bold orange-primary">RowerHub.bike</div>
+                <div class="text-2xl font-bold orange">RowerHub.bike</div>
                 <div class="flex gap-2">
                     <button onclick="setLanguage('ru')" id="btn-ru" class="language-btn active">RU</button>
                     <button onclick="setLanguage('en')" id="btn-en" class="language-btn inactive">EN</button>
@@ -170,7 +256,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white py-20">
+    <section class="hero-section">
         <div class="container">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -180,38 +266,37 @@
                     <p class="text-xl mb-8 opacity-90" data-ru="Профессиональные решения мобильности во Вроцлаве. Надежность, скорость и экономия для вашего успеха в курьерском бизнесе." data-en="Professional mobility solutions in Wrocław. Reliability, speed and economy for your courier business success.">
                         Профессиональные решения мобильности во Вроцлаве. Надежность, скорость и экономия для вашего успеха в курьерском бизнесе.
                     </p>
-                    <a href="#contact" class="btn text-lg mb-8" data-ru="Забронировать сейчас" data-en="Book now">
+                    <a href="#contact" class="btn-primary text-lg mb-8" data-ru="Забронировать сейчас" data-en="Book now">
                         Забронировать сейчас
                     </a>
                     
                     <!-- Hero Features -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-                        <div class="bg-black/20 backdrop-blur-sm border border-white/10 p-4 rounded-xl">
+                        <div class="feature-card">
                             <div class="flex items-start">
-                                <div class="bg-black/30 p-3 rounded-lg mr-4 flex-shrink-0">
-                                    <svg class="w-6 h-6 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
-                                        <line x1="23" y1="13" x2="23" y2="11"/>
+                                <div class="bg-orange text-white p-2 rounded mr-3 flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <rect x="2" y="6" width="16" height="8" rx="1"/>
+                                        <line x1="18" y1="10" x2="18" y2="10"/>
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="font-semibold text-white text-lg mb-1" data-ru="Долгий срок службы батареи" data-en="Long battery life">Долгий срок службы батареи</h3>
-                                    <p class="text-sm text-gray-200" data-ru="До 80 км на одном заряде" data-en="Up to 80 km on single charge">До 80 км на одном заряде</p>
+                                    <h3 class="font-semibold mb-1" data-ru="Долгий срок службы батареи" data-en="Long battery life">Долгий срок службы батареи</h3>
+                                    <p class="text-sm opacity-80" data-ru="До 80 км на одном заряде" data-en="Up to 80 km on single charge">До 80 км на одном заряде</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="bg-black/20 backdrop-blur-sm border border-white/10 p-4 rounded-xl">
+                        <div class="feature-card">
                             <div class="flex items-start">
-                                <div class="bg-black/30 p-3 rounded-lg mr-4 flex-shrink-0">
-                                    <svg class="w-6 h-6 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                        <circle cx="12" cy="10" r="3"/>
+                                <div class="bg-orange text-white p-2 rounded mr-3 flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="font-semibold text-white text-lg mb-1" data-ru="Идеально для города" data-en="Perfect for the city">Идеально для города</h3>
-                                    <p class="text-sm text-gray-200" data-ru="Маневренность в городских условиях" data-en="Maneuverability in urban conditions">Маневренность в городских условиях</p>
+                                    <h3 class="font-semibold mb-1" data-ru="Идеально для города" data-en="Perfect for the city">Идеально для города</h3>
+                                    <p class="text-sm opacity-80" data-ru="Маневренность в городских условиях" data-en="Maneuverability in urban conditions">Маневренность в городских условиях</p>
                                 </div>
                             </div>
                         </div>
@@ -223,9 +308,9 @@
                          alt="Электровелосипеды RowerHub для курьеров" 
                          class="w-full rounded-xl shadow-2xl"
                          onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
-                    <div class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white p-4 rounded-lg">
-                        <p class="font-medium" data-ru="Профессиональное оборудование" data-en="Professional equipment">Профессиональное оборудование</p>
-                        <p class="text-sm text-gray-200" data-ru="Готово к работе прямо сейчас" data-en="Ready to work right now">Готово к работе прямо сейчас</p>
+                    <div class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-70 backdrop-blur text-white p-4 rounded-lg">
+                        <p class="font-semibold" data-ru="Профессиональное оборудование" data-en="Professional equipment">Профессиональное оборудование</p>
+                        <p class="text-sm opacity-90" data-ru="Готово к работе прямо сейчас" data-en="Ready to work right now">Готово к работе прямо сейчас</p>
                     </div>
                 </div>
             </div>
@@ -236,91 +321,86 @@
     <section class="py-20 bg-white">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 orange-primary" data-ru="Почему выбирают нас" data-en="Why choose us">Почему выбирают нас</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Современные электровелосипеды с передовыми технологиями для максимальной эффективности вашего бизнеса" data-en="Modern electric bikes with advanced technologies for maximum efficiency of your business">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800" data-ru="Современные электровелосипеды с передовыми технологиями для максимальной эффективности вашего бизнеса" data-en="Modern electric bikes with advanced technologies for maximum efficiency of your business">
                     Современные электровелосипеды с передовыми технологиями для максимальной эффективности вашего бизнеса
-                </p>
+                </h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="card">
-                    <div class="feature-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
-                            <line x1="23" y1="13" x2="23" y2="11"/>
+                <div class="section-card text-center">
+                    <div class="feature-icon mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <rect x="2" y="6" width="16" height="8" rx="1"/>
+                            <line x1="18" y1="10" x2="18" y2="10"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2" data-ru="Долгий срок службы батареи" data-en="Long battery life">Долгий срок службы батареи</h3>
+                    <h3 class="text-xl font-semibold mb-3" data-ru="Долгий срок службы батареи" data-en="Long battery life">Долгий срок службы батареи</h3>
                     <p class="text-gray-600" data-ru="Мощная батарея обеспечивает до 80 км пробега на одном заряде, идеально для полного рабочего дня курьера" data-en="Powerful battery provides up to 80 km range on single charge, perfect for courier's full working day">
                         Мощная батарея обеспечивает до 80 км пробега на одном заряде, идеально для полного рабочего дня курьера
                     </p>
                 </div>
                 
                 <!-- Feature 2 -->
-                <div class="card">
-                    <div class="feature-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                <div class="section-card text-center">
+                    <div class="feature-icon mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2" data-ru="Высокая скорость доставки" data-en="High delivery speed">Высокая скорость доставки</h3>
+                    <h3 class="text-xl font-semibold mb-3" data-ru="Высокая скорость доставки" data-en="High delivery speed">Высокая скорость доставки</h3>
                     <p class="text-gray-600" data-ru="Электропривод позволяет развивать скорость до 25 км/ч, значительно увеличивая количество выполненных заказов" data-en="Electric drive allows speeds up to 25 km/h, significantly increasing completed orders">
                         Электропривод позволяет развивать скорость до 25 км/ч, значительно увеличивая количество выполненных заказов
                     </p>
                 </div>
                 
                 <!-- Feature 3 -->
-                <div class="card">
-                    <div class="feature-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12,6 12,12 16,14"/>
+                <div class="section-card text-center">
+                    <div class="feature-icon mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2" data-ru="Быстрая зарядка" data-en="Quick charging">Быстрая зарядка</h3>
+                    <h3 class="text-xl font-semibold mb-3" data-ru="Быстрая зарядка" data-en="Quick charging">Быстрая зарядка</h3>
                     <p class="text-gray-600" data-ru="Полная зарядка батареи всего за 4-6 часов. Съемная батарея для удобства зарядки дома или в офисе" data-en="Full battery charge in just 4-6 hours. Removable battery for convenient charging at home or office">
                         Полная зарядка батареи всего за 4-6 часов. Съемная батарея для удобства зарядки дома или в офисе
                     </p>
                 </div>
                 
                 <!-- Feature 4 -->
-                <div class="card">
-                    <div class="feature-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 12l2 2 4-4"/>
-                            <circle cx="12" cy="5" r="3"/>
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <div class="section-card text-center">
+                    <div class="feature-icon mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2" data-ru="Максимальная безопасность" data-en="Maximum security">Максимальная безопасность</h3>
+                    <h3 class="text-xl font-semibold mb-3" data-ru="Максимальная безопасность" data-en="Maximum security">Максимальная безопасность</h3>
                     <p class="text-gray-600" data-ru="Немецкий замок ABUS высшего класса защиты и встроенная система отслеживания для защиты от краж" data-en="German ABUS lock of highest protection class and built-in tracking system for theft protection">
                         Немецкий замок ABUS высшего класса защиты и встроенная система отслеживания для защиты от краж
                     </p>
                 </div>
                 
                 <!-- Feature 5 -->
-                <div class="card">
-                    <div class="feature-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
+                <div class="section-card text-center">
+                    <div class="feature-icon mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2" data-ru="GPS отслеживание" data-en="GPS tracking">GPS отслеживание</h3>
+                    <h3 class="text-xl font-semibold mb-3" data-ru="GPS отслеживание" data-en="GPS tracking">GPS отслеживание</h3>
                     <p class="text-gray-600" data-ru="Встроенный AirTag для постоянного контроля местоположения велосипеда и предотвращения потерь" data-en="Built-in AirTag for constant bike location control and loss prevention">
                         Встроенный AirTag для постоянного контроля местоположения велосипеда и предотвращения потерь
                     </p>
                 </div>
                 
                 <!-- Feature 6 -->
-                <div class="card">
-                    <div class="feature-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                <div class="section-card text-center">
+                    <div class="feature-icon mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2" data-ru="Поддержка 24/7" data-en="24/7 Support">Поддержка 24/7</h3>
+                    <h3 class="text-xl font-semibold mb-3" data-ru="Поддержка 24/7" data-en="24/7 Support">Поддержка 24/7</h3>
                     <p class="text-gray-600" data-ru="Круглосуточная техническая поддержка, быстрая замена велосипеда в случае поломки и помощь на дороге" data-en="24/7 technical support, quick bike replacement in case of breakdown and roadside assistance">
                         Круглосуточная техническая поддержка, быстрая замена велосипеда в случае поломки и помощь на дороге
                     </p>
@@ -329,7 +409,7 @@
             
             <!-- Gallery -->
             <div class="mt-16">
-                <h3 class="text-2xl font-bold text-center mb-8 orange-primary" data-ru="Наши велосипеды" data-en="Our bikes">Наши велосипеды</h3>
+                <h3 class="text-2xl font-bold text-center mb-8 orange" data-ru="Наши велосипеды" data-en="Our bikes">Наши велосипеды</h3>
                 <div class="gallery-scroll">
                     <img src="bike3.jpg" alt="Главный велосипед RowerHub" class="bike-image" onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
                     <img src="bike2.jpg" alt="Велосипеды готовы к работе" class="bike-image" onerror="this.src='https://i.ibb.co/gFNYn8X/photo-2025-05-28-23-37-30.jpg'">
@@ -345,10 +425,9 @@
     <section class="py-20 bg-gray-50">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 orange-primary" data-ru="Наши велосипеды" data-en="Our Bikes">Наши велосипеды</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Профессиональные электровелосипеды с лучшими характеристиками для эффективной работы курьеров" data-en="Professional electric bikes with the best characteristics for efficient courier work">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800" data-ru="Профессиональные электровелосипеды с лучшими характеристиками для эффективной работы курьеров" data-en="Professional electric bikes with the best characteristics for efficient courier work">
                     Профессиональные электровелосипеды с лучшими характеристиками для эффективной работы курьеров
-                </p>
+                </h2>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -356,59 +435,54 @@
                     <img src="bike3.jpg" alt="Электровелосипед RowerHub" class="w-full rounded-xl shadow-lg" onerror="this.src='https://i.ibb.co/Db5fBQW/photo-2025-05-28-23-37-33.jpg'">
                 </div>
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 orange-primary" data-ru="Технические характеристики" data-en="Technical Specifications">Технические характеристики</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                            <div class="bg-orange-primary text-white p-2 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
-                                    <line x1="23" y1="13" x2="23" y2="11"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1" data-ru="Батарея" data-en="Battery">Батарея</h4>
-                                <p class="text-gray-600" data-ru="36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км." data-en="36V, 10.4Ah Samsung lithium-ion battery. Range up to 80 km.">36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км.</p>
-                            </div>
+                    <h3 class="text-2xl font-bold mb-6 orange" data-ru="Технические характеристики" data-en="Technical Specifications">Технические характеристики</h3>
+                    
+                    <div class="spec-item">
+                        <div class="spec-icon">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <rect x="2" y="6" width="16" height="8" rx="1"/>
+                                <line x1="18" y1="10" x2="18" y2="10"/>
+                            </svg>
                         </div>
-                        
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                            <div class="bg-orange-primary text-white p-2 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="8" x2="12" y2="12"/>
-                                    <line x1="12" y1="16" x2="12.01" y2="16"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1" data-ru="Мотор" data-en="Motor">Мотор</h4>
-                                <p class="text-gray-600" data-ru="Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч." data-en="Bafang 250W rear-wheel motor. Maximum speed 25 km/h.">Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч.</p>
-                            </div>
+                        <div>
+                            <h4 class="font-semibold mb-1 orange" data-ru="Батарея" data-en="Battery">Батарея</h4>
+                            <p class="text-gray-600" data-ru="36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км." data-en="36V, 10.4Ah Samsung lithium-ion battery. Range up to 80 km.">36V, 10.4Ah литий-ионная батарея Samsung. Дальность до 80 км.</p>
                         </div>
-                        
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                            <div class="bg-orange-primary text-white p-2 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M9 12l2 2 4-4"/>
-                                    <circle cx="12" cy="5" r="3"/>
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1" data-ru="Безопасность" data-en="Security">Безопасность</h4>
-                                <p class="text-gray-600" data-ru="Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары." data-en="ABUS Bordo 6000 lock, AirTag GPS tracker, LED headlights.">Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары.</p>
-                            </div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-icon">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                            </svg>
                         </div>
-                        
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                            <div class="bg-orange-primary text-white p-2 rounded-lg mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1" data-ru="Дополнительно" data-en="Additional">Дополнительно</h4>
-                                <p class="text-gray-600" data-ru="Багажник 25 кг, брызговики, подножка, регулируемое седло." data-en="25 kg luggage rack, fenders, kickstand, adjustable saddle.">Багажник 25 кг, брызговики, подножка, регулируемое седло.</p>
-                            </div>
+                        <div>
+                            <h4 class="font-semibold mb-1 orange" data-ru="Мотор" data-en="Motor">Мотор</h4>
+                            <p class="text-gray-600" data-ru="Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч." data-en="Bafang 250W rear-wheel motor. Maximum speed 25 km/h.">Заднеприводный мотор Bafang 250W. Максимальная скорость 25 км/ч.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-icon">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1 orange" data-ru="Безопасность" data-en="Security">Безопасность</h4>
+                            <p class="text-gray-600" data-ru="Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары." data-en="ABUS Bordo 6000 lock, AirTag GPS tracker, LED headlights.">Замок ABUS Bordo 6000, AirTag GPS-трекер, светодиодные фары.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <div class="spec-icon">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1 orange" data-ru="Дополнительно" data-en="Additional">Дополнительно</h4>
+                            <p class="text-gray-600" data-ru="Багажник 25 кг, брызговики, подножка, регулируемое седло." data-en="25 kg luggage rack, fenders, kickstand, adjustable saddle.">Багажник 25 кг, брызговики, подножка, регулируемое седло.</p>
                         </div>
                     </div>
                 </div>
@@ -420,98 +494,49 @@
     <section class="py-20 bg-white">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 orange-primary" data-ru="Правила аренды" data-en="Rental Rules">Правила аренды</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Простые и понятные условия аренды для комфортной и безопасной работы" data-en="Simple and clear rental conditions for comfortable and safe work">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800" data-ru="Простые и понятные условия аренды для комфортной и безопасной работы" data-en="Simple and clear rental conditions for comfortable and safe work">
                     Простые и понятные условия аренды для комфортной и безопасной работы
-                </p>
+                </h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-gray-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-4 orange-primary" data-ru="Условия аренды" data-en="Rental Conditions">Условия аренды</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Минимальный срок аренды: 1 день" data-en="Minimum rental period: 1 day">Минимальный срок аренды: 1 день</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Залог: 500 злотых (возвращается)" data-en="Deposit: 500 zloty (refundable)">Залог: 500 злотых (возвращается)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Документы: паспорт или ID карта" data-en="Documents: passport or ID card">Документы: паспорт или ID карта</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Возраст: от 18 лет" data-en="Age: from 18 years">Возраст: от 18 лет</span>
-                        </li>
+            <div class="rules-grid">
+                <div class="rules-card">
+                    <h3 data-ru="Условия аренды" data-en="Rental Conditions">Условия аренды</h3>
+                    <ul class="rules-list">
+                        <li data-ru="Минимальный срок аренды: 1 день" data-en="Minimum rental period: 1 day">Минимальный срок аренды: 1 день</li>
+                        <li data-ru="Залог: 500 злотых (возвращается)" data-en="Deposit: 500 zloty (refundable)">Залог: 500 злотых (возвращается)</li>
+                        <li data-ru="Документы: паспорт или ID карта" data-en="Documents: passport or ID card">Документы: паспорт или ID карта</li>
+                        <li data-ru="Возраст: от 18 лет" data-en="Age: from 18 years">Возраст: от 18 лет</li>
                     </ul>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-4 orange-primary" data-ru="Обязанности арендатора" data-en="Tenant Responsibilities">Обязанности арендатора</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Всегда используйте замок при парковке" data-en="Always use the lock when parking">Всегда используйте замок при парковке</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Заряжайте батарею каждую ночь" data-en="Charge the battery every night">Заряжайте батарею каждую ночь</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Соблюдайте правила дорожного движения" data-en="Follow traffic rules">Соблюдайте правила дорожного движения</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Немедленно сообщайте о повреждениях" data-en="Report damage immediately">Немедленно сообщайте о повреждениях</span>
-                        </li>
+                <div class="rules-card">
+                    <h3 data-ru="Обязанности арендатора" data-en="Tenant Responsibilities">Обязанности арендатора</h3>
+                    <ul class="rules-list">
+                        <li data-ru="Всегда используйте замок при парковке" data-en="Always use the lock when parking">Всегда используйте замок при парковке</li>
+                        <li data-ru="Заряжайте батарею каждую ночь" data-en="Charge the battery every night">Заряжайте батарею каждую ночь</li>
+                        <li data-ru="Соблюдайте правила дорожного движения" data-en="Follow traffic rules">Соблюдайте правила дорожного движения</li>
+                        <li data-ru="Немедленно сообщайте о повреждениях" data-en="Report damage immediately">Немедленно сообщайте о повреждениях</li>
                     </ul>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-4 orange-primary" data-ru="Что включено" data-en="What's Included">Что включено</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Полностью заряженная батарея" data-en="Fully charged battery">Полностью заряженная батарея</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Зарядное устройство" data-en="Charger">Зарядное устройство</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Замок ABUS и ключи" data-en="ABUS lock and keys">Замок ABUS и ключи</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="24/7 техническая поддержка" data-en="24/7 technical support">24/7 техническая поддержка</span>
-                        </li>
+                <div class="rules-card">
+                    <h3 data-ru="Что включено" data-en="What's Included">Что включено</h3>
+                    <ul class="rules-list">
+                        <li data-ru="Полностью заряженная батарея" data-en="Fully charged battery">Полностью заряженная батарея</li>
+                        <li data-ru="Зарядное устройство" data-en="Charger">Зарядное устройство</li>
+                        <li data-ru="Замок ABUS и ключи" data-en="ABUS lock and keys">Замок ABUS и ключи</li>
+                        <li data-ru="24/7 техническая поддержка" data-en="24/7 technical support">24/7 техническая поддержка</li>
                     </ul>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-4 orange-primary" data-ru="Штрафы и повреждения" data-en="Fines and Damages">Штрафы и повреждения</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Потеря велосипеда: полная стоимость" data-en="Bike loss: full cost">Потеря велосипеда: полная стоимость</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Потеря ключей: 50 злотых" data-en="Key loss: 50 zloty">Потеря ключей: 50 злотых</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Повреждения: по стоимости ремонта" data-en="Damage: at repair cost">Повреждения: по стоимости ремонта</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="orange-primary mr-2 mt-1">•</span>
-                            <span data-ru="Просрочка возврата: +50% за день" data-en="Late return: +50% per day">Просрочка возврата: +50% за день</span>
-                        </li>
+                <div class="rules-card">
+                    <h3 data-ru="Штрафы и повреждения" data-en="Fines and Damages">Штрафы и повреждения</h3>
+                    <ul class="rules-list">
+                        <li data-ru="Потеря велосипеда: полная стоимость" data-en="Bike loss: full cost">Потеря велосипеда: полная стоимость</li>
+                        <li data-ru="Потеря ключей: 50 злотых" data-en="Key loss: 50 zloty">Потеря ключей: 50 злотых</li>
+                        <li data-ru="Повреждения: по стоимости ремонта" data-en="Damage: at repair cost">Повреждения: по стоимости ремонта</li>
+                        <li data-ru="Просрочка возврата: +50% за день" data-en="Late return: +50% per day">Просрочка возврата: +50% за день</li>
                     </ul>
                 </div>
             </div>
@@ -519,57 +544,57 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="py-20 bg-gradient-to-b from-gray-900 to-black text-white">
+    <section class="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div class="container">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4" data-ru="Выгодные тарифы" data-en="Affordable Pricing">Выгодные тарифы</h2>
+                <h2 class="text-3xl font-bold mb-4 text-white" data-ru="Выгодные тарифы" data-en="Affordable Pricing">Выгодные тарифы</h2>
                 <p class="text-gray-300 max-w-2xl mx-auto" data-ru="Подберите оптимальный вариант аренды с технической поддержкой и гарантией качества." data-en="Choose the optimal rental option with technical support and quality guarantee.">
                     Подберите оптимальный вариант аренды с технической поддержкой и гарантией качества.
                 </p>
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <div class="bg-gradient-to-r from-gray-900 to-black rounded-xl shadow-2xl p-8 border-2 border-orange-primary">
-                    <div class="bg-orange-primary text-white text-sm font-semibold uppercase py-2 px-4 rounded-full inline-block mb-6">
+                <div class="pricing-card">
+                    <div class="bg-orange text-white text-sm font-semibold uppercase py-2 px-4 rounded-full inline-block mb-6">
                         <div class="flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
                             </svg>
                             <span data-ru="Аренда электровелосипедов" data-en="Electric bike rental">Аренда электровелосипедов</span>
                         </div>
                     </div>
                     
-                    <div class="mb-12 text-center">
-                        <span class="pricing-highlight" data-ru="от 26 зл" data-en="from 26 zł">от 26 зл</span>
+                    <div class="mb-12">
+                        <span class="pricing-amount" data-ru="от 26 зл" data-en="from 26 zł">от 26 зл</span>
                         <span class="text-2xl text-gray-300 ml-2" data-ru="/день" data-en="/day">/день</span>
                     </div>
                     
-                    <div class="mb-10">
-                        <ul class="space-y-5">
-                            <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                    <div class="text-left mb-10">
+                        <ul class="space-y-4">
+                            <li class="flex items-start bg-gray-800 bg-opacity-50 p-4 rounded-lg">
+                                <span class="orange mr-3 mt-1 text-lg">✓</span>
                                 <span class="text-gray-200" data-ru="Долгий срок службы батареи до 80 км" data-en="Long battery life up to 80 km">Долгий срок службы батареи до 80 км</span>
                             </li>
-                            <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                            <li class="flex items-start bg-gray-800 bg-opacity-50 p-4 rounded-lg">
+                                <span class="orange mr-3 mt-1 text-lg">✓</span>
                                 <span class="text-gray-200" data-ru="Идеально для города - маневренность и скорость" data-en="Perfect for the city - maneuverability and speed">Идеально для города - маневренность и скорость</span>
                             </li>
-                            <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                            <li class="flex items-start bg-gray-800 bg-opacity-50 p-4 rounded-lg">
+                                <span class="orange mr-3 mt-1 text-lg">✓</span>
                                 <span class="text-gray-200" data-ru="Надежный велосипедный замок ABUS" data-en="Reliable ABUS bike lock">Надежный велосипедный замок ABUS</span>
                             </li>
-                            <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                            <li class="flex items-start bg-gray-800 bg-opacity-50 p-4 rounded-lg">
+                                <span class="orange mr-3 mt-1 text-lg">✓</span>
                                 <span class="text-gray-200" data-ru="GPS отслеживание с AirTag" data-en="GPS tracking with AirTag">GPS отслеживание с AirTag</span>
                             </li>
-                            <li class="flex items-start bg-gray-900/50 p-4 rounded-lg hover:bg-gray-900 transition-all duration-300">
-                                <span class="orange-primary mr-3 mt-0.5 text-lg">✓</span>
+                            <li class="flex items-start bg-gray-800 bg-opacity-50 p-4 rounded-lg">
+                                <span class="orange mr-3 mt-1 text-lg">✓</span>
                                 <span class="text-gray-200" data-ru="Техподдержка и обслуживание 24/7" data-en="24/7 technical support and maintenance">Техподдержка и обслуживание 24/7</span>
                             </li>
                         </ul>
                     </div>
                     
-                    <a href="#contact" class="btn w-full text-xl py-6 text-center">
+                    <a href="#contact" class="btn-primary w-full text-xl py-6 text-center">
                         <span data-ru="Забронировать" data-en="Book Now">Забронировать</span>
                     </a>
                 </div>
@@ -617,7 +642,7 @@
                                   placeholder="Расскажите о ваших потребностях в аренде велосипеда..."
                                   data-ru-placeholder="Расскажите о ваших потребностях в аренде велосипеда..." data-en-placeholder="Tell us about your bike rental needs..."></textarea>
                     </div>
-                    <button type="submit" class="btn w-full text-lg py-3">
+                    <button type="submit" class="btn-primary w-full text-lg py-3">
                         <span data-ru="Отправить заявку" data-en="Send Request">Отправить заявку</span>
                     </button>
                 </form>
@@ -635,7 +660,7 @@
         <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold orange-primary mb-4">RowerHub.bike</h3>
+                    <h3 class="text-xl font-bold orange mb-4">RowerHub.bike</h3>
                     <p class="text-gray-400" data-ru="Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса." data-en="Professional electric bike rental for couriers in Wrocław. Reliability, economy and convenience for your business.">
                         Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса.
                     </p>

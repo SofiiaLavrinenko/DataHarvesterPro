@@ -6,22 +6,6 @@
     <title>RowerHub.bike - Аренда электровелосипедов во Вроцлаве</title>
     <meta name="description" content="Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежные велосипеды, доступные цены, круглосуточная поддержка.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#ea580c',
-                        secondary: '#171717',
-                        accent: '#c2410c'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,32 +13,31 @@
         * { box-sizing: border-box; }
         body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
         
-        /* ПРИНУДИТЕЛЬНЫЕ ТЕМНО-ОРАНЖЕВЫЕ ЦВЕТА */
-        .orange-force { color: #ea580c !important; }
-        .bg-orange-force { background-color: #ea580c !important; }
-        .border-orange-force { border-color: #ea580c !important; }
-        
-        /* Принудительно заменяем ВСЕ оранжевые цвета на темно-оранжевый */
-        .text-orange-500, .bg-orange-500, .text-orange-600, .bg-orange-600 { 
-            color: #ea580c !important; 
-            background-color: #ea580c !important; 
+        /* ПРИНУДИТЕЛЬНЫЕ ТЕМНО-ОРАНЖЕВЫЕ ЦВЕТА - МАКСИМАЛЬНАЯ СИЛА */
+        :root {
+            --orange-primary: #ea580c !important;
+            --orange-dark: #c2410c !important;
         }
         
-        /* Перебиваем цвета Tailwind */
-        [class*="orange"] { color: #ea580c !important; }
-        [class*="bg-orange"] { background-color: #ea580c !important; }
+        .orange-force { color: var(--orange-primary) !important; }
+        .bg-orange-force { background-color: var(--orange-primary) !important; }
+        .border-orange-force { border-color: var(--orange-primary) !important; }
         
-        /* Принудительно устанавливаем для всех основных элементов */
-        h1, h2, h3, .font-bold:first-child { color: #ea580c !important; }
-        button[class*="orange"], .btn-primary { background-color: #ea580c !important; }
+        /* Перебиваем АБСОЛЮТНО все оранжевые цвета */
+        [class*="orange"], .text-orange-500, .bg-orange-500, .text-orange-600, .bg-orange-600 { 
+            color: var(--orange-primary) !important; 
+            background-color: var(--orange-primary) !important; 
+        }
         
+        /* Принудительно устанавливаем главные элементы */
         .hero-gradient { 
-            background: #ea580c !important;
-            background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+            background: var(--orange-primary) !important;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-dark) 100%) !important;
         }
+        
         .btn-primary {
-            background: #ea580c !important;
-            background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+            background: var(--orange-primary) !important;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-dark) 100%) !important;
             color: white !important; padding: 0.75rem 2rem; border-radius: 0.5rem;
             font-weight: 600; transition: all 0.3s ease; border: none;
             cursor: pointer; text-decoration: none; display: inline-block;
@@ -63,6 +46,7 @@
             transform: translateY(-2px); 
             box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3) !important; 
         }
+        
         .card-shadow { 
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
             transition: all 0.3s ease; 
@@ -71,37 +55,38 @@
             transform: translateY(-4px); 
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); 
         }
+        
         .feature-icon {
             width: 3rem; height: 3rem; 
-            background: #ea580c !important;
-            background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+            background: var(--orange-primary) !important;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-dark) 100%) !important;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             color: white; margin: 0 auto; flex-shrink: 0;
         }
+        
         .container-custom { 
             max-width: 1200px; margin: 0 auto; padding: 0 1rem; 
         }
+        
         .success-message {
             background: #10b981; color: white; padding: 1rem; border-radius: 0.5rem;
             margin: 1rem 0; display: none;
         }
+        
         .gallery-scroll {
             display: flex; gap: 1rem; overflow-x: auto; padding: 1rem 0;
-            scrollbar-width: thin; scrollbar-color: #ea580c #f1f1f1;
+            scrollbar-width: thin; scrollbar-color: var(--orange-primary) #f1f1f1;
         }
         .gallery-scroll::-webkit-scrollbar { height: 8px; }
         .gallery-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
-        .gallery-scroll::-webkit-scrollbar-thumb { background: #ea580c; border-radius: 4px; }
+        .gallery-scroll::-webkit-scrollbar-thumb { background: var(--orange-primary); border-radius: 4px; }
+        
         .bike-photo {
             min-width: 280px; height: 200px; object-fit: cover; border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;
         }
         .bike-photo:hover { transform: scale(1.05); }
         
-        /* Логотип */
-        .logo { width: 40px; height: 40px; margin-right: 0.5rem; }
-        
-        /* SVG иконки */
         .icon { width: 24px; height: 24px; fill: currentColor; }
     </style>
 </head>
@@ -137,8 +122,7 @@
                         <div class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-4 rounded-xl shadow-lg">
                             <div class="flex items-start">
                                 <div class="bg-gray-800 p-3 rounded-lg mr-4 shadow-inner border border-gray-700 flex-shrink-0">
-                                    <!-- Battery SVG Icon -->
-                                    <svg class="icon text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg class="icon" style="color: #ea580c !important;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
                                         <line x1="23" y1="13" x2="23" y2="11"/>
                                     </svg>
@@ -153,8 +137,7 @@
                         <div class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-4 rounded-xl shadow-lg">
                             <div class="flex items-start">
                                 <div class="bg-gray-800 p-3 rounded-lg mr-4 shadow-inner border border-gray-700 flex-shrink-0">
-                                    <!-- Map Pin SVG Icon -->
-                                    <svg class="icon text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg class="icon" style="color: #ea580c !important;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                         <circle cx="12" cy="10" r="3"/>
                                     </svg>
@@ -190,7 +173,7 @@
     <section class="py-20 bg-white">
         <div class="container-custom">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4" data-ru="Почему выбирают нас" data-en="Why choose us">Почему выбирают нас</h2>
+                <h2 class="text-3xl font-bold mb-4 orange-force" data-ru="Почему выбирают нас" data-en="Why choose us">Почему выбирают нас</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto" data-ru="Современные электровелосипеды с передовыми технологиями для максимальной эффективности вашего бизнеса" data-en="Modern electric bikes with advanced technologies for maximum efficiency of your business">
                     Современные электровелосипеды с передовыми технологиями для максимальной эффективности вашего бизнеса
                 </p>
@@ -282,7 +265,7 @@
             
             <!-- Photo Gallery -->
             <div class="mt-16">
-                <h3 class="text-2xl font-bold text-center mb-8 text-gray-900" data-ru="Наши велосипеды" data-en="Our bikes">Наши велосипеды</h3>
+                <h3 class="text-2xl font-bold text-center mb-8 orange-force" data-ru="Наши велосипеды" data-en="Our bikes">Наши велосипеды</h3>
                 <div class="overflow-x-auto scrollbar-hide">
                     <div class="flex gap-6 pb-4" style="min-width: max-content;">
                         <div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
@@ -459,7 +442,7 @@
         <div class="container-custom">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold orange-force">RowerHub.bike</h3>
+                    <h3 class="text-xl font-bold orange-force mb-4">RowerHub.bike</h3>
                     <p class="text-gray-400" data-ru="Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса." data-en="Professional electric bike rental for couriers in Wrocław. Reliability, economy and convenience for your business.">
                         Профессиональная аренда электровелосипедов для курьеров во Вроцлаве. Надежность, экономичность и удобство для вашего бизнеса.
                     </p>
@@ -467,7 +450,6 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4" data-ru="Контакты" data-en="Contacts">Контакты</h4>
                     <p class="text-gray-400 mb-2">📧 info@rowerhub.bike</p>
-
                     <p class="text-gray-400 mb-2">💬 @BaitEb1ke</p>
                     <p class="text-gray-400">📍 Wrocław, Polska</p>
                 </div>

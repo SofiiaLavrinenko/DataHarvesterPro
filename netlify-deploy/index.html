@@ -1148,6 +1148,12 @@
                     Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
                 </span>
             </div>
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <button type="button" onclick="runTelegramDiagnostic()" style="background: #666; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
+                    Проверить Telegram интеграцию
+                </button>
+            </div>
         </div>
     </section>
 
@@ -1266,19 +1272,67 @@
                         document.getElementById('successMessage').style.display = 'none';
                     }, 5000);
                 } else {
-                    // Show error message
-                    alert(jsonResult.message || 'Произошла ошибка при отправке заявки');
+                    // Show error message with diagnostic option
+                    const errorMsg = jsonResult.message || 'Произошла ошибка при отправке заявки';
+                    if (confirm(errorMsg + '\n\nЗапустить диагностику Telegram?')) {
+                        await runTelegramDiagnostic();
+                    }
                 }
                 
             } catch (error) {
                 console.error('Contact form error:', error);
-                alert('Произошла ошибка при отправке заявки. Попробуйте еще раз.');
+                if (confirm('Произошла ошибка при отправке заявки.\n\nЗапустить диагностику Telegram?')) {
+                    await runTelegramDiagnostic();
+                } else {
+                    alert('Попробуйте еще раз или свяжитесь с нами по телефону.');
+                }
             } finally {
                 // Re-enable submit button
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
             }
         });
+        
+        // Telegram diagnostic function
+        async function runTelegramDiagnostic() {
+            try {
+                const response = await fetch('/.netlify/functions/debug-telegram');
+                const result = await response.json();
+                
+                let message = 'ДИАГНОСТИКА TELEGRAM:\n\n';
+                
+                if (result.success) {
+                    message += '✅ Интеграция работает корректно!\n';
+                    message += `Бот: ${result.tests.botInfo.bot.username}\n`;
+                    message += `Чат: ${result.tests.environment.chatId}\n`;
+                    message += 'Тестовое сообщение должно было прийти в группу.';
+                } else {
+                    message += `❌ Проблема на этапе: ${result.stage}\n\n`;
+                    
+                    if (result.stage === 'environment') {
+                        message += 'Проблема с переменными окружения:\n';
+                        message += `Токен: ${result.debug.hasToken ? '✅' : '❌'}\n`;
+                        message += `Chat ID: ${result.debug.hasChatId ? '✅' : '❌'}\n`;
+                        if (!result.debug.hasToken || !result.debug.hasChatId) {
+                            message += '\nНужно настроить переменные в Netlify:\n';
+                            message += 'TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID';
+                        }
+                    } else if (result.stage === 'bot_info') {
+                        message += 'Проблема с токеном бота:\n';
+                        message += 'Токен неверный или бот заблокирован';
+                    } else {
+                        message += `Детали: ${result.tests?.messageTest?.response?.description || 'Неизвестная ошибка'}`;
+                    }
+                }
+                
+                alert(message);
+                console.log('Полная диагностика:', result);
+                
+            } catch (error) {
+                alert('Ошибка диагностики: ' + error.message + '\n\nСвяжитесь с администратором.');
+                console.error('Diagnostic error:', error);
+            }
+        }
         
         // Mobile menu toggle
         function toggleMobileMenu() {

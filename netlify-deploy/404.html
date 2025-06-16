@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена - RowerHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            text-align: center;
+            background: #1a1a1a;
+            color: white;
+        }
+        h1 { color: #ea580c; }
+        a {
+            color: #ea580c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover { text-decoration: underline; }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ea580c;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>404 - Страница не найдена</h1>
+    <p>Запрашиваемая страница не существует.</p>
+    <a href="/" class="back-button">Вернуться на главную</a>
+    
+    <hr style="margin: 40px 0;">
+    
+    <h2>Диагностика Telegram</h2>
+    <p>Если вы искали страницу тестирования Telegram:</p>
+    <button onclick="runDiagnostic()" style="background: #ea580c; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Проверить Telegram интеграцию</button>
+    
+    <div id="result" style="margin-top: 20px; padding: 20px; background: #333; border-radius: 5px; text-align: left; white-space: pre-wrap; display: none;"></div>
+    
+    <script>
+        async function runDiagnostic() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.textContent = 'Проверяем интеграцию с Telegram...';
+            
+            try {
+                const response = await fetch('/.netlify/functions/debug-telegram');
+                const result = await response.json();
+                
+                resultDiv.textContent = JSON.stringify(result, null, 2);
+                resultDiv.style.background = result.success ? '#1a5d1a' : '#5d1a1a';
+            } catch (error) {
+                resultDiv.textContent = 'Ошибка: ' + error.message;
+                resultDiv.style.background = '#5d1a1a';
+            }
+        }
+    </script>
+</body>
+</html>

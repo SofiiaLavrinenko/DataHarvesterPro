@@ -1247,46 +1247,32 @@
                     body: JSON.stringify(data)
                 });
                 
-                // If Netlify function fails, try direct Telegram API with proxy bypass
-                if (!response.ok) {
-                    const telegramMessage = `🚴‍♂️ НОВАЯ ЗАЯВКА ROWERHUB.BIKE
-
-👤 Имя: ${data.name}
-📧 Email: ${data.email}  
-📱 Телефон: ${data.phone}
-💬 Сообщение: ${data.message || 'Не указано'}
-
-🕐 Время: ${new Date().toLocaleString('ru-RU')}`;
-
-                    response = await fetch(`https://api.telegram.org/bot6838629436:AAGbWVh7OrjkUmYCcQHaOe-lXCYoU_0uYK8/sendMessage`, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            chat_id: '-1002126895025',
-                            text: telegramMessage
-                        })
-                    });
+                const result = await response.text();
+                console.log('Contact form response:', response.status, result);
+                
+                let jsonResult;
+                try {
+                    jsonResult = JSON.parse(result);
+                } catch {
+                    jsonResult = { success: response.ok, message: result };
                 }
                 
-                // Show success message regardless of response (for no-cors mode)
-                document.getElementById('successMessage').style.display = 'block';
-                this.reset();
-                
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
+                if (jsonResult.success !== false) {
+                    // Show success message
+                    document.getElementById('successMessage').style.display = 'block';
+                    this.reset();
+                    
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 5000);
+                } else {
+                    // Show error message
+                    alert(jsonResult.message || 'Произошла ошибка при отправке заявки');
+                }
                 
             } catch (error) {
-                console.error('Error:', error);
-                
-                // Even if there's an error, show success message since no-cors mode prevents error detection
-                document.getElementById('successMessage').style.display = 'block';
-                this.reset();
-                
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
+                console.error('Contact form error:', error);
+                alert('Произошла ошибка при отправке заявки. Попробуйте еще раз.');
             } finally {
                 // Re-enable submit button
                 submitBtn.disabled = false;

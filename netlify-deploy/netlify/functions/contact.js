@@ -52,45 +52,81 @@ exports.handler = async (event, context) => {
 
 🕐 Время: ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Warsaw' })}`;
 
-    const TELEGRAM_BOT_TOKEN = '6838629436:AAGbWVh7OrjkUmYCcQHaOe-lXCYoU_0uYK8';
-    const TELEGRAM_CHAT_ID = '-1002126895025';
+    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
-    console.log('Sending to Telegram...');
+    console.log('Environment check:');
+    console.log('TELEGRAM_BOT_TOKEN exists:', !!TELEGRAM_BOT_TOKEN);
+    console.log('TELEGRAM_CHAT_ID exists:', !!TELEGRAM_CHAT_ID);
+    console.log('TELEGRAM_CHAT_ID value:', TELEGRAM_CHAT_ID);
 
-    const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: telegramMessage
-      })
-    });
-
-    const result = await response.text();
-    console.log('Telegram response:', response.status, result);
-
-    if (response.ok) {
-      console.log('Message sent successfully');
+    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+      console.error('Missing Telegram credentials');
       return {
         statusCode: 200,
         headers,
-        body: 'Success'
+        body: 'Form received but missing Telegram configuration'
+      };
+    }
+
+    console.log('Sending to Telegram...');
+
+    const telegramPayload = {
+      chat_id: TELEGRAM_CHAT_ID,
+      text: telegramMessage,
+      parse_mode: 'HTML'
+    };
+    
+    console.log('Telegram API URL:', `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN.substring(0, 10)}...`);
+    console.log('Telegram payload:', JSON.stringify(telegramPayload, null, 2));
+
+    const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'User-Agent': 'RowerHub-Contact-Form/1.0'
+      },
+      body: JSON.stringify(telegramPayload)
+    });
+
+    const result = await response.json();
+    console.log('Telegram response status:', response.status);
+    console.log('Telegram response body:', JSON.stringify(result, null, 2));
+
+    if (response.ok && result.ok) {
+      console.log('Message sent successfully to Telegram');
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({ success: true, message: 'Заявка успешно отправлена!' })
       };
     } else {
       console.error('Telegram API error:', result);
+      console.error('Error code:', result.error_code);
+      console.error('Error description:', result.description);
+      
       return {
-        statusCode: 200, // Return 200 to prevent form error
+        statusCode: 200,
         headers,
-        body: 'Form received but notification failed'
+        body: JSON.stringify({ 
+          success: false, 
+          message: 'Заявка получена, но уведомление не отправлено',
+          error: result.description || 'Unknown error'
+        })
       };
     }
 
   } catch (error) {
     console.error('Function error:', error);
+    console.error('Error stack:', error.stack);
     return {
-      statusCode: 200, // Return 200 to prevent form error
+      statusCode: 200,
       headers,
-      body: 'Form received'
+      body: JSON.stringify({
+        success: false,
+        message: 'Произошла ошибка при обработке заявки',
+        error: error.message
+      })
     };
   }
 };

@@ -1318,41 +1318,49 @@
         // Telegram diagnostic function
         async function runTelegramDiagnostic() {
             try {
-                const response = await fetch('/.netlify/functions/debug-telegram');
-                const result = await response.json();
+                // Check environment variables
+                const envResponse = await fetch('/.netlify/functions/check-env');
+                const envData = await envResponse.json();
+                
+                console.log('Environment check:', envData);
                 
                 let message = 'ДИАГНОСТИКА TELEGRAM:\n\n';
                 
-                if (result.success) {
-                    message += '✅ Интеграция работает корректно!\n';
-                    message += `Бот: ${result.tests.botInfo.bot.username}\n`;
-                    message += `Чат: ${result.tests.environment.chatId}\n`;
-                    message += 'Тестовое сообщение должно было прийти в группу.';
+                if (!envData.environment.hasToken) {
+                    message += '❌ TELEGRAM_BOT_TOKEN не настроен в Netlify\n';
+                    message += 'Добавьте переменную окружения в Site settings → Environment variables';
+                } else if (!envData.environment.hasChatId) {
+                    message += '❌ TELEGRAM_CHAT_ID не настроен в Netlify\n';
+                    message += 'Добавьте переменную окружения: -1002126895025';
                 } else {
-                    message += `❌ Проблема на этапе: ${result.stage}\n\n`;
+                    message += '✅ Переменные окружения настроены\n';
+                    message += `Chat ID: ${envData.environment.chatIdValue}\n\n`;
+                    message += 'Отправляю тестовое сообщение...';
                     
-                    if (result.stage === 'environment') {
-                        message += 'Проблема с переменными окружения:\n';
-                        message += `Токен: ${result.debug.hasToken ? '✅' : '❌'}\n`;
-                        message += `Chat ID: ${result.debug.hasChatId ? '✅' : '❌'}\n`;
-                        if (!result.debug.hasToken || !result.debug.hasChatId) {
-                            message += '\nНужно настроить переменные в Netlify:\n';
-                            message += 'TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID';
-                        }
-                    } else if (result.stage === 'bot_info') {
-                        message += 'Проблема с токеном бота:\n';
-                        message += 'Токен неверный или бот заблокирован';
+                    // Send test message
+                    const testResponse = await fetch('/.netlify/functions/simple-contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: 'Тест диагностики',
+                            email: 'test@rowerhub.bike',
+                            phone: '+48123456789',
+                            message: 'Тестовое сообщение для проверки интеграции'
+                        })
+                    });
+                    
+                    if (testResponse.ok) {
+                        message += '\n\n✅ Тестовое сообщение отправлено\nПроверьте Telegram группу';
                     } else {
-                        message += `Детали: ${result.tests?.messageTest?.response?.description || 'Неизвестная ошибка'}`;
+                        message += '\n\n❌ Ошибка отправки\nПроверьте логи Netlify Functions';
                     }
                 }
                 
                 alert(message);
-                console.log('Полная диагностика:', result);
                 
             } catch (error) {
-                alert('Ошибка диагностики: ' + error.message + '\n\nСвяжитесь с администратором.');
                 console.error('Diagnostic error:', error);
+                alert('Ошибка диагностики: ' + error.message);
             }
         }
         

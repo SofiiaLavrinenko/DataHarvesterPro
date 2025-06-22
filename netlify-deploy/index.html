@@ -1185,7 +1185,7 @@
         </div>
     </footer>
 
-   <script>
+    <script>
         let currentLanguage = 'ru';
         
         function setLanguage(lang) {
@@ -1243,7 +1243,7 @@
             submitBtn.innerHTML = currentLanguage === 'ru' ? 'Отправляем...' : 'Sending...';
             
             try {
-                // Method 1: Try simple contact function
+                // Method 1: Try sendMessage function
                 let response = await fetch('/.netlify/functions/sendMessage', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -1253,20 +1253,14 @@
                 let functionSuccess = false;
                 
                 if (response.ok) {
-                    const result = await response.text();
+                    const result = await response.json();
                     console.log('Function response:', result);
                     
-                    try {
-                        const jsonResult = JSON.parse(result);
-                        if (jsonResult.success !== false) {
-                            functionSuccess = true;
-                        }
-                    } catch {
-                        // If not JSON, consider it success if status is ok
-                        if (response.status === 200) {
-                            functionSuccess = true;
-                        }
+                    if (result.success === true) {
+                        functionSuccess = true;
                     }
+                } else {
+                    console.log('Function failed with status:', response.status);
                 }
                 
                 // Method 2: Try alternative function if main fails

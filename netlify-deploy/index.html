@@ -1149,11 +1149,7 @@
                 </span>
             </div>
             
-            <div style="margin-top: 20px; text-align: center;">
-                <button type="button" onclick="runTelegramDiagnostic()" style="background: #666; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
-                    Проверить Telegram интеграцию
-                </button>
-            </div>
+           
         </div>
     </section>
 
@@ -1320,45 +1316,7 @@
         async function runTelegramDiagnostic() {
             let message = 'ДИАГНОСТИКА TELEGRAM:\n\n';
             
-            try {
-                message += 'Проверяю отправку заявки...\n';
-                
-                const response = await fetch('/.netlify/functions/sendMessage', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: 'Тест диагностики',
-                        email: 'test@rowerhub.bike',
-                        phone: '+48123456789',
-                        message: 'Тестовое сообщение для проверки Telegram интеграции'
-                    })
-                });
-                
-                console.log('Test response status:', response.status);
-                
-                if (response.ok) {
-                    message += '✅ Функция отправки работает\n\n';
-                    message += 'Если сообщение НЕ пришло в Telegram группу:\n';
-                    message += '1. Проверьте переменные в Netlify:\n';
-                    message += '   - TELEGRAM_BOT_TOKEN\n';
-                    message += '   - TELEGRAM_CHAT_ID\n\n';
-                    message += '2. Проверьте что бот добавлен в группу\n';
-                    message += '3. Посмотрите логи Netlify Functions';
-                } else {
-                    message += '❌ Функция не работает\n';
-                    message += `Статус ошибки: ${response.status}\n\n`;
-                    message += 'Проверьте настройки Netlify Functions';
-                }
-                
-            } catch (error) {
-                message += '❌ Ошибка подключения к функции\n';
-                message += `Ошибка: ${error.message}\n\n`;
-                message += 'Функция может быть не развернута';
-                console.error('Diagnostic error:', error);
-            }
             
-            alert(message);
-        }
         
         // Mobile menu toggle
         function toggleMobileMenu() {

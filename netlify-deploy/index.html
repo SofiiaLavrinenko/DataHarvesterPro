@@ -1300,11 +1300,7 @@
                 
             } catch (error) {
                 console.error('All submission methods failed:', error);
-                if (confirm('Произошла ошибка при отправке заявки.\n\nЗапустить диагностику?')) {
-                    await runTelegramDiagnostic();
-                } else {
-                    alert('Попробуйте еще раз или свяжитесь с нами по телефону 800 922 508.');
-                }
+alert('Произошла ошибка при отправке заявки. Попробуйте еще раз или свяжитесь с нами по телефону 800 922 508.');
             } finally {
                 // Re-enable submit button
                 submitBtn.disabled = false;

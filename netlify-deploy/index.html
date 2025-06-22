@@ -1315,53 +1315,48 @@
             }
         });
         
-        // Telegram diagnostic function
+        // Simple diagnostic function
         async function runTelegramDiagnostic() {
+            let message = 'ДИАГНОСТИКА TELEGRAM:\n\n';
+            
             try {
-                // Check environment variables
-                const envResponse = await fetch('/.netlify/functions/check-env');
-                const envData = await envResponse.json();
+                message += 'Проверяю отправку заявки...\n';
                 
-                console.log('Environment check:', envData);
+                const response = await fetch('/.netlify/functions/simple-contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: 'Тест диагностики',
+                        email: 'test@rowerhub.bike',
+                        phone: '+48123456789',
+                        message: 'Тестовое сообщение для проверки Telegram интеграции'
+                    })
+                });
                 
-                let message = 'ДИАГНОСТИКА TELEGRAM:\n\n';
+                console.log('Test response status:', response.status);
                 
-                if (!envData.environment.hasToken) {
-                    message += '❌ TELEGRAM_BOT_TOKEN не настроен в Netlify\n';
-                    message += 'Добавьте переменную окружения в Site settings → Environment variables';
-                } else if (!envData.environment.hasChatId) {
-                    message += '❌ TELEGRAM_CHAT_ID не настроен в Netlify\n';
-                    message += 'Добавьте переменную окружения: -1002126895025';
+                if (response.ok) {
+                    message += '✅ Функция отправки работает\n\n';
+                    message += 'Если сообщение НЕ пришло в Telegram группу:\n';
+                    message += '1. Проверьте переменные в Netlify:\n';
+                    message += '   - TELEGRAM_BOT_TOKEN\n';
+                    message += '   - TELEGRAM_CHAT_ID\n\n';
+                    message += '2. Проверьте что бот добавлен в группу\n';
+                    message += '3. Посмотрите логи Netlify Functions';
                 } else {
-                    message += '✅ Переменные окружения настроены\n';
-                    message += `Chat ID: ${envData.environment.chatIdValue}\n\n`;
-                    message += 'Отправляю тестовое сообщение...';
-                    
-                    // Send test message
-                    const testResponse = await fetch('/.netlify/functions/simple-contact', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            name: 'Тест диагностики',
-                            email: 'test@rowerhub.bike',
-                            phone: '+48123456789',
-                            message: 'Тестовое сообщение для проверки интеграции'
-                        })
-                    });
-                    
-                    if (testResponse.ok) {
-                        message += '\n\n✅ Тестовое сообщение отправлено\nПроверьте Telegram группу';
-                    } else {
-                        message += '\n\n❌ Ошибка отправки\nПроверьте логи Netlify Functions';
-                    }
+                    message += '❌ Функция не работает\n';
+                    message += `Статус ошибки: ${response.status}\n\n`;
+                    message += 'Проверьте настройки Netlify Functions';
                 }
                 
-                alert(message);
-                
             } catch (error) {
+                message += '❌ Ошибка подключения к функции\n';
+                message += `Ошибка: ${error.message}\n\n`;
+                message += 'Функция может быть не развернута';
                 console.error('Diagnostic error:', error);
-                alert('Ошибка диагностики: ' + error.message);
             }
+            
+            alert(message);
         }
         
         // Mobile menu toggle

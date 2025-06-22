@@ -1185,7 +1185,7 @@
         </div>
     </footer>
 
-    <script>
+   <script>
         let currentLanguage = 'ru';
         
         function setLanguage(lang) {
@@ -1244,11 +1244,10 @@
             
             try {
                 // Method 1: Try simple contact function
-                let response = await fetch('/.netlify/functions/sendMessage', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(data)
-
+                let response = await fetch('/.netlify/functions/simple-contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
                 });
                 
                 let functionSuccess = false;
@@ -1270,11 +1269,27 @@
                     }
                 }
                 
-                // Method 2: Fallback to Netlify Forms if function fails
-                if (!functionSuccess) {
-                    console.log('Function failed, trying Netlify Forms...');
+                // Method 2: Try alternative function if main fails
+                if (!functionSuccess && response.status === 404) {
+                    console.log('Main function not found, trying alternative...');
                     
-                    // Submit to Netlify Forms
+                    // Try the older contact function
+                    const altResponse = await fetch('/.netlify/functions/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    if (altResponse.ok) {
+                        functionSuccess = true;
+                        console.log('Alternative function worked');
+                    }
+                }
+                
+                // Method 3: Fallback to Netlify Forms if functions fail
+                if (!functionSuccess) {
+                    console.log('All functions failed, using Netlify Forms...');
+                    
                     const formData = new FormData();
                     formData.append('form-name', 'contact');
                     formData.append('name', data.name);
@@ -1301,7 +1316,7 @@
                 
             } catch (error) {
                 console.error('All submission methods failed:', error);
-alert('Произошла ошибка при отправке заявки. Попробуйте еще раз или свяжитесь с нами по телефону 800 922 508.');
+                alert('Произошла ошибка при отправке заявки. Попробуйте еще раз или свяжитесь с нами по телефону 800 922 508.');
             } finally {
                 // Re-enable submit button
                 submitBtn.disabled = false;
@@ -1309,12 +1324,7 @@ alert('Произошла ошибка при отправке заявки. П�
             }
         });
         
-        // Simple diagnostic function
-        async function runTelegramDiagnostic() {
-            let message = 'ДИАГНОСТИКА TELEGRAM:\n\n';
-            
-            
-        
+
         // Mobile menu toggle
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');

@@ -1244,7 +1244,7 @@
             
             try {
                 // Method 1: Try simple contact function
-                let response = await fetch('/.netlify/functions/simple-contact', {
+                let response = await fetch('/.netlify/functions/sendMessage', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
